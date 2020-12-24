@@ -1,0 +1,19 @@
+{
+  "name": "pixelvibe",
+  "version": "1.0.0",
+  "description": "[![Join the chat at https://gitter.im/FOSS-Cell-GECPKD/pixelvibe](https://img.shields.io/badge/chat-on%20gitter-blue?style=for-the-badge)](https://gitter.im/FOSS-Cell-GECPKD/pixelvibe?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Issues](https://img.shields.io/github/issues/FOSS-Cell-GECPKD/pixelvibe?style=for-the-badge)](https://github.com/FOSS-Cell-GECPKD/pixelvibe/issues)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FOSS-Cell-GECPKD/pixelvibe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FOSS-Cell-GECPKD/pixelvibe/issues"
+  },
+  "homepage": "https://github.com/FOSS-Cell-GECPKD/pixelvibe#readme"
+}
