@@ -7,7 +7,7 @@ body {
   cursor: default;
 }
 .navbar {
-  margin: 4% 6% 5% 7%;
+  margin: 2% 6% 5% 7%;
   height: 5%;
 }
 .logo,
@@ -39,7 +39,7 @@ body {
   color: rgb(51, 89, 114);
 }
 .descp {
-  margin: 18% 0% 0% 13%;
+  margin: 17% 0% 0% 13%;
   text-align: left;
   font-size: 180%;
 }
