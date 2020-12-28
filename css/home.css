@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #24242f;
+  color: rgb(53, 207, 245);
+  cursor: default;
+}
+.navbar {
+  margin: 4% 6% 5% 7%;
+  height: 5%;
+}
+.logo,
+.PV {
+  float: left;
+}
+.logo {
+  height: 5%;
+  width: 5%;
+  padding: 0% 0.5% 0% 0%;
+  margin-top: -2%;
+}
+.PV {
+  font-size: 230%;
+  padding-left: 1%;
+}
+.link {
+  float: right;
+  position: relative;
+  text-align: right;
+  padding: 1% 2% 2% 2%;
+  font-size: 110%;
+}
+.link a {
+  text-decoration: none;
+  color: rgb(53, 207, 245);
+}
+.link a:hover {
+  color: rgb(51, 89, 114);
+}
+.descp {
+  margin: 18% 0% 0% 13%;
+  text-align: left;
+  font-size: 180%;
+}
+.descp span {
+  height: 3%;
+  width: 5%;
+  font-size: 60%;
+  background-color: rgb(47, 191, 216);
+  padding: 1%;
+  margin: 3% 0% 0% 0%;
+}
+.descp span a {
+  text-decoration: none;
+  color: #202324;
+}
+.descp span a:hover,
+.descp span:hover {
+  background-color: rgb(51, 89, 114);
+  color: aliceblue;
+}
+.char {
+  float: right;
+  margin: -8% 3% 0% 0%;
+  height: 40%;
+  width: 40%;
+}
