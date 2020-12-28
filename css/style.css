@@ -1,42 +1,62 @@
 body {
-    text-align: center;
+  text-align: center;
 }
 
 h1 {
-    font-family: Lobster;
-    font-size: 70px;
-    margin: 0.2em;
+  font-family: Lobster;
+  font-size: 70px;
+  margin: 0.2em;
 }
 
 h2 {
-    margin: 1em 0 0.25em;
+  margin: 1em 0 0.25em;
 }
 
 h2:first-of-type {
-    margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 
-table, tr, td {
-    border: 1px solid black;
+table,
+tr,
+td {
+  border: 1px solid black;
 }
 
 table {
-    border-collapse: collapse;
-    margin: 0 auto;
+  border-collapse: collapse;
+  margin: 0 auto;
 }
 
 tr {
-    height: 50px;
+  height: 50px;
 }
 
 td {
-    width: 50px;
+  width: 50px;
 }
 
-input[type=number] {
-    width: 6em;
+input[type="number"] {
+  width: 6em;
 }
 
-input[type=number]:invalid {
-	color: red;
+input[type="number"]:invalid {
+  color: red;
+}
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
