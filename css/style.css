@@ -1,14 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     text-align: center;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    color: #555;
+    background: linear-gradient(-30deg, #ef4f4f 0%, #3a78b7 50%, #262626 50%, #11698e 100%);
 }
 
 h1 {
     font-family: Lobster;
     font-size: 70px;
     margin: 0.2em;
+    color: #fff;
 }
 
 h2 {
+    color: antiquewhite;
+    font-family: Lobster;
+    font-size: 2.3em;
+    font-weight: 100;
     margin: 1em 0 0.25em;
 }
 
@@ -35,8 +51,25 @@ td {
 
 input[type=number] {
     width: 6em;
+    margin: 0.5em;
 }
 
 input[type=number]:invalid {
 	color: red;
+}
+
+.box {
+    padding: 10px;
+    height: 220px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    color: #fff;
+}
+
+.btn {
+    margin: 10px;
 }
