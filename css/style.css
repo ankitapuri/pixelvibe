@@ -6,27 +6,26 @@ body {
     text-align: center;
     height: 100vh;
     width: 100vw;
-    /* overflow: hidden; */
     display: flex;
     justify-content: center;
     color: #555;
-    background: linear-gradient(-30deg, #ff6473 0%, #c75080 50%, #262626 50%, #373a40 100%);
+    background: linear-gradient(-25deg, #00f5f5 0%, #00a3a3 50%, #001a33  50%, #393e46 100%);
     background-attachment: fixed;
     background-repeat: repeat-x;
 }
 
+h1, h2 {
+    font-family: 'Pacifico', cursive;
+    color: #fff;
+}   
+
 h1 {
-    font-family: Lobster;
     font-size: 70px;
     margin: 0.2em;
-    color: #fff;
 }
 
 h2 {
-    color: antiquewhite;
-    font-family: Lobster;
     font-size: 2.3em;
-    font-weight: 100;
     margin: 1em 0 0.25em;
 }
 
