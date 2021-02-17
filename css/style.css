@@ -3,8 +3,8 @@ body {
 }
 
 h1 {
-    font-family: Lobster;
-    font-size: 70px;
+    font-family: dancing script;
+     font-size: 70px;
     margin: 0.2em;
 }
 
@@ -26,17 +26,14 @@ table {
 }
 
 tr {
-    height: 50px;
+    height: 40px;
 }
 
 td {
-    width: 50px;
+    width: 40px;
 }
 
-input[type=number] {
-    width: 6em;
-}
 
-input[type=number]:invalid {
-	color: red;
+.btn {
+    margin: 10px;
 }
