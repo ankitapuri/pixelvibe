@@ -14,7 +14,7 @@ h1 {
     font-size: 80px;
     font-weight: bold;
     animation: colorchange 6s infinite alternate;
-
+    
 }
 @keyframes colorchange{
     0% {
