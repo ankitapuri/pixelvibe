@@ -28,7 +28,7 @@ PixelVibe uses a number of open source projects to work properly:
 5.	Lastly a functionality which helps the user to import the image from the local machine to the web app and convert into pixel format.  
 
 ### 🚀 Contributing  
-This repository is contribution friendly. If you'd like to add or improve any algorithm, your contribution is welcome!  
+This repository is contribution friendly. If you'd like to add or improve , your contribution is welcome!  
 Don't forget to follow [Contribution Guidelines](Contributing.md) 😃  
 
 ## 📘&nbsp; License
