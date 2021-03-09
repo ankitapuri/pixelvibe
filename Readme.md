@@ -1,36 +1,56 @@
-[![Join the chat at https://gitter.im/FOSS-Cell-GECPKD/pixelvibe](https://badges.gitter.im/FOSS-Cell-GECPKD/pixelvibe.svg)](https://gitter.im/FOSS-Cell-GECPKD/pixelvibe?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# PixelVibe
+## The one place for the creator in you
 
-# pixelvibe
-This project is a pixel-art maker which has the following features :
-- Scalable size of the board according to the user preference . 
-- Wide range of colors for making your art beutiful.
-- Eraser for editing the errors. 
-- Ability to import images from the local machine and convert into pixel-art format.
-- Ability to save work so that the user can continue whenever he wishes. 
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![LICENCE](https://img.shields.io/badge/licence-MIT-green)]()
+[![All Contributors](https://img.shields.io/badge/all_contributors-67-orange.svg?style=flat-square)](#contributors-)
+### Discription
+PixelVibe is a pixel-art maker which is mainly made for the creative art lover of the images in a pixel -art format. 
+ 
 
-### setup
+### Tech Stack
 
-**Clone the repo**
+PixelVibe uses a number of open source projects to work properly:
+* Html
+* Css
+* Java Script
+* Progressive web App Programing
+* Database especially Mysql
 
-You need to make a local clone of this repo, so that you can work from your local machine.
-```
-git clone https://github.com/FOSS-Cell-GECPKD/pixelvibe.git
-```
-**Create your own branch**
-```
-git checkout -b new_branch
-```
-**Add Scripts related to your respective issues**
-```
-git add . 
-```
-**Add a commit message**
-```
-git commit -m "Added your message"
-```
-**Push changes**
-```
-git push -u origin <name_of_your_branch>
-```
-### What is a pull-request?
-When you open a pull request, you're proposing your changes and requesting that someone review and pull in your contribution and merge them into their branch. Pull requests show diffs, or differences, of the content from both branches.
+
+### Contents 
+| Page | Description |
+| --- | ----------- |
+|Contribution Guide|Contribution.md|
+|Html|index.html|
+| css | Style.css |
+| Java Script | App.js|
+
+## ✅&nbsp; Requirements
+1. Scalable size off the board according to the user preference 
+2.	Colour palette in the form of colour wheel  
+3.	The board should not display the boxes to the user
+4.	Utility box displaying:
+•	pens of various sizes
+•	erasers of various sizes 
+•	A circle which asks the user to input the radius 
+•	Undo button
+•	Delete button to clear the entire screen 
+•	A button to help the user to save the project 
+5.	Lastly a functionality which helps the user to import the image from the local machine to the web app and convert into pixel format.  
+
+### 🚀 Contributing  
+This repository is contribution friendly. If you'd like to add or improve any algorithm, your contribution is welcome!  
+Don't forget to follow [Contribution Guidelines](contributing.md) 😃  
+
+## 📘&nbsp; License
+
+The PixelVibe is released under the under terms of the [MIT License](LICENSE).
+
+## ❤️&nbsp; Admin and mentors
+
+
+
+
+
+
