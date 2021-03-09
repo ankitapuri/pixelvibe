@@ -21,8 +21,10 @@ Example how to mark a checkbox:-
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] This change requires a documentation update
 
-## Additional Info (optional)
+## Mention any unusual behaviour of your code (Write NA if not)
+Any unusual behaviour of your code
 
+## Additional Info (optional)
 Any additional information you want to give
 
 ## Checklist:
