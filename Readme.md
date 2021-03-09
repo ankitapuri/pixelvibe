@@ -1,11 +1,11 @@
 # PixelVibe
 ## The one place for the creator in you
 
-### Discription
+### 📋 Discription
 PixelVibe is a pixel-art maker which is mainly made for the creative art lover of the images in a pixel -art format. 
  
 
-### Tech Stack
+### 💻 Tech Stack
 
 PixelVibe uses a number of open source projects to work properly:
 * Html
