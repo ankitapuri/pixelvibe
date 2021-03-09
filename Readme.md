@@ -3,7 +3,6 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 [![LICENCE](https://img.shields.io/badge/licence-MIT-green)]()
-[![All Contributors](https://img.shields.io/badge/all_contributors-67-orange.svg?style=flat-square)](#contributors-)
 ### Discription
 PixelVibe is a pixel-art maker which is mainly made for the creative art lover of the images in a pixel -art format. 
  
