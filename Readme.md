@@ -1,5 +1,5 @@
 # 🎉PixelVibe🎉
-       The one place for the creator in you
+  A place for the creator in you
 
 ### 📋 Discription
 
