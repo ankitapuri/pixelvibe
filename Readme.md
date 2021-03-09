@@ -1,7 +1,8 @@
 # 🎉PixelVibe🎉
-## The one place for the creator in you
+       The one place for the creator in you
 
 ### 📋 Discription
+
 PixelVibe is a pixel-art maker which is mainly made for the creative art lover of the images in a pixel -art format. 
  
 
@@ -14,7 +15,7 @@ PixelVibe uses a number of open source projects to work properly:
 * Progressive web App Programing
 * Database especially Mysql
 
-## ✅&nbsp; Requirements
+### ✅&nbsp; Requirements
 1. Scalable size off the board according to the user preference 
 2.	Colour palette in the form of colour wheel  
 3.	The board should not display the boxes to the user
