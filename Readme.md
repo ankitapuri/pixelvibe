@@ -1,4 +1,4 @@
-# PixelVibe
+# 🎉PixelVibe🎉
 ## The one place for the creator in you
 
 ### 📋 Discription
