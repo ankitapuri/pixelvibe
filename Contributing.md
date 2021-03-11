@@ -68,8 +68,7 @@ Submit your pull request and wait for our review. We will soon review and procee
 | Level 1 | 2 days |
 | Level 2 | 5 days |
 | Level 3 | 7 days |
-
+*Note: Please open your PR within the specified duration after an issue has been assigned to you. We may reassign the issue if you fail to do so.*
 
 <p align=center> Thanks for your Contribution 😊<p>
-
 
