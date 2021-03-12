@@ -55,12 +55,20 @@ Make your changes, add/remove files as needed then commit your changes. Keep the
 Goto your GitHub and open your fork of this project. Then follow pull request procedure as described [here](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github). Your pull request must contain following informations. *We will close pull requests having no descriptions*
 - Details of the changes made (file added/changed, code changes, bug fixes etc)
 - Link a related issue if any as `Fixes #issue-number`
-- Your Program name if any (i.e. - GSSOC21`
+- Your Program name if any (i.e. - GSSOC21)
 - References if any(StackOverFlow or GeeksForGeeks or book, other websites)
 - Anything else you want to add
 
 Submit your pull request and wait for our review. We will soon review and proceed further. You can now choose another issue to work on.
 
-<p align=center> Thanks for your Contribution 😊<p>
+## Days allotted according to the levels 
+|Level | Days Provided|
+| - | - |
+| Level 0 | 1 day |
+| Level 1 | 2 days |
+| Level 2 | 5 days |
+| Level 3 | 7 days |
+*Note: Please open your PR within the specified duration after an issue has been assigned to you. We may reassign the issue if you fail to do so.*
 
+<p align=center> Thanks for your Contribution 😊<p>
 
