@@ -1,5 +1,5 @@
 # 🎉PixelVibe🎉
-
+<p align=center>A place for the creator in you.</p>
 
   [![Number of Contributors](https://img.shields.io/github/contributors/FOSS-Cell-GECPKD/pixelvibe)](https://github.com/FOSS-Cell-GECPKD/pixelvibe/graphs/contributors)
   [![Issues opened](https://img.shields.io/github/issues/FOSS-Cell-GECPKD/pixelvibe)](https://github.com/FOSS-Cell-GECPKD/pixelvibe/issues)
@@ -34,12 +34,12 @@ PixelVibe uses a number of open source projects to work properly:
 -	Delete button to clear the entire screen
 -	A button to help the user to save the project
 5.	Lastly a functionality which helps the user to import the image from the local machine to the web app and convert into pixel format.  
-<p align=center>A place for the creator in you.</p>
+
 
 ### 📋 Description
 
-PixelVibe is a pixel-art maker which is mainly created for the creative art lovers of the images in pixel-art format. 
- 
+PixelVibe is a pixel-art maker which is mainly created for the creative art lovers of the images in pixel-art format.
+
 
 ### 💻 Tech Stack
 
@@ -55,14 +55,14 @@ PixelVibe uses several open-source projects to work properly:
 3. The board should not display the boxes to the user
 4. Utility box displaying:
   -	Pens of various sizes
-  -	Erasers of various sizes 
-  -	A circle which asks the user to input the radius 
+  -	Erasers of various sizes
+  -	A circle which asks the user to input the radius
   -	Undo button
-  -	Delete button to clear the entire screen 
-  -	A button to help the user to save the project 
-5. A functionality which helps the user to import the image from the local machine to the web app and convert into pixel format. 
+  -	Delete button to clear the entire screen
+  -	A button to help the user to save the project
+5. A functionality which helps the user to import the image from the local machine to the web app and convert into pixel format.
 6. Sign In/Sign Up page
-7. Ability to store user's work 
+7. Ability to store user's work
 
 
 ### 🚀 Contributing  
@@ -74,7 +74,7 @@ Do not forget to follow [Contribution Guidelines](Contributing.md) 😃
 The PixelVibe is released under the under terms of the [MIT License](LICENSE).
 
 
-## ❤️&nbsp; Project Admin 
+## ❤️&nbsp; Project Admin
 
 <table>
 <tr>
@@ -96,6 +96,6 @@ The PixelVibe is released under the under terms of the [MIT License](LICENSE).
 
 This project is a part of GSSOC 2021.
 <img src="https://raw.githubusercontent.com/GirlScriptSummerOfCode/MentorshipProgram/master/GSsoc%20Type%20Logo%20Black.png">
+
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
-
