@@ -8,7 +8,7 @@ sizePicker.addEventListener("submit", function(e) {
     e.preventDefault();
     makeGrid();
 });
-
+// When you click on submit button it shows grid.
 /**
  * @description Draws the grid based on the user input for grid height and width
  * @param void
