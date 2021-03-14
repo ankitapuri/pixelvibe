@@ -140,7 +140,6 @@ html, body {
 }
 body {
     background: black;
-    overflow: hidden;
 }
 .wrap {
     position: relative;
@@ -170,4 +169,6 @@ body {
     background-color: rgba(255, 85, 0, 1);
 }
 
-   
+#b-margin{
+  padding-bottom: 30px;
+}
