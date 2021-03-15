@@ -1,6 +1,11 @@
 # 🎉PixelVibe🎉
 <p align=center>A place for the creator in you.</p>
 
+
+<p align="center"><img src="pixelVibe.gif"></p>
+
+<p>
+
   [![Number of Contributors](https://img.shields.io/github/contributors/FOSS-Cell-GECPKD/pixelvibe)](https://github.com/FOSS-Cell-GECPKD/pixelvibe/graphs/contributors)
   [![Issues opened](https://img.shields.io/github/issues/FOSS-Cell-GECPKD/pixelvibe)](https://github.com/FOSS-Cell-GECPKD/pixelvibe/issues)
   [![Issues closed](https://img.shields.io/github/issues-closed/FOSS-Cell-GECPKD/pixelvibe)](https://github.com/FOSS-Cell-GECPKD/pixelvibe/issues)
