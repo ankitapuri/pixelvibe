@@ -10,24 +10,12 @@
    <title>PixelVibe</title>
 
    <link href="css/style.css" rel="stylesheet">
+   
    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap" rel="stylesheet">
 </head>
-
-<body>
+   <body>
     <section>
-    <div class="area">
-    <ul class="circles">
-       <li></li>
-       <li></li>
-       <li></li>
-       <li></li>
-       <li></li>
-       <li></li>
-       <li></li>
-       <li></li>
-       <li></li>
-       <li></li>
-       <li></li>
+       
       <h1 class="color_change">PixelVibe</h1>
       <form id="sizePicker">
          <div class="form-group box">
@@ -36,18 +24,19 @@
             <input type="number" id="input-height" name="height" min="1" max="20" value="1" required>
             Grid Width :
             <input type="number" id="input-width" name="width" min="1" max="20" value="1" required> <br />
+            <br>
             <input type="submit" class="btn btn-primary" id="submit" value="Submit">
             <input type="button" class="btn btn-danger" value="Reset" onClick="window.location.reload()">
          </div>
       </form>
       <h2> Design Canvas </h2>
       <table id="pixel_canvas"> </table>
-      <script src="js/app.js"></script>
+      <div id="b-margin"></div>
+      <script src="JS/app.js"></script>
 
-    </ul>
-</div>
 </section>
 
 </body>
 
 </html>
+
