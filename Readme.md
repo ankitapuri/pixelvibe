@@ -16,11 +16,14 @@ PixelVibe is a pixel-art maker which is mainly made for the creative art lover o
 ### 💻 Tech Stack
 
 PixelVibe uses a number of open source projects to work properly:
-* Html
-* Css
-* Java Script
-* Progressive web App Programing
-* Database especially Mysql
+### Front-End:
+<img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>  <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> 
+
+### Data-Base:
+<img alt="MySQL" src="https://img.shields.io/badge/mysql-%2300f.svg?&style=for-the-badge&logo=mysql&logoColor=white"/>
+
+### Other:
+<img alt="Progressive Web Apps" src="https://img.shields.io/badge/Progressive Web Apps%20-%2300C4CC.svg?&style=for-the-badge&logo=ProgressiveWebApps&logoColor=white"/>
 
 ### ✅&nbsp; Requirements
 1. Scalable size off the board according to the user preference
@@ -35,19 +38,6 @@ PixelVibe uses a number of open source projects to work properly:
 -	A button to help the user to save the project
 5.	Lastly a functionality which helps the user to import the image from the local machine to the web app and convert into pixel format.  
 
-
-### 📋 Description
-
-PixelVibe is a pixel-art maker which is mainly created for the creative art lovers of the images in pixel-art format.
-
-
-### 💻 Tech Stack
-
-PixelVibe uses several open-source projects to work properly:
-* HTML
-* CSS
-* JavaScript
-* Progressive Web App Programming
 
 ### ✅&nbsp; Project Goals and Ideas
 1. Scalable size off the board according to the user preferences
