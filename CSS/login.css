@@ -3,6 +3,10 @@
    margin: 0;
    padding: 0;
 }
+
+* {
+  box-sizing: border-box;
+}
 .main
 {
   text-align: center;
@@ -13,29 +17,28 @@
   margin-top: 200px;
   padding: 100px 100px 100px 100px;
 }
-.register
-{
-  background-color: rgba(255, 255, 255, 0.4);
-  width:100%;
-  font-size: 26px;
-  border-radius: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.3);
+@media only screen and (max-width: 600px) {
+  .main #name #register;
+ 
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .main #name #register;
+}
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .main #name #register;
 }
-#register
-{
-  margin:40px;
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .main #name #register;
 }
-input#name
-{
-  width: 400px;
-  border:1px solid #ddd;
-  border-radius: 2px;
-  outline:0;
-  padding:7px;
-  background-color : whitesmoke;
-  box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3);
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .main #name #register;
 }
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 body {
