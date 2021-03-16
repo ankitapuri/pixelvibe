@@ -1,6 +1,4 @@
 # 🎉PixelVibe🎉
-<p align=center>A place for the creator in you.</p>
-
 
 <p align="center"><img src="readme_assets/pixelVibe.gif"></p>
 
