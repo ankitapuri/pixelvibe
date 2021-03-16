@@ -1,0 +1,160 @@
+.box{
+  width: 350px;
+  height: 500px;
+  background:#c1bbdd;
+  padding: 60px 35px 35px 35px;
+    border-radius: 40px;
+    box-shadow: 13px 13px 20px #b399d4,
+               -13px -13px 20px #dcddd9;
+    position: relative;
+    overflow: hidden;
+}
+.signup{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  transition: 0.5s;
+  border-radius: 40px
+}
+.login{
+  position: absolute;
+  bottom: 0;
+  left: 101%;
+  width: 100%;
+  height: 400px;
+  border-radius: 40px; 
+  transition: 0.5s;
+}
+.input-group{
+  width: 95%;
+  padding: 15px 5px 5px 5px;
+
+}
+.input-group input {
+  border: none;
+  outline:none;
+  background: none;
+  font-size: 21px;
+  text-align: justify;
+  color: black;
+
+  
+  padding:15px 10px 15px 5px;
+}
+/* CSS for icons */
+.material-icons{
+  height: 25px;
+  margin:0 10px -3px 20px;
+  padding:10px 0px 15px 5px;
+  color: gray;
+}
+.username, .password, .email {
+  margin-bottom: 20px;
+  border-radius: 25px;
+  box-shadow: inset 2px 2px 5px #b399d4,
+              inset -5px -5px 10px #dcddd9;
+}
+/* CSS for signup button starts from here */
+.signup-btn  {
+  margin: 10px 0px 0px 80px;
+  outline: none;
+  border:none;
+  cursor: pointer;
+  width: 50%;
+  height: 50px; 
+  border-radius: 30px;
+  font-size: 20px;
+
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color:#fff;
+  text-align: center;
+  background: purple;
+  box-shadow: 3px 3px 8px #000,
+              -3px -3px 8px white;
+  transition: 0.5s;
+}
+.signup-btn:hover {
+  
+  background:#c1bbdd;
+  box-shadow: inset 3px 3px 8px #b399d4,
+              inset -3px -3px 8px #dcddd9;
+  color: black;
+}
+.signup-btn:active {
+  background: #c1bbdd;
+  box-shadow: inset 3px 3px 8px #b399d4 ,
+              inset -3px -3px 8px #dcddd9 ;
+}
+/* CSS For Login page starts*/
+.input-signin {
+  width: 95%;
+  padding: 75px 5px 5px 5px;
+}
+.input-signin input {
+  border: none;
+  outline:none;
+  background: none;
+  font-size: 22px;
+  color: black;
+  padding:20px 10px 20px 5px;
+}
+.input-signin svg {
+  height: 20px;
+  margin:0 10px -3px 20px;
+}
+.link {
+  padding-top: 20px;
+  text-align: center;
+}
+.link a {
+  text-decoration: none;
+  color:black;
+  font-size: 15px;
+}
+/* CSS For Toggle button starts*/
+.toggle-btn{
+  -webkit-appearance: none;
+  width: 150px;
+  height: 40px;
+  border: 1px ;
+  position: absolute;
+  top: 40px;
+  left: calc(50% - 75px);
+  border-radius: 100px;
+  box-shadow: inset 3px 3px 8px #b399d4 ,
+              inset -3px -3px 8px #dcddd9 ;
+
+}
+.toggle-btn:before{
+  content: 'Sign Up';
+  font-weight: bolder;
+  color: white;
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 55%;
+  height: 100%;
+  background-color: #966fd6;
+  border-radius: 100px;
+  display: grid;
+  place-items: center;
+  transition: 0.5s;
+  box-shadow: 3px 3px 8px #b399d4 ,
+              -3px -3px 8px #dcddd9 ;
+}
+.toggle-btn:checked:before{
+  content: 'Login';
+  font-weight: bolder;
+  color: white;
+  position: absolute;
+  left:50%;
+}
+.toggle-btn:checked + .signup{
+  left: -101%;
+}
+.toggle-btn:checked + .signup + .login{
+  left: 0%;
+}
