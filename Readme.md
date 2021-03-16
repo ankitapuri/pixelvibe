@@ -1,6 +1,6 @@
 
 
-<p align="center"><img src="readme_assets/pixelVibe.gif"></p>
+<p align="center"><img src="assets/pixelVibe.gif"></p>
 
 <p>
 
