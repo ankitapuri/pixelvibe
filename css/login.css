@@ -15,30 +15,6 @@
   padding: 100px 100px 100px 100px;
 }
 
-@media only screen and (max-width: 600px) {
-  .main #name #register;
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .main #name #register;
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .main #name #register;
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .main #name #register;
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  .main #name #register;
-}
-
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 body {
   background: #0c1618;
@@ -46,88 +22,87 @@ body {
   font-family: "Raleway", sans-serif;
 }
 .circle {
-  margin: right;
+  margin: auto;
   position: absolute;
   top: 0;
   left: 70;
-  bottom: 0;
+  bottom: 20;
   right: 0;
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   border: 0.2em solid #adadad;
-  box-shadow: 2.5px 2.5px 5px 2.5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   background: #eeeeee;
 }
 .push-btn-container {
-  position: relative;
-  width: 63px;
-  height: 66px;
+  position: absolute;
+  width: 89px;
+  height: 90px;
   top: 0.1em;
   left: 0.1em;
   border-radius: 50%;
   border: 0.2em solid #f5f5f5;
-  box-shadow: inset 0 0 3px #191919;
+  box-shadow: inset 0 0 12px #191919;
   overflow: hidden;
   background: #0c1618;
 }
 .centering {
-  position: relative;
-  top: 35%;
-  left: 25%;
+  position: absolute;
+  top: 40%;
+  left: 40%;
   transform: translate(-50%, -50%);
 }
 .push-toggle {
-  border-radius: 25%;
+  border-radius: 50%;
   background: #0c1618;
-  height: 15px;
-  width: 15px;
+  height: 70px;
+  width: 70px;
 }
 .push-toggle:before {
-  box-shadow: 0 0 4px 5px rgba(0, 230, 255, 0.99);
-  border-radius: 10%;
+  box-shadow: 0 0 8px 4px rgba(0, 230, 255, 0.99);
+  border-radius: 50%;
   background: rgba(0, 230, 255, 0.99);
   position: absolute;
   margin-left: -1.5em;
   margin-top: -1.5em;
-  opacity: 0.4;
+  opacity: 0.2;
   content: "";
-  height: 25px;
-  width: 25px;
-  left: 25%;
-  top: 25%;
+  height: 50px;
+  width: 50px;
+  left: 50%;
+  top: 50%;
 }
 .push-toggle .push-button {
   -webkit-filter: blur(1px);
   -moz-filter: blur(1px);
   filter: blur(1px);
-  transition: all 150ms cubic-bezier(0.12, 1, 0.15, 1);
+  transition: all 300ms cubic-bezier(0.12, 1, 0.15, 1);
   box-shadow: 0 7px 6px -2px #236b6c, inset 0 -2px 2px -1px #46c1c3,
     0 -5px 7px -1px #236b6c, inset 0 3px 2px -1px #46c1c3,
     inset 0 0 5px 1px #287a7b, inset 0 5px 8px 0 #236b6c;
-  border-radius: 20px;
+  border-radius: 50px;
   position: absolute;
   background: #194c4d;
-  margin-left: -1.56em;
-  margin-top: -1.45em;
+  margin-left: -1.4em;
+  margin-top: -1.4em;
   display: block;
-  height: 30px;
-  width: 30px;
-  left: 65%;
-  top: 65%;
+  height: 35px;
+  width: 35px;
+  left: 55%;
+  top: 55%;
 }
-/*Bulb button*/
 .push-toggle .push-btn-label {
   transition: color 300ms ease-out;
-  top: 2em;
-  left: 1.8em;
+  top: -1em;
+  left: 3.5em;
   text-align: center;
-  position: relative;
-  font-size: 0.9em;
+  position: absolute;
+  font-size: 0.35em;
   display: block;
-  height: 55%;
-  width: 55%;
+  height: 25%;
+  width: 45%;
   color: #191919;
 }
 .push-toggle input {
@@ -135,9 +110,9 @@ body {
   position: absolute;
   cursor: pointer;
   z-index: 10;
-  height: 50%;
-  width: 50%;
-  right: 0.8em;
+  height: 90%;
+  width: 90%;
+  right: 0.7em;
 }
 .push-toggle input:active ~ .push-button {
   box-shadow: 0 7px 15px -2px rgba(0, 0, 0, 0.2),
@@ -147,7 +122,7 @@ body {
     inset 0 0 5px 1px rgba(255, 255, 255, 0.3);
 }
 .push-toggle input:active ~ .push-btn-label {
-  font-size: 0.5em;
+  font-size: 2em;
   color: rgba(0, 230, 255, 0.99);
 }
 .push-toggle input:checked ~ .push-button {
@@ -157,16 +132,13 @@ body {
     inset 0 4px 10px 0 rgba(0, 0, 0, 0.1),
     inset 0 0 3px 1px rgba(255, 255, 255, 0.3);
 }
-/*Green button bulb*/
 .push-toggle input:checked ~ .push-btn-label {
-  top: 1.3em;
-  color: #87cefa;
+  top: 2.6em;
+  color: #c3eb78;
 }
-
 .dark-mode {
-  background-color: #87cefa;
+  background-color: #c3eb78;
 }
-
 .light-mode {
   margin: top;
   right: 8783rem;
@@ -174,3 +146,4 @@ body {
   top: -8em;
   left: 0.5em;
 }
+
