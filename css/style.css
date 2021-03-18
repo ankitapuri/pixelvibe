@@ -1,5 +1,7 @@
 body {
     text-align: center;
+    font-family: 'Lora', serif;
+
 }
 
 h1 {
@@ -114,8 +116,26 @@ td {
     background: -webkit-linear-gradient(to left, #424e34,#91ff14);
 }
 
-
-
+input {
+  width:80px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.45;
+  outline: none;
+  padding:0.2em;
+}
+input:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+input:focus {
+  color: #4b515d;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}
 
  *{
     margin: 0px;
