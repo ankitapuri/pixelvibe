@@ -36,7 +36,7 @@ Do not forget to follow [Contribution Guidelines](Contributing.md) 😃
 
 ## 📘&nbsp; License
 
-The PixelVibe is released under the under terms of the [MIT License](LICENSE).
+The PixelVibe is released under the terms of the [MIT License](LICENSE).
 
 ## ❤️&nbsp; Project Admin 
 <table>
