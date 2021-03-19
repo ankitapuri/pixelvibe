@@ -1,0 +1,43 @@
+/* **************************** LOGIN PAGE FOOTER ************************** */
+
+
+.love {
+    
+    position: relative;
+    /* top: .1em; */
+    font-size: 2.4em;
+    color: #e74c3c;
+    -webkit-transform: scale(.9);
+    -moz-transform: scale(.9);
+    transform: scale(.9);
+    -webkit-animation: love .5s infinite linear alternate-reverse;
+    -moz-animation: love .5s infinite linear alternate-reverse;
+    animation: love .5s infinite linear alternate-reverse;
+  }
+  .footer-content{
+    font-size: 2em;
+    font-family: Montserrat;
+   align-items: center; 
+   justify-content: center;
+   display: flex;               
+  }
+  @-webkit-keyframes love {
+    to {-webkit-transform: scale(1.2);}
+  }
+  @-moz-keyframes love {
+    to {-moz-transform: scale(1.2);}
+  }
+  @keyframes love {
+    to {transform: scale(1.2);}
+  }
+  
+  
+    @keyframes fave-heart {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: -2800px 0;
+      }
+    }
+    
