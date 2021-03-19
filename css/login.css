@@ -8,8 +8,9 @@
 }
 
 .main {
+  background:rgb(87, 86, 85);
   text-align: center;
-  color: White;
+  color:rgb(155, 213, 252);
   font-family: sans-serif;
   font-size: 2.5rem;
   margin-top: 200px;
@@ -18,8 +19,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 body {
-  background: #0c1618;
-
+  background:rgb(199 230 252);
   font-family: "Raleway", sans-serif;
 }
 .circle {
@@ -138,8 +138,52 @@ body {
   color: #c3eb78;
 }
 .dark-mode {
-  background-color: #c3eb78;
+  background:#0c1618;
 }
+.dark-mode .username {
+  box-shadow: inset 2px 2px 5px  #0d0d0e,
+              inset -5px -5px 10px #0c0c0c;
+}
+.dark-mode .password {
+  box-shadow: inset 2px 2px 5px  #0d0d0e,
+              inset -5px -5px 10px #0c0c0c;
+}
+.dark-mode .email {
+  box-shadow: inset 2px 2px 5px  #0d0d0e,
+              inset -5px -5px 10px #0c0c0c;
+}
+.dark-mode .box{
+  background: #0c1618;
+   box-shadow: 13px 13px 20px #0c0c0c,
+   -13px -13px 10px #0d0d0e;
+}
+.dark-mode .toggle-btn
+{
+  box-shadow: 13px 13px 20px #0d0d0e,
+-13px -13px 20px #0c0c0c;
+}
+.dark-mode .toggle-btn::before
+{
+  box-shadow: 13px 13px 20px #232324,
+-13px -13px 20px #0c0c0c;
+}
+.dark-mode .toggle-btn::after
+{
+  box-shadow: 13px 13px 20px #232324,
+-13px -13px 20px #0c0c0c;
+}
+.dark-mode .signup-btn
+{
+  box-shadow: 13px 13px 20px #232324,
+-13px -13px 20px #0c0c0c;
+   background:rgb(185, 107, 185);
+}
+.dark-mode .link a {
+  text-decoration: none;
+  color:rgb(128, 122, 122);
+  font-size: 15px;
+}
+
 .light-mode {
   margin: top;
   right: 8783rem;
@@ -153,11 +197,11 @@ body {
 .box{
   width: 350px;
   height: 500px;
-  background:#c1bbdd;
+  background:rgb(199 230 252);
   padding: 60px 35px 35px 35px;
     border-radius: 40px;
-    box-shadow: 13px 13px 20px #b399d4,
-               -13px -13px 20px #dcddd9;
+    box-shadow: 13px 13px 20px #70a19f,
+               -13px -13px 20px #e4ffff;
     position: relative;
     overflow: hidden;
 }
@@ -205,8 +249,8 @@ body {
 .username, .password, .email {
   margin-bottom: 20px;
   border-radius: 25px;
-  box-shadow: inset 2px 2px 5px #b399d4,
-              inset -5px -5px 10px #dcddd9;
+  box-shadow: inset 2px 2px 5px #9fd6d2,
+              inset -5px -5px 10px #96dff5;
 }
 /* CSS for signup button starts from here */
 .signup-btn  {
@@ -223,7 +267,7 @@ body {
   font-family: 'Lato', sans-serif;
   color:#fff;
   text-align: center;
-  background: purple;
+  background: rgb(185, 107, 185);
   box-shadow: 3px 3px 8px #000,
               -3px -3px 8px white;
   transition: 0.5s;
@@ -231,13 +275,13 @@ body {
 .signup-btn:hover {
   
   background:#c1bbdd;
-  box-shadow: inset 3px 3px 8px #b399d4,
+  box-shadow: inset 3px 3px 8px #9fd6d2,
               inset -3px -3px 8px #dcddd9;
   color: black;
 }
 .signup-btn:active {
   background: #c1bbdd;
-  box-shadow: inset 3px 3px 8px #b399d4 ,
+  box-shadow: inset 3px 3px 8px #9fd6d2 ,
               inset -3px -3px 8px #dcddd9 ;
 }
 /* CSS For Login page starts*/
@@ -276,8 +320,8 @@ body {
   top: 40px;
   left: calc(50% - 75px);
   border-radius: 100px;
-  box-shadow: inset 3px 3px 8px #b399d4 ,
-              inset -3px -3px 8px #dcddd9 ;
+  box-shadow: inset 3px 3px 8px #9fd6d2,
+              inset -3px -3px 8px #87ece7 ;
 
 }
 .toggle-btn:before{
@@ -289,13 +333,13 @@ body {
   left:0;
   width: 55%;
   height: 100%;
-  background-color: #966fd6;
+  background-color:#966fd6;
   border-radius: 100px;
   display: grid;
   place-items: center;
   transition: 0.5s;
-  box-shadow: 3px 3px 8px #b399d4 ,
-              -3px -3px 8px #dcddd9 ;
+  box-shadow: 3px 3px 8px #9fd6d2,
+              -3px -3px 8px #8df8fc ;
 }
 .toggle-btn:checked:before{
   content: 'Login';
@@ -310,4 +354,6 @@ body {
 .toggle-btn:checked + .signup + .login{
   left: 0%;
 }
+
+
 /* css code for login/signup ends here */
