@@ -1,37 +1,3 @@
-// //variable declarations
-// const table = document.getElementById("pixel_canvas");
-// let gridHeight, gridWidth;
-//
-// //draw the grid when Submit is clicked or Enter/Return key is pressed
-// const sizePicker = document.querySelector("#size-picker");
-// sizePicker.addEventListener("submit", function(e) {
-//     e.preventDefault();
-//     makeGrid();
-// });
-//
-// /**
-//  * @description Draws the grid based on the user input for grid height and width
-//  * @param void
-//  * @return void
-//  */
-// function makeGrid() {
-//   //clear the existing table rows
-//   table.innerHTML = '';
-//
-//   //get the user input values for grid height and grid width
-//   gridHeight = document.getElementById("input-height").value;
-//   gridWidth = document.getElementById("input-width").value;
-//
-//   //draw table grid and add event listener for each cell
-//   for (let i = 0; i < gridHeight; i++) {
-//     let row = table.insertRow(i);
-//     for (let j = 0; j < gridWidth; j++) {
-//       let cell = row.insertCell(j);
-//
-//     }
-//   }
-// }
-
 /**
  * @description Hides landing page components and makes canvas visible
  */
@@ -46,6 +12,68 @@ document.getElementById("submit").addEventListener("click", (e) => {
     setTimeout(() => {
         document.getElementById("size-picker").hidden = true;
         document.getElementById("canvas-div").hidden = false;
-    }, TIMEOUT_DURATION)
+    }, TIMEOUT_DURATION);
+
+    width = document.getElementById("input-width").value;
+    height = document.getElementById("input-height").value;
 
 }, false);
+
+/**
+ * @description Following few lines are setting up the canvas
+ */
+const canvas = document.querySelector("#canvas");
+const context = canvas.getContext("2d");
+
+// width and height needs to accept input values from
+const width = 16;
+const height = 16;
+
+canvas.height = 10 * height;
+canvas.width = 10 * width;
+
+var w = +canvas.width;
+var h = +canvas.height;
+// console.log(`Height ${height} Width ${width} ClientWIDTH ${canvas.clientWidth} `);    // DEBUG
+context.globalAlpha = 1;
+canvas.style.display = "block";
+
+let isDrawing = false;
+/**
+ * @description This event listener responds to whenever site loads
+ */
+window.addEventListener("load", (e) => {
+
+    canvas.addEventListener("mousedown", (e) => {
+        isDrawing = true;
+        draw(e);
+    });
+    canvas.addEventListener("mouseup", (e) => {
+        isDrawing = false;
+        context.beginPath();
+    });
+    canvas.addEventListener("mousemove", draw);
+
+})
+
+function draw(e) {
+    // Mouse is not pressed
+    if (!isDrawing) return;
+
+    var rect = canvas.getBoundingClientRect();
+    var x = e.clientX - rect.left;
+    var y = e.clientY - rect.top;
+    x = Math.floor(width * x / canvas.clientWidth);
+    y = Math.floor(height * y / canvas.clientHeight);
+
+    if (x >= 0 && x < width && y >= 0 && y < height) {
+        context.fillStyle = "black";
+
+        context.fillRect(
+            Math.floor(x * (w / width)),
+            Math.floor(y * (h / height)),
+            Math.floor(canvas.width / width),
+            Math.floor(canvas.height / height)
+        )
+    }
+}

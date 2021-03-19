@@ -15,26 +15,24 @@
     </head>
     <body>
         <section>
-          <h1 class="color_change">PixelVibe</h1>
+          <h1 class="color_change pixelated-webfont">PixelVibe</h1>
           <form id="size-picker" class="size-picker-form scale-up-center">
-             <div class="form-group box">
-                <h2> Choose Grid Size </h2>
+             <div class="form-group wagnasty-webfont">
+                <h2 class="comic-webfont"> Choose Grid Size </h2>
                 Height:
-                <input type="number" id="input-height" name="height" min="1" max="20" value="1" required>
+                <input type="text" id="input-height" placeholder="16" name="height" required>
                 Width:
-                <input type="number" id="input-width" name="width" min="1" max="20" value="1" required> <br/>
+                <input type="text" id="input-width" placeholder="16" name="width" required>
                 <br>
-                <input type="submit" class="btn btn-primary" id="submit" value="Submit" >
-                <input type="button" class="btn btn-danger" value="Reset" onClick="window.location.reload()">
-             </div>
+                <input type="submit" class="btn btn-outline-warning" id="submit" value="Submit" >
+                <input type="button" class="btn btn-outline-warning" id="reset" value="Reset" onClick="window.location.reload()">
+            </div>
+            <small class="wagnasty-webfont">Psst...recommended <u>16x16</u> and above</small>
           </form>
 
           <!-- Canvas supposed to be hidden before submitting -->
           <div id="canvas-div" hidden>
-              <h2 id="design-canvas" > Design Canvas </h2>
-              <canvas id="canvas" width="300" height="300"></canvas>
-              <!-- <table id="pixel_canvas"></table> -->
-              <div id="b-margin"></div>
+              <canvas id="canvas" class="main-canvas"></canvas>
           </div>
 
         </section>
