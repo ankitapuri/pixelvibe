@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<head>
+  <title>Login/Signup Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style type="text/css">
+    *{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+      font-family: calibri;
+      outline: none;
+    }
+    body{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:#c1bbdd;
+    }
+  </style>  
+</head>
+<body>
+  <!-- Code for header -->
+  <div class="circle">
+    <div class="push-btn-container">
+  <!--     <div class="centering"> -->
+      <div class="push-toggle">
+          <input onclick="myFunction()" type="checkbox">
+          <span class="push-button"></span>
+          <span class="push-btn-label">
+            <!-- <i class="fa fa-lightbulb-o" aria-hidden="true"></i> -->
+            <i class="fa fa-lightbulb-o" style="font-size:42px;"></i>
+            </span>
+        </div>
+      </div>
+    </div>
+      
+  <script src="JS/login.js"></script>
+  <!-- </div> -->
+  <div class="box">
+    <input type="checkbox" class="toggle-btn" name="">
+
+        <!-- Code for Signup section begins -->
+        <div class="signup">
+          <div class="input-group">
+            <div class="username">
+              <span class="material-icons">person</span>
+              <input type="username" class="user-input" placeholder="Username" /></div>
+
+            <div class="email">
+              <span class="material-icons">email</span>
+              <input type="email" class="user-input" placeholder="Email" /></div>
+
+            <div class="password">
+              <span class="material-icons">lock</span>
+              <input type="password" class="pass-input" placeholder="Password" /></div>
+
+            <div class="password">
+              <span class="material-icons">check_circle</span>
+              <input type="password" class="pass-input" placeholder="Confirm Password" /></div>
+
+            <button class="signup-btn">Sign Up</button>        
+          </div>
+        </div>
+        <!-- code of signup section ends -->
+
+        <!-- Code for Login section begins -->
+        <div class="login">
+          <div class="input-signin">
+            <div class="username">
+              <span class="material-icons">person</span>  
+              <input type="username" class="user-input" placeholder="Username" /></div>
+
+            <div class="password">
+              <span class="material-icons">lock</span>
+              <input type="password" class="pass-input" placeholder="Password" /></div>
+
+            <button class="signup-btn">Sign In</button>
+            <div class="link">
+              <a href="#">Forgot password?</a>
+            </div>
+          </div>      
+        </div>
+        <!-- Code for Login section ends -->    
+  </div>
+</body>
