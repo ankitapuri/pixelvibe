@@ -96,7 +96,7 @@ body {
 }
 .push-toggle .push-btn-label {
   transition: color 300ms ease-out;
-  top: -1em;
+  top: 2.6em;
   left: 3.5em;
   text-align: center;
   position: absolute;
