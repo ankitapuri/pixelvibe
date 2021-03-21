@@ -140,9 +140,14 @@ body {
 .dark-mode {
   background:#0c1618;
 }
-.dark-mode .username {
+.dark-mode .username{
   box-shadow: inset 2px 2px 5px  #0d0d0e,
               inset -5px -5px 10px #0c0c0c;
+}
+/* for White color of text in dark mode */
+.dark-mode .user-input , .dark-mode .pass-input
+{
+  color: #fff;
 }
 .dark-mode .password {
   box-shadow: inset 2px 2px 5px  #0d0d0e,
@@ -234,7 +239,8 @@ body {
   background: none;
   font-size: 21px;
   text-align: justify;
-  color: black;
+  /* because of this it is of black color in both modes */
+  /* color: black; */
 
   
   padding:15px 10px 15px 5px;
