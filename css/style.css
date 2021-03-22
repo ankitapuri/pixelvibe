@@ -172,3 +172,44 @@ body {
 #b-margin{
   padding-bottom: 30px;
 }
+/*navbar styles */
+.nav{
+  height:40%;
+  background: transparent;
+
+}
+.logo img
+{
+ height:10%;
+ width:10%; 
+ margin-right:85%;
+}
+nav ul{
+display:flex;
+  flex-wrap: wrap;
+  width:30%;
+  justify-content: space-evenly;
+  margin-left: 65%;
+  margin-top:-2%;
+}
+nav ul li{
+  list-style: none;
+  color:white;
+}
+nav li a{
+  text-decoration: none;
+}
+a:hover{
+  transition: 0.2s ease-in-out;
+}
+#about{
+  color:white;
+}
+#services
+{
+  color:white;
+}
+#contact
+{
+  color:white;
+}
