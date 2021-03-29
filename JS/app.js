@@ -39,8 +39,8 @@ const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
 
 // width and height needs to accept input values from
-const width = 16;
-const height = 16;
+var width = 16;
+var height = 16;
 
 canvas.height = 10 * height;
 canvas.width = 10 * width;
@@ -89,4 +89,9 @@ function draw(e) {
             Math.floor(canvas.height / height)
         )
     }
+}
+
+document.getElementById("submit").onclick = () => {
+    var width = document.getElementById("input-width").value;
+    var height = document.getElementById("input-height").value;
 }
