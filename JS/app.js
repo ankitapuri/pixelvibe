@@ -14,8 +14,21 @@ document.getElementById("submit").addEventListener("click", (e) => {
         document.getElementById("canvas-div").hidden = false;
     }, TIMEOUT_DURATION);
 
-    width = document.getElementById("input-width").value;
-    height = document.getElementById("input-height").value;
+    // These are configurations for the canvas for user-specific dimensions
+    width = parseInt(document.getElementById("input-width").value);
+    height = parseInt(document.getElementById("input-height").value);
+
+    if (!width || !height) {
+        alert("Please provide dimensions");
+        document.getElementById("reset").click();
+        return;
+    }
+
+    canvas.height = 10 * height;
+    canvas.width = 10 * width;
+
+    w = +canvas.width;
+    h = +canvas.height;
 
 }, false);
 
@@ -26,8 +39,8 @@ const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
 
 // width and height needs to accept input values from
-const width = 16;
-const height = 16;
+var width = 16;
+var height = 16;
 
 canvas.height = 10 * height;
 canvas.width = 10 * width;
@@ -76,4 +89,9 @@ function draw(e) {
             Math.floor(canvas.height / height)
         )
     }
+}
+
+document.getElementById("submit").onclick = () => {
+    var width = document.getElementById("input-width").value;
+    var height = document.getElementById("input-height").value;
 }
