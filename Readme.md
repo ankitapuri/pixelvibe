@@ -60,7 +60,7 @@ PixelVibe uses a number of open source projects to work properly:
 
 ### 🚀 Contributing  
 This repository is contribution friendly. If you would like to add or improve, your contribution is welcome!  
-Do not forget to follow [Contribution Guidelines](Contributing.md) 😃  
+Do not forget to follow [Contribution Guidelines](Contributing.md) and [Code of Conduct](CODE_OF_CONDUCT.md) 😃  
 
 ## 📘&nbsp; License
 
