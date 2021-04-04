@@ -1,42 +1,86 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
 
-    <head>
-       <meta charset="utf-8">
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-       <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"
+    />
 
-       <title>PixelVibe</title>
+    <title>PixelVibe</title>
 
-       <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
 
-       <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <section>
-          <h1 class="color_change pixelated-webfont">PixelVibe</h1>
-          <form id="size-picker" class="size-picker-form scale-up-center">
-             <div class="form-group wagnasty-webfont">
-                <h2 class="comic-webfont"> Choose Grid Size </h2>
-                Height:
-                <input type="text" id="input-height" placeholder="16" name="height" required>
-                Width:
-                <input type="text" id="input-width" placeholder="16" name="width" required>
-                <br>
-                <input type="submit" class="btn btn-outline-warning" id="submit" value="Submit" >
-                <input type="button" class="btn btn-outline-warning" id="reset" value="Reset" onClick="window.location.reload()">
-            </div>
-            <small class="wagnasty-webfont">Psst...recommended <u>16x16</u> and above</small>
-          </form>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section>
+      <h1 class="color_change pixelated-webfont">PixelVibe</h1>
+      <form id="size-picker" class="size-picker-form scale-up-center">
+        <div class="form-group wagnasty-webfont">
+          <h2 class="comic-webfont">Choose Grid Size</h2>
+          Height:
+          <input
+            type="text"
+            id="input-height"
+            placeholder="16"
+            name="height"
+            required
+          />
+          Width:
+          <input
+            type="text"
+            id="input-width"
+            placeholder="16"
+            name="width"
+            required
+          />
+          <br />
+          <input
+            type="submit"
+            class="btn btn-outline-warning"
+            id="submit"
+            value="Submit"
+          />
+          <input
+            type="button"
+            class="btn btn-outline-warning"
+            id="reset"
+            value="Reset"
+            onClick="window.location.reload()"
+          />
+        </div>
+        <small class="wagnasty-webfont"
+          >Psst...recommended <u>16x16</u> and above</small
+        >
+      </form>
 
-          <!-- Canvas supposed to be hidden before submitting -->
-          <div id="canvas-div" hidden>
-              <canvas id="canvas" class="main-canvas"></canvas>
-          </div>
+      <!-- Canvas supposed to be hidden before submitting -->
+      <div id="canvas-div" hidden>
+        <canvas id="canvas" class="main-canvas"></canvas>
+      </div>
 
-        </section>
-        <script src="JS/app.js"></script>
-    </body>
-
+      <button
+        id="download"
+        class="btn btn-warning btn-download text-white wagnasty-webfont"
+      >
+        <span class="material-icons"> file_download </span>
+      </button>
+    </section>
+    <script src="JS/app.js"></script>
+  </body>
 </html>
