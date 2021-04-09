@@ -11,14 +11,25 @@
 
        <link href="css/style.css" rel="stylesheet">
 
+       <link rel="preconnect" href="https://fonts.gstatic.com">
        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Chewy&display=swap" rel="stylesheet">
     </head>
     <body>
-        <section>
-          <h1 class="color_change pixelated-webfont">PixelVibe</h1>
-          <form id="size-picker" class="size-picker-form scale-up-center">
+        <section id="title">
+            <div class="row">
+                <div class="col">
+                    <img src="assets/pixelVibe1.png" class="title-img">
+                </div>
+                <div class="col">
+                    <h1 class="color_change main-heading">PixelVibe</h1>
+                </div>
+            </div>  
+        </section>
+        <section id ="grid-form">
+          <form id="size-picker" class="size-picker-form scale-up-center" >
              <div class="form-group wagnasty-webfont">
-                <h2 class="comic-webfont"> Choose Grid Size </h2>
+                <h2 class="section-heading"> Choose Grid Size </h2>
                 Height:
                 <input type="text" id="input-height" placeholder="16" name="height" required>
                 Width:
