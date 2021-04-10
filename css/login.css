@@ -159,17 +159,15 @@ body {
 }
 .dark-mode .box{
   background: #0b2d34;
-   box-shadow: 13px 13px 20px #403e3e, -13px -13px 10px #36363a
+  box-shadow: 0px 0px 18px 14px rgba(255, 255, 255, 0.25);
 }
 .dark-mode .toggle-btn
 {
-  box-shadow: 13px 13px 20px #0d0d0e,
--13px -13px 20px #0c0c0c;
+  box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.3);
 }
 .dark-mode .toggle-btn::before
 {
-  box-shadow: 13px 13px 20px #232324,
--13px -13px 20px #0c0c0c;
+  box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.3);
 }
 .dark-mode .toggle-btn::after
 {
@@ -178,8 +176,7 @@ body {
 }
 .dark-mode .signup-btn
 {
-  box-shadow: 13px 13px 20px #232324,
--13px -13px 20px #0c0c0c;
+  box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.3);
    background:rgb(185, 107, 185);
 }
 .dark-mode .link a {
