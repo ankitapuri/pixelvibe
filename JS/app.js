@@ -60,8 +60,8 @@ document.getElementById("submit").addEventListener(
       return;
     }
 
-    canvas.height = 10 * height;
-    canvas.width = 10 * width;
+    canvas.height = 20 * height;
+    canvas.width = 20 * width;
 
     w = +canvas.width;
     h = +canvas.height;
