@@ -3,13 +3,20 @@
  *
  */
 // reference to Download button in DOM.
-var downloadBtn = document.getElementById("download");
-
+var downloadBtn = document.getElementById("download-button");
+var downloadLinkPNG = document.getElementById("png-download");
+var downloadLinkJPEG = document.getElementById("jpeg-download");
 // attaching click event listener to Download button
-downloadBtn.addEventListener("click", (e) => {
+downloadLinkPNG.addEventListener("click", (e) => {
   e.preventDefault();
   var canvas = document.getElementById("canvas");
   var img = canvas.toDataURL("image/png");
+  download(img);
+});
+downloadLinkJPEG.addEventListener("click", (e) => {
+  e.preventDefault();
+  var canvas = document.getElementById("canvas");
+  var img = canvas.toDataURL("image/jpeg");
   download(img);
 });
 
@@ -20,7 +27,7 @@ downloadBtn.addEventListener("click", (e) => {
  */
 var download = function (img) {
   var link = document.createElement("a");
-  link.download = "pixelvibe.png";
+  link.download = "pixelvibe";
   link.href = img;
   link.click();
 };
@@ -61,6 +68,9 @@ document.getElementById("submit").addEventListener(
 
     // displaying download button once everything is ready
     downloadBtn.style.display = "block";
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#fff"; /// set white fill style
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
   },
   false
 );
