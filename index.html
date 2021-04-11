@@ -13,12 +13,20 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
 
-    <meta
-      name="viewport"
-      content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"
-    />
-
-    <title>PixelVibe</title>
+    <head>
+       <meta charset="utf-8">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+       <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+       <link rel="favicon" href="mstile-150x150.png" sizes="150x150" type="img/png">
+       <link rel="favicon" href="android-chrome-192x192.png" sizes="192x192" type="img/png">
+       <link rel="favicon" href="android-chrome-512x512.png" sizes="512x512" type="img/png">
+       <link rel="favicon" href="favicon-16x16.png" sizes="16x16." type="img/png">
+       <link rel="favicon" href="favicon-32x32.png" sizes="32x32" type="img/png">
+       <link rel="favicon" href="apple-touch-icon.png" sizes="any" type="img/png">
+       <link rel="favicon" href="assets/favicon_pixelVibe.png" sizes="any" type="img/png">
+       <link rel="favicon" href="assets/pixel_logo.png" sizes="any" type="img/png">
+       <title>PixelVibe</title>
 
     <link href="css/style.css" rel="stylesheet" />
 
@@ -84,33 +92,36 @@
         >
       </form>
 
-      <!-- Canvas supposed to be hidden before submitting -->
-      <div id="canvas-div" hidden>
-        <canvas id="canvas" class="main-canvas"></canvas>
-      </div>
+          <!-- Canvas supposed to be hidden before submitting -->
+          <div id="canvas-div" hidden>
+              <canvas id="canvas" class="main-canvas"></canvas> 
+              <div class="center-con" onclick="window.history.go(0)">
+                <div class="round">
+                    <div id="cta">
+                        <span class="arrow segunda next "></span>
+                        <span class="arrow primera next "></span>
+                        
+                    </div>
+                </div>
+            </div>
 
-      <!-- <button
-        id="download"
-        class="btn btn-warning btn-download text-white wagnasty-webfont"
-      >
-        <span class="material-icons"> file_download </span>
-      </button> -->
-      <div id="download-button" class="btn-group btn-download">
-        <button
-          type="button"
-          class="btn btn-warning dropdown-toggle dropup dropdown-menu-left"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Download
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" id="png-download" href="#">PNG</a>
-          <a class="dropdown-item" id="jpeg-download" href="#">JPEG</a>
-        </div>
-      </div>
-    </section>
-    <script src="JS/app.js"></script>
-  </body>
+          </div>
+          <div id="download-button" class="btn-group btn-download">
+                  <button
+                    type="button"
+                    class="btn btn-warning dropdown-toggle dropup dropdown-menu-left"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Download
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" id="png-download" href="#">PNG</a>
+                    <a class="dropdown-item" id="jpeg-download" href="#">JPEG</a>
+                  </div>
+                </div>
+        </section>
+        <script src="JS/app.js"></script>
+    </body>
 </html>
