@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
 
     <head>
        <meta charset="utf-8">
@@ -16,11 +28,27 @@
        <link rel="favicon" href="assets/pixel_logo.png" sizes="any" type="img/png">
        <title>PixelVibe</title>
 
-       <link href="css/style.css" rel="stylesheet">
+       <link href="css/style.css" rel="stylesheet" />
 
        <link rel="preconnect" href="https://fonts.gstatic.com">
        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap" rel="stylesheet">
        <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Chewy&display=swap" rel="stylesheet">
+      
+       <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
     </head>
     <body>
         <section id="title">
@@ -48,6 +76,11 @@
             <small class="wagnasty-webfont">Psst...recommended <u>16x16</u> and above</small>
           </form>
 
+ 
+   
+ 
+
+
           <!-- Canvas supposed to be hidden before submitting -->
           <div id="canvas-div" hidden>
               <canvas id="canvas" class="main-canvas"></canvas> 
@@ -62,9 +95,22 @@
             </div>
 
           </div>
-
+          <div id="download-button" class="btn-group btn-download">
+                  <button
+                    type="button"
+                    class="btn btn-warning dropdown-toggle dropup dropdown-menu-left"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Download
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" id="png-download" href="#">PNG</a>
+                    <a class="dropdown-item" id="jpeg-download" href="#">JPEG</a>
+                  </div>
+                </div>
         </section>
         <script src="JS/app.js"></script>
     </body>
-
 </html>

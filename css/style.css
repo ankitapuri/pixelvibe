@@ -37,32 +37,31 @@ h2:first-of-type {
 /* Fontface definitions */
 
 @font-face {
-	font-family: pixelated;
-	src: url('../fonts/slkscr-webfont.woff');
-	font-style: normal;
-	/*
+  font-family: pixelated;
+  src: url("../fonts/slkscr-webfont.woff");
+  font-style: normal;
+  /*
    * Source: https://www.fontsquirrel.com/fonts/silkscreen
    */
 }
 
 @font-face {
-	font-family: Wagnasty-webfont;
-	src: url('../fonts/Wagnasty-webfont.woff');
-	font-style: normal;
-	/*
+  font-family: Wagnasty-webfont;
+  src: url("../fonts/Wagnasty-webfont.woff");
+  font-style: normal;
+  /*
    * Source: https://www.fontsquirrel.com/fonts/wagnasty
    */
 }
 
 @font-face {
-	font-family: comic-webfont;
-	src: url('../fonts/comic_zine_ot-webfont.woff');
-	font-style: normal;
-	/*
+  font-family: comic-webfont;
+  src: url("../fonts/comic_zine_ot-webfont.woff");
+  font-style: normal;
+  /*
    * Source: https://www.fontsquirrel.com/fonts/comic-zine-ot
    */
 }
-
 
 /* Title Section */
 
@@ -170,16 +169,15 @@ h2:first-of-type {
 
 /* size-picker-form animations */
 .scale-up-center {
-	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .scale-down-center {
-	animation: scale-down-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-down-center 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @keyframes scale-up-center {
   0% {
     transform: scale(0.8);
-    
   }
   100% {
     transform: scale(1);
@@ -197,6 +195,7 @@ h2:first-of-type {
 }
 
 .btn {
+<<<<<<< main
     margin: 10px;
     background: -webkit-linear-gradient(to left, #424e34,#91ff14)
 }
@@ -243,151 +242,168 @@ td {
 
 
 .area {
-	background: rgb(0, 0, 0);
-	background: -webkit-linear-gradient(to left, #363583, #1b25e4);
-	width: 100%;
-	height: 100vh;
+  background: rgb(0, 0, 0);
+  background: -webkit-linear-gradient(to left, #363583, #1b25e4);
+  width: 100%;
+  height: 100vh;
 }
 
 .form-group {
-	/* background-color: white:  */
-	color: white;
+  /* background-color: white:  */
+  color: white;
 }
 
 .wrap {
-	position: relative;
-	top: 70%;
-	left: 50%;
-	width: 0;
-	height: 0;
-	transform-style: preserve-3d;
-	perspective: 1000px;
-	animation: rotate 25s infinite linear;
+  position: relative;
+  top: 70%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: rotate 25s infinite linear;
+  margin: 10px;
+  background: -webkit-linear-gradient(to left, #424e34, #91ff14);
 }
 
 @keyframes rotate {
-	100% {
-		transform: rotateY(360deg) rotateX(360deg);
-	}
+  100% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
 }
 
 .c {
-	position: absolute;
-	width: 2px;
-	height: 2px;
-	border-radius: 50%;
-	opacity: 0;
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  opacity: 0;
 }
 
 .c:nth-child(1) {
-	animation: orbit1 25s infinite;
-	animation-delay: 0.01s;
-	background-color: rgba(255, 85, 0, 1);
+  animation: orbit1 25s infinite;
+  animation-delay: 0.01s;
+  background-color: rgba(255, 85, 0, 1);
 }
 
 #b-margin {
-	padding-bottom: 30px;
+  padding-bottom: 30px;
 }
-
 
 /* CSS for the back button */
 
 .center-con {
-	position: relative;
-	display: flex;
-	height: 10vh;
-	width: 10vh;
-	align-items: flex-end;
-	justify-content: left;
-	margin: 550px 800px 20px 200px;
-	cursor: pointer;
+  position: relative;
+  display: flex;
+  height: 10vh;
+  width: 10vh;
+  align-items: flex-end;
+  justify-content: left;
+  margin: 550px 800px 20px 200px;
+  cursor: pointer;
 }
 
 .round {
-	position: absolute;
-	border: 4px solid #000;
-	width: 80px;
-	height: 80px;
-	border-radius: 100%;
-	padding-top: 8px;
-	padding-left: 5px;
+  position: absolute;
+  border: 4px solid #000;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  padding-top: 8px;
+  padding-left: 5px;
 }
 
 #cta {
-	width: 100%;
-	cursor: pointer;
-	position: absolute;
+  width: 100%;
+  cursor: pointer;
+  position: absolute;
 }
 
 #cta .arrow {
-	left: 14%;
+  left: 14%;
 }
 
 .arrow {
-	position: absolute;
-	bottom: 0;
-	margin-left: 0px;
-	width: 24px;
-	height: 24px;
-	background-size: contain;
-	top: 17px;
+  position: absolute;
+  bottom: 0;
+  margin-left: 0px;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  top: 17px;
 }
 
 .segunda {
-	margin-left: 16px;
+  margin-left: 16px;
 }
 
 .next {
-	background-image: url(https://image.flaticon.com/icons/png/128/271/271220.png);
+  background-image: url(https://image.flaticon.com/icons/png/128/271/271220.png);
 }
 
 @keyframes bounceAlpha {
-	0% {
-		opacity: 1;
-		transform: translateX(0px) scale(1);
-	}
-	25% {
-		opacity: 0;
-		transform: translateX(10px) scale(0.9);
-	}
-	26% {
-		opacity: 0;
-		transform: translateX(-10px) scale(0.9);
-	}
-	55% {
-		opacity: 1;
-		transform: translateX(0px) scale(1);
-	}
+  0% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+  25% {
+    opacity: 0;
+    transform: translateX(10px) scale(0.9);
+  }
+  26% {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.9);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
 }
 
 .bounceAlpha {
-	animation-name: bounceAlpha;
-	animation-duration: 1.4s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .arrow.primera.bounceAlpha {
-	animation-name: bounceAlpha;
-	animation-duration: 1.4s;
-	animation-delay: 0.2s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .round:hover .arrow {
-	animation-name: bounceAlpha;
-	animation-duration: 1.4s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .round:hover .arrow.primera {
-	animation-name: bounceAlpha;
-	animation-duration: 1.4s;
-	animation-delay: 0.2s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* Download button */
+
+.btn-download {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  /* background-color: white:  */
+  color: white;
 }
 
 
