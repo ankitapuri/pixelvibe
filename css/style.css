@@ -1,3 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  text-align: center;
+  background-color: #fdb1bb;
+}
+
+/* Headings */
+.main-heading {
+  font-family: 'Charm', cursive;
+  position:relative;
+  right:41%;
+}
+
+.section-heading{
+  font-family: 'Chewy', cursive;
+  color:#fff;
+}
+
+.wagnasty-webfont {
+    font-family: Wagnasty-webfont;
+    font-weight: bold;
+}
+
+
+
+h2 {
+  margin: 0.25em 0 0.25em;
+  font-size: 3rem;
+}
+
+h2:first-of-type {
+  margin-top: 0.5em;
+}
+
 /* Fontface definitions */
 
 @font-face {
@@ -27,168 +63,114 @@
    */
 }
 
-/* Font classes */
+/* Title Section */
 
-.pixelated-webfont {
-  font-family: pixelated;
+.title-img{
+  height:130px;
+  width:130px;
+  position:relative;
+  left:30%;
+  transform: rotate(-20deg);
 }
 
-.wagnasty-webfont {
-  font-family: Wagnasty-webfont;
-  font-weight: bold;
-}
-
-.comic-webfont {
-  font-family: comic-webfont;
-  /* font-weight: bold; */
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  text-align: center;
-  /* background-color: #decccc; */
-  background-color: #ffdede;
-}
-
-h1 {
-  font-size: 70px;
-  margin: 0.2em;
-}
-
-.color_change {
-  margin: 0 auto;
-  text-align: center;
+.color_change{
   color: #313131;
-  font-size: 80px;
+  font-size: 5rem;
   font-weight: bold;
-  animation: colorchange 6s infinite alternate;
+  animation: colorchange 8s infinite alternate;
 }
 
-@keyframes colorchange {
+@keyframes colorchange{
   0% {
-    color: blue;
+      color: #6e1224;
+    }
+  5%{
+     color: #5e17eb;
   }
-  5% {
-    color: #4cb332;
-  }
-  10% {
-    color: #8e44ad;
-  }
-  15% {
-    color: #b84352;
-  }
-  20% {
-    color: #1abc9c;
-  }
-  25% {
-    color: #d61ba7;
-  }
-  30% {
-    color: #d35400;
-  }
-  40% {
-    color: blue;
-  }
-  50% {
-    color: #34495e;
-  }
-  60% {
-    color: blue;
-  }
-  70% {
-    color: #383a3b;
-  }
-  80% {
-    color: #f1c40f;
-  }
-  90% {
-    color: #2980b9;
-  }
-  100% {
-    color: pink;
-  }
+    10% {
+
+      color: #8e44ad;
+    }
+    15% {
+
+      color: #b84352;
+    }
+    20% {
+
+      color: #1abc9c;
+    }
+    25% {
+
+      color: #d61ba7;
+    }
+
+    30% {
+
+      color: #d35400;
+    }
+
+    40% {
+      color: #7f91aa;
+    }
+
+    50% {
+
+      color: #34495e;
+    }
+
+    60% {
+
+      color: blue;
+    }
+
+    70% {
+
+      color: #383a3b;
+    }
+    80% {
+
+      color:#0A7029;
+    }
+
+    90% {
+
+      color: #2980b9;
+    }
+
+    100% {
+
+    }
 }
 
-h2 {
-  margin: 1em 0 0.25em;
-  color: black;
-  font-size: 50px;
-}
-
-h2:first-of-type {
-  margin-top: 0.5em;
-}
-
-table,
-tr,
-td {
-  border: 1px solid rgb(255, 255, 255);
-}
-
-table {
-  border-collapse: collapse;
-  margin: 0 auto;
-}
-
-tr {
-  height: 40px;
-}
-
-td {
-  width: 40px;
-}
+/* Grid-Form Section */
 
 .size-picker-form {
   margin-top: 5%;
-  margin-left: 32%;
-  margin-right: 32%;
+  margin-left: 30%;
+  margin-right: 30%;
   padding: 2%;
-  background: #db3737;
+  background: #fd0054;
   border-radius: 5px;
 }
 
-.main-canvas {
-  margin: 10px;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
-  position: fixed;
-  left: 50%;
-  top: 55%;
-  transform: translate(-50%, -50%);
-  width: 75%;
-  max-width: 550px;
-  background-color: white;
-  cursor: crosshair;
-  touch-action: none;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -webkit-crisp-edges;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-}
-
-#input-height,
-#input-width {
-  border: 2px solid;
+#input-height, #input-width {
+  border: 2px solid ;
   border-radius: 2px solid;
   font-weight: bold;
   padding: 3px;
   width: 3em;
 }
 
-#submit,
-#reset {
+#submit, #reset {
   font-weight: bold;
-  background-color: #e3ac14;
-  color: white;
+  background-color: #FEDE00;
+  color: black;
 }
 
 /* size-picker-form animations */
-
 .scale-up-center {
   animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
-
 .scale-down-center {
   animation: scale-down-center 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -196,11 +178,10 @@ td {
 @keyframes scale-up-center {
   0% {
     transform: scale(0.8);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 20px 0px rgba(207, 27, 27, 0.35);
+    box-shadow: 5px 5px 5px 0 #fcf5ee;
   }
 }
 
@@ -214,17 +195,52 @@ td {
 }
 
 .btn {
-  margin: 10px;
-  background: -webkit-linear-gradient(to left, #424e34, #91ff14);
+<<<<<<< main
+    margin: 10px;
+    background: -webkit-linear-gradient(to left, #424e34,#91ff14)
 }
-.btn-download {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
+
+/* Table */
+
+table, tr, td {
+    border: 1px solid rgb(255, 255, 255);
 }
+
+table {
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+tr {
+	height: 40px;
+}
+
+td {
+	width: 40px;
+}
+
+
+/* Canvas-div Section */
+
+.main-canvas {
+    margin: 10px;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    max-width: 550px;
+    background-color: white;
+    cursor: crosshair;
+    touch-action: none;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+
 .area {
   background: rgb(0, 0, 0);
   background: -webkit-linear-gradient(to left, #363583, #1b25e4);
@@ -248,29 +264,6 @@ td {
   animation: rotate 25s infinite linear;
   margin: 10px;
   background: -webkit-linear-gradient(to left, #424e34, #91ff14);
-}
-
-.area {
-  background: rgb(0, 0, 0);
-  background: -webkit-linear-gradient(to left, #363583, #1b25e4);
-  width: 100%;
-  height: 100vh;
-}
-
-.form-group {
-  /* background-color: white:  */
-  color: white;
-}
-
-.wrap {
-  position: relative;
-  top: 70%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  animation: rotate 25s infinite linear;
 }
 
 @keyframes rotate {
@@ -396,3 +389,21 @@ td {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
+/* Download button */
+
+.btn-download {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  /* background-color: white:  */
+  color: white;
+}
+
+

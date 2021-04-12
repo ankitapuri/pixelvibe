@@ -28,13 +28,13 @@
        <link rel="favicon" href="assets/pixel_logo.png" sizes="any" type="img/png">
        <title>PixelVibe</title>
 
-    <link href="css/style.css" rel="stylesheet" />
+       <link href="css/style.css" rel="stylesheet" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap"
-      rel="stylesheet"
-    />
-    <script
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+       <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Chewy&display=swap" rel="stylesheet">
+      
+       <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
       crossorigin="anonymous"
@@ -49,48 +49,37 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-  </head>
-  <body>
-    <section>
-      <h1 class="color_change pixelated-webfont">PixelVibe</h1>
-      <form id="size-picker" class="size-picker-form scale-up-center">
-        <div class="form-group wagnasty-webfont">
-          <h2 class="comic-webfont">Choose Grid Size</h2>
-          Height:
-          <input
-            type="text"
-            id="input-height"
-            placeholder="16"
-            name="height"
-            required
-          />
-          Width:
-          <input
-            type="text"
-            id="input-width"
-            placeholder="16"
-            name="width"
-            required
-          />
-          <br />
-          <input
-            type="submit"
-            class="btn btn-outline-warning"
-            id="submit"
-            value="Submit"
-          />
-          <input
-            type="button"
-            class="btn btn-outline-warning"
-            id="reset"
-            value="Reset"
-            onClick="window.location.reload()"
-          />
-        </div>
-        <small class="wagnasty-webfont"
-          >Psst...recommended <u>16x16</u> and above</small
-        >
-      </form>
+    </head>
+    <body>
+        <section id="title">
+            <div class="row">
+                <div class="col">
+                    <img src="assets/favicon_pixelVibe.png" class="title-img">
+                </div>
+                <div class="col">
+                    <h1 class="color_change main-heading">PixelVibe</h1>
+                </div>
+            </div>  
+        </section>
+        <section id ="grid-form">
+          <form id="size-picker" class="size-picker-form scale-up-center" >
+             <div class="form-group wagnasty-webfont">
+                <h2 class="section-heading"> Choose Grid Size </h2>
+                Height:
+                <input type="text" id="input-height" placeholder="16" name="height" required>
+                Width:
+                <input type="text" id="input-width" placeholder="16" name="width" required>
+                <br>
+                <input type="submit" class="btn btn-outline-warning" id="submit" value="Submit" >
+                <input type="button" class="btn btn-outline-warning" id="reset" value="Reset" onClick="window.location.reload()">
+            </div>
+            <small class="wagnasty-webfont">Psst...recommended <u>16x16</u> and above</small>
+          </form>
+
+ 
+   
+ 
+
 
           <!-- Canvas supposed to be hidden before submitting -->
           <div id="canvas-div" hidden>
