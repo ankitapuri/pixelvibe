@@ -433,3 +433,52 @@ body {
     }
   }
   
+  /* ************* Media Query  for footer *********** */
+  @media (min-width: 100px) and (max-width: 375px) {
+    .footer-sec{
+      margin-left: -585px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 425px) and (max-width: 760px) {
+    .footer-sec{
+      margin-left: -548px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 375px) and (max-width: 425px) {
+    .footer-sec{
+      margin-left: -585px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 375px) and (max-width: 425px) {
+    .footer-sec{
+      margin-left: -585px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .footer-sec{
+      margin-left: -382px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 1023px) and (max-width: 1440px) {
+    .footer-sec{
+      margin-left: -259px;
+      margin-top: 49px;
+
+
+    }
+  }
