@@ -383,3 +383,102 @@ body {
   /* css for reducing the size of light button */
  /* Will work on it */
 }
+
+/* ********************* FOOTER **************** */
+
+.footer-sec{
+ 
+    
+    position: absolute;
+    left: 42rem;
+    bottom: 0;
+    
+    overflow: hidden;
+}
+.love {
+  display: inline-block;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  top: .2em;
+  font-size: 1.5em;
+  color: #e74c3c;
+  -webkit-transform: scale(.9);
+  -moz-transform: scale(.9);
+  transform: scale(.9);
+  -webkit-animation: love .5s infinite linear alternate-reverse;
+  -moz-animation: love .5s infinite linear alternate-reverse;
+  animation: love .5s infinite linear alternate-reverse;
+}
+.footer-content{
+  font-size: 2em;
+  font-family: Montserrat;                 
+}
+@-webkit-keyframes love {
+  to {-webkit-transform: scale(1.2);}
+}
+@-moz-keyframes love {
+  to {-moz-transform: scale(1.2);}
+}
+@keyframes love {
+  to {transform: scale(1.2);}
+}
+
+
+  @keyframes fave-heart {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -2800px 0;
+    }
+  }
+  
+  /* ************* Media Query  for footer *********** */
+  @media (min-width: 100px) and (max-width: 375px) {
+    .footer-sec{
+      margin-left: -585px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 425px) and (max-width: 760px) {
+    .footer-sec{
+      margin-left: -548px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 375px) and (max-width: 425px) {
+    .footer-sec{
+      margin-left: -585px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 375px) and (max-width: 425px) {
+    .footer-sec{
+      margin-left: -585px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .footer-sec{
+      margin-left: -382px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 1023px) and (max-width: 1440px) {
+    .footer-sec{
+      margin-left: -259px;
+      margin-top: 49px;
+
+
+    }
+  }
