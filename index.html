@@ -1,24 +1,70 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
 
     <head>
        <meta charset="utf-8">
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-
+       <link rel="favicon" href="mstile-150x150.png" sizes="150x150" type="img/png">
+       <link rel="favicon" href="android-chrome-192x192.png" sizes="192x192" type="img/png">
+       <link rel="favicon" href="android-chrome-512x512.png" sizes="512x512" type="img/png">
+       <link rel="favicon" href="favicon-16x16.png" sizes="16x16." type="img/png">
+       <link rel="favicon" href="favicon-32x32.png" sizes="32x32" type="img/png">
+       <link rel="favicon" href="apple-touch-icon.png" sizes="any" type="img/png">
+       <link rel="favicon" href="assets/favicon_pixelVibe.png" sizes="any" type="img/png">
+       <link rel="favicon" href="assets/pixel_logo.png" sizes="any" type="img/png">
        <title>PixelVibe</title>
 
-       <link href="css/style.css" rel="stylesheet">
+       <link href="css/style.css" rel="stylesheet" />
 
+       <link rel="preconnect" href="https://fonts.gstatic.com">
        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Chewy&display=swap" rel="stylesheet">
+      
+       <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
     </head>
     <body>
-        <section>
-          <h1 class="color_change pixelated-webfont">PixelVibe</h1>
-          <form id="size-picker" class="size-picker-form scale-up-center">
+        <section id="title">
+            <div class="row">
+                <div class="col">
+                    <img src="assets/favicon_pixelVibe.png" class="title-img">
+                </div>
+                <div class="col">
+                    <h1 class="color_change main-heading">PixelVibe</h1>
+                </div>
+            </div>  
+        </section>
+        <section id ="grid-form">
+          <form id="size-picker" class="size-picker-form scale-up-center" >
              <div class="form-group wagnasty-webfont">
-                <h2 class="comic-webfont"> Choose Grid Size </h2>
+                <h2 class="section-heading"> Choose Grid Size </h2>
                 Height:
                 <input type="text" id="input-height" placeholder="16" name="height" required>
                 Width:
@@ -30,13 +76,41 @@
             <small class="wagnasty-webfont">Psst...recommended <u>16x16</u> and above</small>
           </form>
 
+ 
+   
+ 
+
+
           <!-- Canvas supposed to be hidden before submitting -->
           <div id="canvas-div" hidden>
-              <canvas id="canvas" class="main-canvas"></canvas>
-          </div>
+              <canvas id="canvas" class="main-canvas"></canvas> 
+              <div class="center-con" onclick="window.history.go(0)">
+                <div class="round">
+                    <div id="cta">
+                        <span class="arrow segunda next "></span>
+                        <span class="arrow primera next "></span>
+                        
+                    </div>
+                </div>
+            </div>
 
+          </div>
+          <div id="download-button" class="btn-group btn-download">
+                  <button
+                    type="button"
+                    class="btn btn-warning dropdown-toggle dropup dropdown-menu-left"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Download
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" id="png-download" href="#">PNG</a>
+                    <a class="dropdown-item" id="jpeg-download" href="#">JPEG</a>
+                  </div>
+                </div>
         </section>
         <script src="JS/app.js"></script>
     </body>
-
 </html>
