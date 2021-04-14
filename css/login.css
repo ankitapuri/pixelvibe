@@ -387,7 +387,7 @@ body {
  
     
     position: absolute;
-    left: 42rem;
+    left: 50rem;
     bottom: 0;
     
     overflow: hidden;
@@ -433,7 +433,7 @@ body {
   /* ************* Media Query  for footer *********** */
   @media (min-width: 100px) and (max-width: 375px) {
     .footer-sec{
-      margin-left: -585px;
+      margin-left: -707px;
       margin-top: 49px;
 
 
