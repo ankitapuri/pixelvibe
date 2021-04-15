@@ -184,6 +184,9 @@ body {
   color:rgb(128, 122, 122);
   font-size: 15px;
 }
+.dark-mode footer{
+    color: #ffffff;
+}
 
 .light-mode {
   margin: top;
