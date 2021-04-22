@@ -4,6 +4,7 @@ body {
   height: 100%;
   text-align: center;
   background-color: #fdb1bb;
+  overflow: hidden;
 }
 /* preloader */
 .folding-cube ul{
@@ -405,7 +406,9 @@ td {
 }
 
 .round {
-  position: absolute;
+  position: fixed;
+  top:84%;
+  left:10%;
   border: 4px solid #000;
   width: 80px;
   height: 80px;
