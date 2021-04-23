@@ -4,6 +4,7 @@ body {
   height: 100%;
   text-align: center;
   background-color: #fdb1bb;
+  overflow: hidden;
 }
 /* preloader */
 .folding-cube ul{
@@ -105,7 +106,6 @@ body {
 /* Headings */
 .main-heading {
   font-family: 'Charm', cursive;
-  position:relative;
   right:41%;
 }
 
@@ -161,10 +161,16 @@ h2:first-of-type {
 
 /* Title Section */
 
+.heading{
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items: center;
+}
+
 .title-img{
   height:130px;
   width:130px;
-  position:relative;
   left:30%;
   transform: rotate(-20deg);
 }
@@ -400,7 +406,9 @@ td {
 }
 
 .round {
-  position: absolute;
+  position: fixed;
+  top:84%;
+  left:10%;
   border: 4px solid #000;
   width: 80px;
   height: 80px;
@@ -502,4 +510,11 @@ td {
   color: white;
 }
 
+/* responsive css */
 
+@media (max-width:400px) {
+  .size-picker-form {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+}
