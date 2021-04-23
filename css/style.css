@@ -538,11 +538,13 @@ td {
   box-shadow: 5px 6px 8px rgb(61, 58, 58);
   text-align: start;
   padding: 10px;
-  display: none;
+  transform: scale(0);
 }
 .unhideStylenav{
   display: flex;
   flex-direction: column;
+  transform: scale(1);
+  transition: transform.4s ease;
 }
 
 #circlestyle1{
