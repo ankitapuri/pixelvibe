@@ -80,11 +80,33 @@
 
             <button class="signup-btn">Sign In</button>
             <div class="link">
-              <a href="#">Forgot password?</a>
+              <a href="#" onclick="document.getElementById('id01').style.display='block'">Forgot password?</a>
             </div>
           </div>      
         </div>
-  </div >  <br>
+  </div > 
+
+<!-- Forgot password section -->
+  
+<div id="id01" class="modal">
+  <form class="modal-content animate" action="#" method="post">
+    <div class="container">
+      <span class="material-icons" style="font-size:140px; color: black;">lock</span>
+      <h1><b>Forgot Password ?</b></h1>
+        <p>you can reset your pasword here</p>
+        <div class="email">
+          <span class="material-icons">email</span>
+          <input type="email" class="user-input" placeholder="Enter your Email" name="uname"/>
+        </div>
+      <button type="submit">Send My Password</button>
+      <div class="container" >
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+  <br>
   <br>
   <br>
   <br>
@@ -98,5 +120,9 @@
         </footer>
         <br>
 
- 
-</body>
+    
+        <script src="./JS/login.js"></script>
+        
+        
+   </body>
+</html>
