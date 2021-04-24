@@ -21,6 +21,7 @@
 body {
   background:rgb(199 230 252);
   font-family: "Raleway", sans-serif;
+  width:100%;
 }
 .circle {
   margin: auto;
@@ -387,13 +388,14 @@ body {
 /* ********************* FOOTER **************** */
 
 .footer-sec{
- 
-    
     position: absolute;
-    left: 50rem;
+    left: 40%;
+    right: 50%;
     bottom: 0;
-    
+    text-align: center;
     overflow: hidden;
+    width:60%;
+    margin-right:30%;
 }
 .love {
   display: inline-block;
