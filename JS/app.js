@@ -157,37 +157,38 @@ document.getElementsByClassName("settings")[0].addEventListener('click',()=>{
 
 document.getElementById("circlestyle1").addEventListener("click", () => {
     
-     document.getElementsByClassName("section-heading")[0].style.color="red";
-     document.getElementsByClassName("form-group wagnasty-webfont")[0].style.color="red";
-     document.getElementById("wagnasty").style.color="red";
+     document.getElementsByClassName("section-heading")[0].style.color="#FFD700";
+     document.getElementsByClassName("form-group wagnasty-webfont")[0].style.color="#FFD700";
+     document.getElementById("wagnasty").style.color="#FFD700";
+     
     
 });
 document.getElementById("circlestyle2").addEventListener("click", () => {
   
      document.getElementsByClassName("section-heading")[0].style.color =
-       "rgb(32, 165, 241)";
+       "#4feff7";
      document.getElementsByClassName(
        "form-group wagnasty-webfont"
-     )[0].style.color = "rgb(32, 165, 241)";
-     document.getElementById("wagnasty").style.color = "rgb(32, 165, 241)";
+     )[0].style.color = "#4feff7";
+     document.getElementById("wagnasty").style.color = "#4feff7";
 
 });
 document.getElementById("circlestyle3").addEventListener("click", () => {
   document.getElementsByClassName("section-heading")[0].style.color =
-    " rgb(255, 100, 10)";
+    " #98ff98";
   document.getElementsByClassName(
     "form-group wagnasty-webfont"
-  )[0].style.color = " rgb(255, 100, 10)";
-  document.getElementById("wagnasty").style.color = " rgb(255, 100, 10)";
+  )[0].style.color = "#98ff98";
+  document.getElementById("wagnasty").style.color = "#98ff98";
 });
 document.getElementById("circlestyle4").addEventListener("click", () => {
 
    document.getElementsByClassName("section-heading")[0].style.color =
-     "rgb(255, 251, 13)";
+     "#FFFDD0";
    document.getElementsByClassName(
      "form-group wagnasty-webfont"
-   )[0].style.color = "rgb(255, 251, 13)";
-   document.getElementById("wagnasty").style.color = "rgb(255, 251, 13)";
+   )[0].style.color = "#FFFDD0";
+   document.getElementById("wagnasty").style.color = "#FFFDD0";
 
 });
 document.getElementById("circlestyle5").addEventListener("click", () => {
@@ -206,4 +207,8 @@ document.getElementById("dar").addEventListener("click",()=>{
 
 document.getElementById("lid").addEventListener("click", () => {
   document.getElementsByTagName("body")[0].style.backgroundColor = "#fdb1bb";
+});
+
+document.getElementById("dim").addEventListener("click", () => {
+  document.getElementsByTagName("body")[0].style.backgroundColor = "#0f164d";
 });
