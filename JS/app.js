@@ -141,3 +141,74 @@ document.getElementById("submit").onclick = () => {
   var width = document.getElementById("input-width").value;
   var height = document.getElementById("input-height").value;
 };
+
+document.getElementsByClassName("settings")[0].addEventListener('click',()=>{
+     let styleclass=document.getElementsByClassName("StyleSwitcher")[0].classList;
+
+     if(styleclass.contains("unhideStylenav"))
+     {
+       styleclass.remove("unhideStylenav");
+     }
+     else{
+       styleclass.add("unhideStylenav");
+     }
+
+})
+
+document.getElementById("circlestyle1").addEventListener("click", () => {
+    
+     document.getElementsByClassName("section-heading")[0].style.color="#FFD700";
+     document.getElementsByClassName("form-group wagnasty-webfont")[0].style.color="#FFD700";
+     document.getElementById("wagnasty").style.color="#FFD700";
+     
+    
+});
+document.getElementById("circlestyle2").addEventListener("click", () => {
+  
+     document.getElementsByClassName("section-heading")[0].style.color =
+       "#4feff7";
+     document.getElementsByClassName(
+       "form-group wagnasty-webfont"
+     )[0].style.color = "#4feff7";
+     document.getElementById("wagnasty").style.color = "#4feff7";
+
+});
+document.getElementById("circlestyle3").addEventListener("click", () => {
+  document.getElementsByClassName("section-heading")[0].style.color =
+    " #98ff98";
+  document.getElementsByClassName(
+    "form-group wagnasty-webfont"
+  )[0].style.color = "#98ff98";
+  document.getElementById("wagnasty").style.color = "#98ff98";
+});
+document.getElementById("circlestyle4").addEventListener("click", () => {
+
+   document.getElementsByClassName("section-heading")[0].style.color =
+     "#FFFDD0";
+   document.getElementsByClassName(
+     "form-group wagnasty-webfont"
+   )[0].style.color = "#FFFDD0";
+   document.getElementById("wagnasty").style.color = "#FFFDD0";
+
+});
+document.getElementById("circlestyle5").addEventListener("click", () => {
+  
+   document.getElementsByClassName("section-heading")[0].style.color =
+     "rgb(5, 255, 5)";
+   document.getElementsByClassName(
+     "form-group wagnasty-webfont"
+   )[0].style.color = "rgb(5, 255, 5)";
+   document.getElementById("wagnasty").style.color = "rgb(5, 255, 5)";
+});
+
+document.getElementById("dar").addEventListener("click",()=>{
+      document.getElementsByTagName("body")[0].style.backgroundColor= "#0d1117";
+});
+
+document.getElementById("lid").addEventListener("click", () => {
+  document.getElementsByTagName("body")[0].style.backgroundColor = "#fdb1bb";
+});
+
+document.getElementById("dim").addEventListener("click", () => {
+  document.getElementsByTagName("body")[0].style.backgroundColor = "#0e0921";
+});
