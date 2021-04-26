@@ -297,7 +297,6 @@ h2:first-of-type {
 }
 
 .btn {
-<<<<<<< main
     margin: 10px;
     background: -webkit-linear-gradient(to left, #424e34,#91ff14)
 }
@@ -324,13 +323,19 @@ td {
 
 /* Canvas-div Section */
 
+#canvas-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-canvas {
     margin: 10px;
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
-    position: fixed;
-    left: 50%;
-    top: 55%;
-    transform: translate(-50%, -50%);
+    /* position: fixed; */
+    /* left: 50%; */
+    /* top: 55%; */
+    /* transform: translate(-50%, -50%); */
     width: 75%;
     max-width: 550px;
     background-color: white;
@@ -517,4 +522,30 @@ td {
     margin-left: 8%;
     margin-right: 8%;
   }
+}
+
+#palette {
+  display: grid;
+  height: 50vh;
+  width: 20vw;
+  margin-left: 10px;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+#palette-prompt {
+  grid-column: span 3;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.color {
+  cursor: pointer;
+}
+
+/* to highlight the currently chosen color, toggle the selected class on the color */
+
+.color.selected {
+  border: 3px solid white;
 }
