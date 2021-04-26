@@ -548,7 +548,7 @@ td {
 }
 
 #circlestyle1{
-  background-color: red;
+  background-color: #FFD700;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -556,7 +556,7 @@ td {
   cursor: pointer;
 }
 #circlestyle2 {
-  background-color:rgb(32, 165, 241);
+  background-color:#4feff7;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -565,7 +565,7 @@ td {
 }
 
 #circlestyle3 {
-  background-color: rgb(255, 100, 10);
+  background-color:  #98ff98;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -573,7 +573,7 @@ td {
      cursor: pointer;
 }
 #circlestyle4 {
-  background-color: rgb(255, 251, 13);
+  background-color: #FFFDD0;
   width: 25px;
   height: 25px;
   border-radius: 50%;
