@@ -48,6 +48,7 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script src="https://kit.fontawesome.com/427ff44d09.js" crossorigin="anonymous"></script>
     </head>
     <body>
       <!-- Preloader -->
@@ -71,6 +72,27 @@
         </section>
         <section id ="grid-form">
           <form id="size-picker" class="size-picker-form scale-up-center" >
+             <div class="settings"> <i class="fas fa-cog"></i></div>
+             <div class="StyleSwitcher ">
+                 <div style="padding-bottom: 3px;border-bottom: 1px solid rgb(110, 110, 110);">Style Switcher </div>
+                 <div style="display: flex; flex-direction: row;"> 
+                   <div id="circlestyle1"></div> 
+                   <div id="circlestyle2"></div>
+                   <div id="circlestyle3"></div>
+                   <div id="circlestyle4"></div>
+                    <div id="circlestyle5"></div>
+                </div>
+                 <div style="padding-bottom: 3px;border-bottom: 1px solid rgb(110, 110, 110);"> Body Skin</div>
+                  <div >
+                       <input type="radio" name="theme" value="light" id="lid">
+                      <label for="lid">Light</label> 
+                       <input type="radio" name="theme" value="dark" id="dar"> 
+                       <label for="dar">Dark</label>
+                       <input type="radio" name="theme" value="dim" id="dim"> 
+                       <label for="dim">Dim</label>
+
+                  </div>
+             </div>
              <div class="form-group wagnasty-webfont">
                 <h2 class="section-heading"> Choose Grid Size </h2>
                 Height:
@@ -81,7 +103,7 @@
                 <input type="submit" class="btn btn-outline-warning" id="submit" value="Submit" >
                 <input type="button" class="btn btn-outline-warning" id="reset" value="Reset" onClick="window.location.reload()">
             </div>
-            <small class="wagnasty-webfont">Psst...recommended <u>16x16</u> and above</small>
+            <small class="wagnasty-webfont" id="wagnasty">Psst...recommended <u>16x16</u> and above</small>
           </form>
 
  
