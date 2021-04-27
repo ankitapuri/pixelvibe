@@ -4,7 +4,8 @@ body {
   height: 100%;
   text-align: center;
   background-color: #fdb1bb;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 /* preloader */
 .folding-cube ul{
@@ -297,7 +298,6 @@ h2:first-of-type {
 }
 
 .btn {
-<<<<<<< main
     margin: 10px;
     background: -webkit-linear-gradient(to left, #424e34,#91ff14)
 }
@@ -324,13 +324,15 @@ td {
 
 /* Canvas-div Section */
 
+#canvas-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-canvas {
     margin: 10px;
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
-    position: fixed;
-    left: 50%;
-    top: 55%;
-    transform: translate(-50%, -50%);
     width: 75%;
     max-width: 550px;
     background-color: white;
@@ -394,17 +396,6 @@ td {
 
 /* CSS for the back button */
 
-.center-con {
-  position: relative;
-  display: flex;
-  height: 10vh;
-  width: 10vh;
-  align-items: flex-end;
-  justify-content: left;
-  margin: 550px 800px 20px 200px;
-  cursor: pointer;
-}
-
 .round {
   position: fixed;
   top:84%;
@@ -415,11 +406,11 @@ td {
   border-radius: 100%;
   padding-top: 8px;
   padding-left: 5px;
+  cursor: pointer;
 }
 
 #cta {
   width: 100%;
-  cursor: pointer;
   position: absolute;
 }
 
@@ -517,4 +508,32 @@ td {
     margin-left: 8%;
     margin-right: 8%;
   }
+}
+
+/* Colour palette styles */
+
+#palette {
+  display: grid;
+  height: 50vh;
+  width: 20vw;
+  margin-left: 10px;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+#palette-prompt {
+  font-family: 'Chewy', cursive;
+  grid-column: span 3;
+  font-size: 2rem;
+}
+
+.color {
+  cursor: pointer;
+}
+
+/* to highlight the currently chosen color, toggle the selected class on the color */
+
+.color.selected {
+  border: 3px solid white;
 }
