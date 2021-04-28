@@ -141,3 +141,12 @@ document.getElementById("submit").onclick = () => {
   var width = document.getElementById("input-width").value;
   var height = document.getElementById("input-height").value;
 };
+
+function myFunction(x) {
+  x.classList.toggle("change");
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+dlt.addEventListener("click", ()=>{
+  context.clearRect(0,0,canvas.width,canvas.height)
+})
