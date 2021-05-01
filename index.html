@@ -91,6 +91,22 @@
 
           <!-- Canvas supposed to be hidden before submitting -->
           <div id="canvas-div" hidden>
+            <div class="dropdown">
+              <button onclick="myFunction(this)" class="dropbtn">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </button>
+              <div id="myDropdown" class="dropdown-content">
+                <ul class="list">
+                  <li>Brush</li>
+                  <li id="dlt">Delete <i class="fas fa-trash"></i></li>
+                  <li>Undo</li>
+                  <li>Eraser</li>
+                  <li>Color fill</li>
+              </ul>
+              </div>
+            </div>
               <canvas id="canvas" class="main-canvas"></canvas> 
               <div id="palette">
                 <div id="palette-prompt">Pick a colour!</div>
@@ -134,6 +150,6 @@
                 </div>
         </section>
         <script src="JS/app.js"></script>
-        
+        <script src="https://kit.fontawesome.com/59a498d1d1.js" crossorigin="anonymous"></script>
     </body>
 </html>
