@@ -151,7 +151,7 @@ document.getElementById('palette').addEventListener('click', (e) => {
   if (e.target.className === 'palette-color') {
     e.target.style.boxShadow = boxShadow;
   }
-})
+});
 
 function myFunction(x) {
   x.classList.toggle("change");
