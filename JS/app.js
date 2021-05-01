@@ -1,3 +1,8 @@
+//preloader
+let foldingCube = document.querySelector('.folding-cube');
+window.addEventListener('load', function () {
+  setTimeout(function(){ foldingCube.parentElement.removeChild(foldingCube);}, 3000);  
+});
 /**
  * @description Downloads the pixel art drawn by user.
  *
@@ -84,6 +89,8 @@ const context = canvas.getContext("2d");
 // width and height needs to accept input values from
 var width = 16;
 var height = 16;
+// default brush color upon loading the site
+var brushColor = '#000000';
 
 canvas.height = 10 * height;
 canvas.width = 10 * width;
@@ -121,7 +128,7 @@ function draw(e) {
   y = Math.floor((height * y) / canvas.clientHeight);
 
   if (x >= 0 && x < width && y >= 0 && y < height) {
-    context.fillStyle = "black";
+    context.fillStyle = brushColor;
 
     context.fillRect(
       Math.floor(x * (w / width)),
@@ -132,7 +139,25 @@ function draw(e) {
   }
 }
 
-document.getElementById("submit").onclick = () => {
-  var width = document.getElementById("input-width").value;
-  var height = document.getElementById("input-height").value;
-};
+document.getElementById('palette').addEventListener('click', (e) => {
+  
+  const boxShadow = 'inset 0 0 6px #616161';
+  brushColor = e.target.style.backgroundColor;
+  
+  for (var child of document.getElementById('palette').children) {
+    child.style.boxShadow = null;
+  }
+
+  if (e.target.className === 'palette-color') {
+    e.target.style.boxShadow = boxShadow;
+  }
+})
+
+function myFunction(x) {
+  x.classList.toggle("change");
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+dlt.addEventListener("click", ()=>{
+  context.clearRect(0,0,canvas.width,canvas.height)
+})
