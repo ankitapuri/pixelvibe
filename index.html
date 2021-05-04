@@ -113,21 +113,37 @@
 
           <!-- Canvas supposed to be hidden before submitting -->
           <div id="canvas-div" hidden>
+            <div class="dropdown">
+              <button onclick="myFunction(this)" class="dropbtn">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </button>
+              <div id="myDropdown" class="dropdown-content">
+                <ul class="list">
+                  <li>Brush</li>
+                  <li id="dlt">Delete <i class="fas fa-trash"></i></li>
+                  <li>Undo</li>
+                  <li>Eraser</li>
+                  <li>Color fill</li>
+              </ul>
+              </div>
+            </div>
               <canvas id="canvas" class="main-canvas"></canvas> 
               <div id="palette">
                 <div id="palette-prompt">Pick a colour!</div>
-                <div class="color" style="background-color: #ff0000;"></div>
-                <div class="color" style="background-color: #0000ff;"></div>
-                <div class="color" style="background-color: #008000;"></div>
-                <div class="color" style="background-color: #ffff00;"></div>
-                <div class="color" style="background-color: #00ff00;"></div>
-                <div class="color" style="background-color: #ff798f;"></div>
-                <div class="color" style="background-color: #000000;"></div>
-                <div class="color" style="background-color: #ff6600;"></div>
-                <div class="color" style="background-color: #87cefa;"></div>
-                <div class="color" style="background-color: #d400ff;"></div>
-                <div class="color" style="background-color: #ff1d4e;"></div>
-                <div class="color" style="background-color: #952300;"></div>
+                <div class="palette-color" style="background-color: #ff0000;"></div>
+                <div class="palette-color" style="background-color: #0000ff;"></div>
+                <div class="palette-color" style="background-color: #008000;"></div>
+                <div class="palette-color" style="background-color: #ffff00;"></div>
+                <div class="palette-color" style="background-color: #00ff00;"></div>
+                <div class="palette-color" style="background-color: #ff798f;"></div>
+                <div class="palette-color" style="background-color: #000000;"></div>
+                <div class="palette-color" style="background-color: #ff6600;"></div>
+                <div class="palette-color" style="background-color: #87cefa;"></div>
+                <div class="palette-color" style="background-color: #d400ff;"></div>
+                <div class="palette-color" style="background-color: #ff1d4e;"></div>
+                <div class="palette-color" style="background-color: #952300;"></div>
               </div>
               
             </div>
@@ -156,6 +172,6 @@
                 </div>
         </section>
         <script src="JS/app.js"></script>
-        
+        <script src="https://kit.fontawesome.com/59a498d1d1.js" crossorigin="anonymous"></script>
     </body>
 </html>
