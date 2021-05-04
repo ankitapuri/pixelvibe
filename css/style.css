@@ -693,8 +693,6 @@ ul {
   cursor: pointer;
 }
 
-/* to highlight the currently chosen color, toggle the selected class on the color */
-
-.color.selected {
-  border: 3px solid white;
+#ersr.selected, #brsh.selected {
+  background-color: white;
 }
