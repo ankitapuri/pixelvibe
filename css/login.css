@@ -159,17 +159,15 @@ body {
 }
 .dark-mode .box{
   background: #0b2d34;
-   box-shadow: 13px 13px 20px #403e3e, -13px -13px 10px #36363a
+  box-shadow: 0px 0px 18px 14px rgba(255, 255, 255, 0.25);
 }
 .dark-mode .toggle-btn
 {
-  box-shadow: 13px 13px 20px #0d0d0e,
--13px -13px 20px #0c0c0c;
+  box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.3);
 }
 .dark-mode .toggle-btn::before
 {
-  box-shadow: 13px 13px 20px #232324,
--13px -13px 20px #0c0c0c;
+  box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.3);
 }
 .dark-mode .toggle-btn::after
 {
@@ -178,14 +176,16 @@ body {
 }
 .dark-mode .signup-btn
 {
-  box-shadow: 13px 13px 20px #232324,
--13px -13px 20px #0c0c0c;
+  box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.3);
    background:rgb(185, 107, 185);
 }
 .dark-mode .link a {
   text-decoration: none;
   color:rgb(128, 122, 122);
   font-size: 15px;
+}
+.dark-mode footer{
+    color: #ffffff;
 }
 
 .light-mode {
@@ -383,3 +383,102 @@ body {
   /* css for reducing the size of light button */
  /* Will work on it */
 }
+
+/* ********************* FOOTER **************** */
+
+.footer-sec{
+ 
+    
+    position: absolute;
+    left: 50rem;
+    bottom: 0;
+    
+    overflow: hidden;
+}
+.love {
+  display: inline-block;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  top: .2em;
+  font-size: 1.5em;
+  color: #e74c3c;
+  -webkit-transform: scale(.9);
+  -moz-transform: scale(.9);
+  transform: scale(.9);
+  -webkit-animation: love .5s infinite linear alternate-reverse;
+  -moz-animation: love .5s infinite linear alternate-reverse;
+  animation: love .5s infinite linear alternate-reverse;
+}
+.footer-content{
+  font-size: 2em;
+  font-family: Montserrat;                 
+}
+@-webkit-keyframes love {
+  to {-webkit-transform: scale(1.2);}
+}
+@-moz-keyframes love {
+  to {-moz-transform: scale(1.2);}
+}
+@keyframes love {
+  to {transform: scale(1.2);}
+}
+
+
+  @keyframes fave-heart {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -2800px 0;
+    }
+  }
+  
+  /* ************* Media Query  for footer *********** */
+  @media (min-width: 100px) and (max-width: 375px) {
+    .footer-sec{
+      margin-left: -707px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 425px) and (max-width: 760px) {
+    .footer-sec{
+      margin-left: -548px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 375px) and (max-width: 425px) {
+    .footer-sec{
+      margin-left: -585px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 375px) and (max-width: 425px) {
+    .footer-sec{
+      margin-left: -585px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .footer-sec{
+      margin-left: -382px;
+      margin-top: 49px;
+
+
+    }
+  }
+  @media (min-width: 1023px) and (max-width: 1440px) {
+    .footer-sec{
+      margin-left: -259px;
+      margin-top: 49px;
+
+
+    }
+  }
