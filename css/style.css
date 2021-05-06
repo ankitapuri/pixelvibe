@@ -453,8 +453,9 @@ td {
 .dropdown {
   position: relative;
   display: inline-block;
+  right:2vw;
+  bottom: 20vh;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
