@@ -210,5 +210,5 @@ document.getElementById("lid").addEventListener("click", () => {
 });
 
 document.getElementById("dim").addEventListener("click", () => {
-  document.getElementsByTagName("body")[0].style.backgroundColor = "#696969";
+  document.getElementsByTagName("body")[0].style.backgroundColor = "#353535";
 });
