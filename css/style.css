@@ -461,7 +461,7 @@ td {
   background-color: #f1f1f1;
   min-width: 200px;
   z-index: 1;
-  left: 50%;
+  left: 70%;
   transform: translateX(-50%);
 }
 
