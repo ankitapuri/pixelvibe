@@ -650,8 +650,8 @@ ul {
 .btn-download {
   display: none;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top:2vh;
+  right:1vw;
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
