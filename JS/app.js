@@ -91,6 +91,7 @@ var width = 16;
 var height = 16;
 // default brush color upon loading the site
 var brushColor = '#000000';
+var prevBrushColor = '#000000';
 
 canvas.height = 10 * height;
 canvas.width = 10 * width;
@@ -143,6 +144,7 @@ document.getElementById('palette').addEventListener('click', (e) => {
   
   const boxShadow = 'inset 0 0 6px #616161';
   brushColor = e.target.style.backgroundColor;
+  prevBrushColor = brushColor;
   
   for (var child of document.getElementById('palette').children) {
     child.style.boxShadow = null;
@@ -151,6 +153,9 @@ document.getElementById('palette').addEventListener('click', (e) => {
   if (e.target.className === 'palette-color') {
     e.target.style.boxShadow = boxShadow;
   }
+
+  ersr.classList.remove("selected");
+  brsh.classList.add("selected");
 });
 
 function myFunction(x) {
@@ -160,4 +165,17 @@ function myFunction(x) {
 
 dlt.addEventListener("click", ()=>{
   context.clearRect(0,0,canvas.width,canvas.height)
+})
+
+ersr.addEventListener("click", () => {
+  ersr.classList.add("selected");
+  brsh.classList.remove("selected");
+  prevBrushColor = brushColor;
+  brushColor = "white";
+})
+
+brsh.addEventListener("click", () => {
+  ersr.classList.remove("selected");
+  brsh.classList.add("selected");
+  brushColor = prevBrushColor;
 })
