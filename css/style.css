@@ -559,7 +559,7 @@ ul {
 .round {
   position: fixed;
   top: 84%;
-  left: 10%;
+  left: 5px;
   border: 4px solid #000;
   width: 80px;
   height: 80px;
