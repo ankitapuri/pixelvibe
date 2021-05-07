@@ -453,15 +453,16 @@ td {
 .dropdown {
   position: relative;
   display: inline-block;
+  right:2vw;
+  bottom: 20vh;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
   min-width: 200px;
   z-index: 1;
-  left: 50%;
+  left: 70%;
   transform: translateX(-50%);
 }
 
