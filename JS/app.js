@@ -1,63 +1,43 @@
+
+const foldingCube = document.querySelector('.folding-cube');              //preloader
+const submit  = document.getElementById("submit");                        //submit
+const downloadBtn = document.getElementById("download-button");           //Download 
+const downloadLinkPNG = document.getElementById("png-download");          //Download 
+const downloadLinkJPEG = document.getElementById("jpeg-download");        //Download 
+const palette = document.getElementById('palette')                        //palette
+const clear=document.getElementById('dlt')                                //clear
+
+const canvas = document.querySelector("#canvas");
+const context = canvas.getContext("2d");
+
+context.globalAlpha = 1;
+canvas.style.display = "block";
+
+// Global Variables
+let brushColor = '#000000';         // default brush color (black)
+let isDrawing = false;
+
 //preloader
-let foldingCube = document.querySelector('.folding-cube');
 window.addEventListener('load', function () {
-  setTimeout(function(){ foldingCube.parentElement.removeChild(foldingCube);}, 3000);  
-});
-/**
- * @description Downloads the pixel art drawn by user.
- *
- */
-// reference to Download button in DOM.
-var downloadBtn = document.getElementById("download-button");
-var downloadLinkPNG = document.getElementById("png-download");
-var downloadLinkJPEG = document.getElementById("jpeg-download");
-// attaching click event listener to Download button
-downloadLinkPNG.addEventListener("click", (e) => {
-  e.preventDefault();
-  var canvas = document.getElementById("canvas");
-  var img = canvas.toDataURL("image/png");
-  download(img);
-});
-downloadLinkJPEG.addEventListener("click", (e) => {
-  e.preventDefault();
-  var canvas = document.getElementById("canvas");
-  var img = canvas.toDataURL("image/jpeg");
-  download(img);
+  setTimeout(function () { foldingCube.parentElement.removeChild(foldingCube); }, 3000);
 });
 
-/**
- *
- * @param {String} img
- * @description utility function to download image of provided dataURL
- */
-var download = function (img) {
-  var link = document.createElement("a");
-  link.download = "pixelvibe";
-  link.href = img;
-  link.click();
-};
-
-/**
- * @description Hides landing page components and makes canvas visible
- */
-document.getElementById("submit").addEventListener(
-  "click",
-  (e) => {
+// On Submit
+submit.addEventListener("click",(e) => {
     e.preventDefault();
 
     const sizePicker = document.getElementById("size-picker");
     sizePicker.classList.toggle("scale-up-center");
     sizePicker.classList.toggle("scale-down-center");
 
-    const TIMEOUT_DURATION = 100; // milliSeconds
+    const TIMEOUT_DURATION = 100;                       // milliSeconds
     setTimeout(() => {
-      document.getElementById("size-picker").hidden = true;
-      document.getElementById("canvas-div").hidden = false;
+      document.getElementById("size-picker").hidden = true;                   
+      document.getElementById("canvas-div").hidden = false;                  // displaying canvas
     }, TIMEOUT_DURATION);
 
-    // These are configurations for the canvas for user-specific dimensions
-    width = parseInt(document.getElementById("input-width").value);
-    height = parseInt(document.getElementById("input-height").value);
+    width = parseInt(document.getElementById("input-width").value);           //user input width
+    height = parseInt(document.getElementById("input-height").value);         //user input - height
 
     if (!width || !height) {
       alert("Please provide dimensions");
@@ -71,38 +51,15 @@ document.getElementById("submit").addEventListener(
     w = +canvas.width;
     h = +canvas.height;
 
-    // displaying download button once everything is ready
-    downloadBtn.style.display = "block";
-    var ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#fff"; /// set white fill style
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    downloadBtn.style.display = "block";              // displaying download button
+
+    context.fillStyle = "#fff";                        // set white fill style
+    context.fillRect(0, 0, canvas.width, canvas.height);
   },
   false
 );
 
-/**
- * @description Following few lines are setting up the canvas
- */
-const canvas = document.querySelector("#canvas");
-const context = canvas.getContext("2d");
-
-// width and height needs to accept input values from
-var width = 16;
-var height = 16;
-
-canvas.height = 10 * height;
-canvas.width = 10 * width;
-
-var w = +canvas.width;
-var h = +canvas.height;
-// console.log(`Height ${height} Width ${width} ClientWIDTH ${canvas.clientWidth} `);    // DEBUG
-context.globalAlpha = 1;
-canvas.style.display = "block";
-
-let isDrawing = false;
-/**
- * @description This event listener responds to whenever site loads
- */
+//Get Mouse Position
 window.addEventListener("load", (e) => {
   canvas.addEventListener("mousedown", (e) => {
     isDrawing = true;
@@ -115,9 +72,10 @@ window.addEventListener("load", (e) => {
   canvas.addEventListener("mousemove", draw);
 });
 
+//Draw Function
 function draw(e) {
-  // Mouse is not pressed
-  if (!isDrawing) return;
+  if (!isDrawing)              // Mouse is not pressed
+    return;
 
   var rect = canvas.getBoundingClientRect();
   var x = e.clientX - rect.left;
@@ -126,7 +84,7 @@ function draw(e) {
   y = Math.floor((height * y) / canvas.clientHeight);
 
   if (x >= 0 && x < width && y >= 0 && y < height) {
-    context.fillStyle = "black";
+    context.fillStyle = brushColor;
 
     context.fillRect(
       Math.floor(x * (w / width)),
@@ -137,16 +95,50 @@ function draw(e) {
   }
 }
 
-document.getElementById("submit").onclick = () => {
-  var width = document.getElementById("input-width").value;
-  var height = document.getElementById("input-height").value;
+
+//Color palette
+palette.addEventListener('click', (e) => {
+  const boxShadow = 'inset 0 0 6px #616161';
+  brushColor = e.target.style.backgroundColor;
+
+  for (var child of document.getElementById('palette').children) {
+    child.style.boxShadow = null;
+  }
+
+  if (e.target.className === 'palette-color') {
+    e.target.style.boxShadow = boxShadow;
+  }
+});
+
+
+//Download Image
+downloadLinkPNG.addEventListener("click", (e) => {          //PNG
+  e.preventDefault();
+  
+  var img = canvas.toDataURL("image/png");
+  download(img);
+});
+downloadLinkJPEG.addEventListener("click", (e) => {        //JPEG
+  e.preventDefault();
+  var img = canvas.toDataURL("image/jpeg");
+  download(img);
+});
+
+var download = function (img) {
+  var link = document.createElement("a");
+  link.download = "pixelvibe";
+  link.href = img;
+  link.click();
 };
 
-function myFunction(x) {
-  x.classList.toggle("change");
+
+//Dropdown Menu
+function showDropdownMenu(list) {
+  list.classList.toggle("change");
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-dlt.addEventListener("click", ()=>{
+//Clear Canvas
+clear.addEventListener("click", ()=>{
   context.clearRect(0,0,canvas.width,canvas.height)
 })
