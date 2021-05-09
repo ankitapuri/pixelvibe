@@ -141,8 +141,8 @@ function draw(e) {
 }
 
 document.getElementById('palette').addEventListener('click', (e) => {
-  
   const boxShadow = '0 8px 12px -4px rgba(0,0,0,0.7)';
+  const boxShadow = 'inset 0 0 6px #616161';
   brushColor = e.target.style.backgroundColor;
   prevBrushColor = brushColor;
   
