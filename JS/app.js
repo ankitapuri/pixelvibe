@@ -89,6 +89,9 @@ const context = canvas.getContext("2d");
 // width and height needs to accept input values from
 var width = 16;
 var height = 16;
+// default brush color upon loading the site
+var brushColor = '#000000';
+var prevBrushColor = '#000000';
 
 canvas.height = 10 * height;
 canvas.width = 10 * width;
@@ -126,7 +129,7 @@ function draw(e) {
   y = Math.floor((height * y) / canvas.clientHeight);
 
   if (x >= 0 && x < width && y >= 0 && y < height) {
-    context.fillStyle = "black";
+    context.fillStyle = brushColor;
 
     context.fillRect(
       Math.floor(x * (w / width)),
@@ -137,10 +140,23 @@ function draw(e) {
   }
 }
 
-document.getElementById("submit").onclick = () => {
-  var width = document.getElementById("input-width").value;
-  var height = document.getElementById("input-height").value;
-};
+document.getElementById('palette').addEventListener('click', (e) => {
+  
+  const boxShadow = '0 8px 12px -4px rgba(0,0,0,0.7)';
+  brushColor = e.target.style.backgroundColor;
+  prevBrushColor = brushColor;
+  
+  for (var child of document.getElementById('palette').children) {
+    child.style.boxShadow = null;
+  }
+
+  if (e.target.className === 'palette-color') {
+    e.target.style.boxShadow = boxShadow;
+  }
+
+  ersr.classList.remove("selected");
+  brsh.classList.add("selected");
+});
 
 function myFunction(x) {
   x.classList.toggle("change");
@@ -149,4 +165,17 @@ function myFunction(x) {
 
 dlt.addEventListener("click", ()=>{
   context.clearRect(0,0,canvas.width,canvas.height)
+})
+
+ersr.addEventListener("click", () => {
+  ersr.classList.add("selected");
+  brsh.classList.remove("selected");
+  prevBrushColor = brushColor;
+  brushColor = "white";
+})
+
+brsh.addEventListener("click", () => {
+  ersr.classList.remove("selected");
+  brsh.classList.add("selected");
+  brushColor = prevBrushColor;
 })

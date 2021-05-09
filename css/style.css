@@ -597,6 +597,10 @@ ul{
   font-size: 2rem;
 }
 
+.palette-color{
+  cursor: pointer;
+}
+
 .color {
   cursor: pointer;
 }
