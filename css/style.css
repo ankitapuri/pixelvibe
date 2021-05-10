@@ -521,8 +521,8 @@ td {
 
 .settings{
   position: absolute;
-  right: 5px;
-  top:5px;
+  right: 50px;
+  top:50px;
   color: white;
   cursor: pointer;
 }
