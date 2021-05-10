@@ -10,8 +10,8 @@ def hello_world():
         height = request.form['height']
         width = request.form['width']
         print(height,width)
-        return render_template("index3.html",height=height,width=width)
-    return render_template('index2.html')
+        return render_template("canvas.html",height=height,width=width)
+    return render_template('user_input.html')
 
 
 if __name__ == '__main__':
