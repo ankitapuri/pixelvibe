@@ -145,7 +145,11 @@ header{
     top:0; left:0;
     z-index: 1000;
     width: 100%;
+<<<<<<< HEAD
     background-color: #243e73;
+=======
+    background:#fff;
+>>>>>>> 7c8e36e5e68e84fb11466a52bc2979fd99ce79d1
     padding:1.5rem 10%;
     height: 10vmin;
     box-shadow: 0 .3rem 2rem rgba(0,0,0,.1);
@@ -163,7 +167,10 @@ header .navbar ul{
     align-items: center;
     justify-content: center;
     list-style: none;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7c8e36e5e68e84fb11466a52bc2979fd99ce79d1
 }
 
 header .navbar ul li{
@@ -173,12 +180,20 @@ header .navbar ul li{
 
 header .navbar ul li a{
     font-size: 1.7rem;
+<<<<<<< HEAD
     color:#ffff;
+=======
+    color:#666;
+>>>>>>> 7c8e36e5e68e84fb11466a52bc2979fd99ce79d1
 }
 
 header .navbar ul li a.active,
 header .navbar ul li a:hover{
+<<<<<<< HEAD
     color:#ffff;
+=======
+    color:black;
+>>>>>>> 7c8e36e5e68e84fb11466a52bc2979fd99ce79d1
     text-decoration: none;
 }
 
@@ -189,7 +204,16 @@ header #menu-bar{
     display: none;
 }
 
+<<<<<<< HEAD
 
+=======
+.brand a{
+        font-size: 2rem;
+        color:#666;
+        cursor: pointer;
+    
+}
+>>>>>>> 7c8e36e5e68e84fb11466a52bc2979fd99ce79d1
 
 section {
     width: 100%;
@@ -231,12 +255,15 @@ section {
 .footer .box-container .box{
     flex:1 1 25rem;
     margin:2rem;
+<<<<<<< HEAD
 
 }
 .footer .box-container .box .follow{
     flex:1 1 25rem;
     margin:2rem;
     margin-left:300px;
+=======
+>>>>>>> 7c8e36e5e68e84fb11466a52bc2979fd99ce79d1
 }
 
 .footer .box-container .box h3{
