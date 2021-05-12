@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Favicons -->
+<link rel="favicon" href="/static/mstile-150x150.png" sizes="150x150" type="img/png">
+<link rel="favicon" href="/static/android-chrome-192x192.png" sizes="192x192" type="img/png">
+<link rel="favicon" href="/static/android-chrome-512x512.png" sizes="512x512" type="img/png">
+<link rel="favicon" href="/static/favicon-16x16.png" sizes="16x16." type="img/png">
+<link rel="favicon" href="/static/favicon-32x32.png" sizes="32x32" type="img/png">
+<link rel="favicon" href="/static/apple-touch-icon.png" sizes="any" type="img/png">
+<link rel="favicon" href="/static/assets/favicon_pixelVibe.png" sizes="any" type="img/png">
+<link rel="favicon" href="/static/assets/pixel_logo.png" sizes="any" type="img/png">
+
+ <!-- Google fonts -->
+
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Chewy&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <title>Canvas</title>
+    <style>
+        body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+  background-color: #fdb1bb;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+        /* Title Section */
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-img {
+  height: 130px;
+  width: 130px;
+  left: 30%;
+  transform: rotate(-20deg);
+}
+
+.color_change {
+  color: #313131;
+  font-size: 5rem;
+  font-weight: bold;
+  animation: colorchange 8s infinite alternate;
+}
+
+@keyframes colorchange {
+  0% {
+    color: #6e1224;
+  }
+  5% {
+    color: #5e17eb;
+  }
+  10% {
+    color: #8e44ad;
+  }
+  15% {
+    color: #b84352;
+  }
+  20% {
+    color: #1abc9c;
+  }
+  25% {
+    color: #d61ba7;
+  }
+
+  30% {
+    color: #d35400;
+  }
+
+  40% {
+    color: #7f91aa;
+  }
+
+  50% {
+    color: #34495e;
+  }
+
+  60% {
+    color: blue;
+  }
+
+  70% {
+    color: #383a3b;
+  }
+  80% {
+    color: #0a7029;
+  }
+
+  90% {
+    color: #2980b9;
+  }
+
+  100% {
+  }
+}
+
+
+/* Canvas-div Section */
+
+#canvas-div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+  display: inline-block;
+  cursor: pointer;
+  padding: 12px;
+  margin: 10px;
+  border: none;
+  outline: none;
+  background: whitesmoke;
+  border-radius: 3px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 200px;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dropdown-content li {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  padding-left: 0;
+}
+
+.dropdown-content li:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.show {
+  display: block;
+}
+
+/*CSS for the canvas*/
+
+.main-canvas {
+  margin: 10px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+  width: 75%;
+  max-width: 550px;
+  background-color: white;
+  cursor: crosshair;
+  touch-action: none;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  margin-left: 20%;
+}
+
+.area {
+  background: rgb(0, 0, 0);
+  background: -webkit-linear-gradient(to left, #363583, #1b25e4);
+  width: 100%;
+  height: 100vh;
+}
+
+.wrap {
+  position: relative;
+  top: 70%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: rotate 25s infinite linear;
+  margin: 10px;
+  background: -webkit-linear-gradient(to left, #424e34, #91ff14);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
+
+.c {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.c:nth-child(1) {
+  animation: orbit1 25s infinite;
+  animation-delay: 0.01s;
+  background-color: rgba(255, 85, 0, 1);
+}
+
+#b-margin {
+  padding-bottom: 30px;
+}
+
+/* CSS for the back button */
+
+.round {
+  position: fixed;
+  top: 84%;
+  left: 10%;
+  border: 4px solid #000;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  padding-top: 8px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+#cta {
+  width: 100%;
+  position: absolute;
+}
+
+#cta .arrow {
+  left: 14%;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 0;
+  margin-left: 0px;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  top: 17px;
+}
+
+.segunda {
+  margin-left: 16px;
+}
+
+.next {
+  background-image: url(https://image.flaticon.com/icons/png/128/271/271220.png);
+}
+
+@keyframes bounceAlpha {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+  25% {
+    opacity: 0;
+    transform: translateX(10px) scale(0.9);
+  }
+  26% {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.9);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+}
+
+.bounceAlpha {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.arrow.primera.bounceAlpha {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.round:hover .arrow {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.round:hover .arrow.primera {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* Download button */
+
+.btn-download {
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+
+/* Colour palette styles */
+
+#palette {
+  display: grid;
+  height: 50vh;
+  width: 20vw;
+  margin-left: 10px;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  /* border: 2px solid rgb(194, 58, 121); */
+  padding: 5px;
+}
+
+#palette-prompt {
+  font-family: "Chewy", cursive;
+  grid-column: span 3;
+  font-size: 2rem;
+}
+
+.palette-color {
+  cursor: pointer;
+}
+
+/* to highlight the currently chosen color, toggle the selected class on the color */
+
+.color.selected {
+  border: 3px solid white;
+}
+
+/* responsive css */
+
+@media (max-width: 400px) {
+  .size-picker-form {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+       <!-- Title -->
+  <section id="title">
+    <div class="row heading">
+      <div>
+        <img src="/static/favicon_pixelVibe.png" class="title-img">
+      </div>
+      <div>
+        <h1 class="color_change main-heading">PixelVibe</h1>
+      </div>
+    </div>
+  </section>
+
+  <input type="text" id="input-height" placeholder="16" name="height" required value={{height}} style="visibility:hidden">
+   <input type="text" id="input-width" placeholder="16" name="width" required value={{width}} style="visibility:hidden">
+
+  <!-- Canvas supposed to be hidden before submitting -->
+  <section id=canvas-section>
+    <div id="canvas-div">
+
+      <!-- Dropdown Menu -->
+      <div class="dropdown">
+        <button onclick="showDropdownMenu(this)" class="dropbtn">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+          <ul class="list">
+            <li>Brush</li>
+            <li id="dlt">Delete <i class="fas fa-trash"></i></li>
+            <li>Undo</li>
+            <li>Eraser</li>
+            <li>Color fill</li>
+          </ul>
+        </div>
+      </div>
+      
+      <canvas id="canvas" class="main-canvas"></canvas>
+
+      <!-- Color Palette -->
+      <div id="palette">
+        <div id="palette-prompt">Pick a colour!</div>
+        <div class="palette-color" style="background-color: #ff0000;"></div>
+        <div class="palette-color" style="background-color: #0000ff;"></div>
+        <div class="palette-color" style="background-color: #008000;"></div>
+        <div class="palette-color" style="background-color: #ffff00;"></div>
+        <div class="palette-color" style="background-color: #00ff00;"></div>
+        <div class="palette-color" style="background-color: #ff798f;"></div>
+        <div class="palette-color" style="background-color: #000000;"></div>
+        <div class="palette-color" style="background-color: #ff6600;"></div>
+        <div class="palette-color" style="background-color: #87cefa;"></div>
+        <div class="palette-color" style="background-color: #d400ff;"></div>
+        <div class="palette-color" style="background-color: #ff1d4e;"></div>
+        <div class="palette-color" style="background-color: #952300;"></div>
+      </div>
+
+    </div>
+  </section>
+<!-- Download button -->
+<section id="download"></section>
+<div class="dropdown" id="download-button">
+  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Download
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" id="png-download" href="#">PNG</a></li>
+    <li><a class="dropdown-item" id="jpeg-download" href="#">JPEG</a></li>
+  </ul>
+</div>
+  
+   <script>
+     
+const downloadBtn = document.getElementById("download-button");           //Download 
+const downloadLinkPNG = document.getElementById("png-download");          //Download 
+const downloadLinkJPEG = document.getElementById("jpeg-download");        //Download 
+const palette = document.getElementById('palette')                        //palette
+const clear=document.getElementById('dlt')                                //clear
+
+const canvas = document.querySelector("#canvas");
+const context = canvas.getContext("2d");
+
+context.globalAlpha = 1;
+canvas.style.display = "block";
+
+// Global Variables
+let brushColor = '#000000';         // default brush color (black)
+let isDrawing = false;
+
+
+width = parseInt(document.getElementById("input-width").value);           //user input width
+    height = parseInt(document.getElementById("input-height").value);         //user input - height
+    width = parseInt(document.getElementById("input-width").value);           //user input width
+    height = parseInt(document.getElementById("input-height").value);         //user input - height
+    console.log(width, height)
+
+    canvas.height = 20 * height;
+    canvas.width = 20 * width;
+
+    w = +canvas.width;
+    h = +canvas.height;
+
+    
+    context.fillStyle = "#fff";                        // set white fill style
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+//Get Mouse Position
+window.addEventListener("load", (e) => {
+  canvas.addEventListener("mousedown", (e) => {
+    isDrawing = true;
+    draw(e);
+  });
+  canvas.addEventListener("mouseup", (e) => {
+    isDrawing = false;
+    context.beginPath();
+  });
+  canvas.addEventListener("mousemove", draw);
+});
+
+//Draw Function
+function draw(e) {
+  if (!isDrawing)              // Mouse is not pressed
+    return;
+
+  var rect = canvas.getBoundingClientRect();
+  var x = e.clientX - rect.left;
+  var y = e.clientY - rect.top;
+  x = Math.floor((width * x) / canvas.clientWidth);
+  y = Math.floor((height * y) / canvas.clientHeight);
+
+  if (x >= 0 && x < width && y >= 0 && y < height) {
+    context.fillStyle = brushColor;
+
+    context.fillRect(
+      Math.floor(x * (w / width)),
+      Math.floor(y * (h / height)),
+      Math.floor(canvas.width / width),
+      Math.floor(canvas.height / height)
+    );
+  }
+}
+
+
+//Color palette
+palette.addEventListener('click', (e) => {
+  const boxShadow = 'inset 0 0 6px #616161';
+  brushColor = e.target.style.backgroundColor;
+
+  for (var child of document.getElementById('palette').children) {
+    child.style.boxShadow = null;
+  }
+
+  if (e.target.className === 'palette-color') {
+    e.target.style.boxShadow = boxShadow;
+  }
+});
+
+
+//Download Image
+downloadLinkPNG.addEventListener("click", (e) => {          //PNG
+  e.preventDefault();
+  
+  var img = canvas.toDataURL("image/png");
+  download(img);
+});
+downloadLinkJPEG.addEventListener("click", (e) => {        //JPEG
+  e.preventDefault();
+  var img = canvas.toDataURL("image/jpeg");
+  download(img);
+});
+
+var download = function (img) {
+  var link = document.createElement("a");
+  link.download = "pixelvibe";
+  link.href = img;
+  link.click();
+};
+
+
+//Dropdown Menu
+function showDropdownMenu(list) {
+  list.classList.toggle("change");
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+//Clear Canvas
+clear.addEventListener("click", ()=>{
+  context.clearRect(0,0,canvas.width,canvas.height)
+})
+
+   </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/59a498d1d1.js" crossorigin="anonymous"></script>
+  </body>
+</html>
