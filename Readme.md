@@ -1,6 +1,6 @@
 
 
-<p align="center"><img src="assets/pixelVibe.gif"></p>
+<p align="center"><img src="https://github.com/FOSS-Cell-GECPKD/pixelvibe/blob/main/static/assets/pixelVibe.gif"></p>
 
 <p>
 
