@@ -8,10 +8,14 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
+<<<<<<< HEAD
 
 
 /* Preloader Section */
 
+=======
+/* preloader */
+>>>>>>> upstream/main
 .folding-cube ul {
   position: absolute;
   top: calc(50% - 40px);
@@ -107,16 +111,128 @@ body {
   align-items: center;
   justify-content: center;
 }
+<<<<<<< HEAD
+=======
+/* preloader */
+.folding-cube ul {
+  position: absolute;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  margin: 0;
+  padding: 0;
+  width: 80px;
+  height: 80px;
+  transform: rotate(45deg);
+}
+.folding-cube ul li {
+  list-style: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+.folding-cube ul li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 100% 100%;
+  animation: animate 3.3s linear infinite;
+}
+.folding-cube ul li:nth-child(1) {
+  transform: rotate(0deg);
+}
+.folding-cube ul li:nth-child(1):before {
+  animation-delay: 0s;
+  /* background: #f57b70; */
+  background: #ffa3b8;
+}
+.folding-cube ul li:nth-child(2) {
+  transform: rotate(90deg);
+}
+.folding-cube ul li:nth-child(2):before {
+  animation-delay: 0.4s;
+  background: #ffa3b8;
+}
+.folding-cube ul li:nth-child(3) {
+  transform: rotate(270deg);
+}
+.folding-cube ul li:nth-child(3):before {
+  animation-delay: 1.2s;
+  background: #ffa3b8;
+}
+.folding-cube ul li:nth-child(4) {
+  transform: rotate(180deg);
+}
+.folding-cube ul li:nth-child(4):before {
+  animation-delay: 0.8s;
+  background: #ffa3b8;
+}
+@keyframes animate {
+  0% {
+    transform: perspective(200px) rotateX(0deg);
+    opacity: 0;
+  }
+  10% {
+    transform: perspective(200px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25% {
+    transform: perspective(200px) rotateX(0deg);
+    opacity: 1;
+  }
+  75% {
+    transform: perspective(200px) rotateX(0deg);
+    opacity: 1;
+  }
+  90% {
+    transform: perspective(200px) rotateY(180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(200px) rotateY(0deg);
+    opacity: 0;
+  }
+}
+.folding-cube {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #ffeccb;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+>>>>>>> upstream/main
 
 /* Headings */
 .main-heading {
   font-family: "Charm", cursive;
   right: 41%;
+<<<<<<< HEAD
 }
 
 .section-heading {
   font-family: "Chewy", cursive;
   color: #fff;
+=======
+}
+
+.section-heading {
+  font-family: "Chewy", cursive;
+  color: #fff;
+}
+
+.wagnasty-webfont {
+  font-family: Wagnasty-webfont;
+  font-weight: bold;
+>>>>>>> upstream/main
 }
 
 h2 {
@@ -229,11 +345,14 @@ h2:first-of-type {
   border-radius: 5px;
 }
 
+<<<<<<< HEAD
 .form-group {
   color: white;
 }
 
 
+=======
+>>>>>>> upstream/main
 #input-height,
 #input-width {
   border: 2px solid;
@@ -280,9 +399,33 @@ h2:first-of-type {
 .btn {
   margin: 10px;
   background: -webkit-linear-gradient(to left, #424e34, #91ff14);
+<<<<<<< HEAD
 }
 
+=======
+}
 
+/* Table */
+
+table,
+tr,
+td {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+tr {
+  height: 40px;
+}
+
+td {
+  width: 40px;
+}
+>>>>>>> upstream/main
 
 /* Canvas-div Section */
 
@@ -331,15 +474,16 @@ h2:first-of-type {
 .dropdown {
   position: relative;
   display: inline-block;
+  right:2vw;
+  bottom: 20vh;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
   min-width: 200px;
   z-index: 1;
-  left: 50%;
+  left: 70%;
   transform: translateX(-50%);
 }
 
@@ -431,7 +575,11 @@ ul {
 .round {
   position: fixed;
   top: 84%;
+<<<<<<< HEAD
   left: 10%;
+=======
+  left: 5px;
+>>>>>>> upstream/main
   border: 4px solid #000;
   width: 80px;
   height: 80px;
@@ -522,13 +670,24 @@ ul {
 .btn-download {
   display: none;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top:2vh;
+  right:1vw;
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
 
 
+<<<<<<< HEAD
+=======
+/* responsive css */
+
+@media (max-width: 400px) {
+  .size-picker-form {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+}
+>>>>>>> upstream/main
 
 /* Colour palette styles */
 
@@ -554,6 +713,7 @@ ul {
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 /* to highlight the currently chosen color, toggle the selected class on the color */
 
 .color.selected {
@@ -567,4 +727,8 @@ ul {
     margin-left: 8%;
     margin-right: 8%;
   }
+=======
+#ersr.selected, #brsh.selected {
+  background-color: white;
+>>>>>>> upstream/main
 }

@@ -14,11 +14,10 @@ context.globalAlpha = 1;
 canvas.style.display = "block";
 
 // Global Variables
-let brushColor = '#000000';               // default brush color (black)
-var prevBrushColor = '#000000';        
+let brushColor = '#000000';         // default brush color (black)
 let isDrawing = false;
 
-//Preloader
+//preloader
 window.addEventListener('load', function () {
   setTimeout(function () { foldingCube.parentElement.removeChild(foldingCube); }, 3000);
 });
@@ -60,10 +59,37 @@ submit.addEventListener("click",(e) => {
   false
 );
 
-
-
+<<<<<<< HEAD
 //Get Mouse Position
-window.addEventListener("load", (e) => {                //This event listener responds to whenever site loads
+=======
+/**
+ * @description Following few lines are setting up the canvas
+ */
+const canvas = document.querySelector("#canvas");
+const context = canvas.getContext("2d");
+
+// width and height needs to accept input values from
+var width = 16;
+var height = 16;
+// default brush color upon loading the site
+var brushColor = '#000000';
+var prevBrushColor = '#000000';
+
+canvas.height = 10 * height;
+canvas.width = 10 * width;
+
+var w = +canvas.width;
+var h = +canvas.height;
+// console.log(`Height ${height} Width ${width} ClientWIDTH ${canvas.clientWidth} `);    // DEBUG
+context.globalAlpha = 1;
+canvas.style.display = "block";
+
+let isDrawing = false;
+/**
+ * @description This event listener responds to whenever site loads
+ */
+>>>>>>> upstream/main
+window.addEventListener("load", (e) => {
   canvas.addEventListener("mousedown", (e) => {
     isDrawing = true;
     draw(e);
@@ -98,13 +124,21 @@ function draw(e) {
   }
 }
 
+<<<<<<< HEAD
 
 //Color palette
 palette.addEventListener('click', (e) => {
   const boxShadow = 'inset 0 0 6px #616161';
   brushColor = e.target.style.backgroundColor;
 
-
+=======
+document.getElementById('palette').addEventListener('click', (e) => {
+  
+  const boxShadow = 'inset 0 0 6px #616161';
+  brushColor = e.target.style.backgroundColor;
+  prevBrushColor = brushColor;
+  
+>>>>>>> upstream/main
   for (var child of document.getElementById('palette').children) {
     child.style.boxShadow = null;
   }
@@ -112,17 +146,17 @@ palette.addEventListener('click', (e) => {
   if (e.target.className === 'palette-color') {
     e.target.style.boxShadow = boxShadow;
   }
-
+<<<<<<< HEAD
 });
 
 
 //Download Image
 downloadLinkPNG.addEventListener("click", (e) => {          //PNG
   e.preventDefault();
+  
   var img = canvas.toDataURL("image/png");
   download(img);
 });
-
 downloadLinkJPEG.addEventListener("click", (e) => {        //JPEG
   e.preventDefault();
   var img = canvas.toDataURL("image/jpeg");
@@ -135,6 +169,12 @@ var download = function (img) {
   link.href = img;
   link.click();
 };
+=======
+
+  ersr.classList.remove("selected");
+  brsh.classList.add("selected");
+});
+>>>>>>> upstream/main
 
 
 //Dropdown Menu
@@ -147,19 +187,19 @@ function showDropdownMenu(list) {
 clear.addEventListener("click", ()=>{
   context.clearRect(0,0,canvas.width,canvas.height)
 })
+<<<<<<< HEAD
+=======
 
-//Setting Eraser
-eraser.addEventListener("click", () => {
-  eraser.classList.add("selected");
-  brush.classList.remove("selected");
+ersr.addEventListener("click", () => {
+  ersr.classList.add("selected");
+  brsh.classList.remove("selected");
   prevBrushColor = brushColor;
   brushColor = "white";
 })
 
-//Setting Brush Color
-brush.addEventListener("click", () => {
-  eraser.classList.remove("selected");
-  brush.classList.add("selected");
+brsh.addEventListener("click", () => {
+  ersr.classList.remove("selected");
+  brsh.classList.add("selected");
   brushColor = prevBrushColor;
 })
-
+>>>>>>> upstream/main

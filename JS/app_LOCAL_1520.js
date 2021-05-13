@@ -14,11 +14,10 @@ context.globalAlpha = 1;
 canvas.style.display = "block";
 
 // Global Variables
-let brushColor = '#000000';               // default brush color (black)
-var prevBrushColor = '#000000';        
+let brushColor = '#000000';         // default brush color (black)
 let isDrawing = false;
 
-//Preloader
+//preloader
 window.addEventListener('load', function () {
   setTimeout(function () { foldingCube.parentElement.removeChild(foldingCube); }, 3000);
 });
@@ -60,10 +59,8 @@ submit.addEventListener("click",(e) => {
   false
 );
 
-
-
 //Get Mouse Position
-window.addEventListener("load", (e) => {                //This event listener responds to whenever site loads
+window.addEventListener("load", (e) => {
   canvas.addEventListener("mousedown", (e) => {
     isDrawing = true;
     draw(e);
@@ -104,7 +101,6 @@ palette.addEventListener('click', (e) => {
   const boxShadow = 'inset 0 0 6px #616161';
   brushColor = e.target.style.backgroundColor;
 
-
   for (var child of document.getElementById('palette').children) {
     child.style.boxShadow = null;
   }
@@ -112,17 +108,16 @@ palette.addEventListener('click', (e) => {
   if (e.target.className === 'palette-color') {
     e.target.style.boxShadow = boxShadow;
   }
-
 });
 
 
 //Download Image
 downloadLinkPNG.addEventListener("click", (e) => {          //PNG
   e.preventDefault();
+  
   var img = canvas.toDataURL("image/png");
   download(img);
 });
-
 downloadLinkJPEG.addEventListener("click", (e) => {        //JPEG
   e.preventDefault();
   var img = canvas.toDataURL("image/jpeg");
@@ -147,19 +142,3 @@ function showDropdownMenu(list) {
 clear.addEventListener("click", ()=>{
   context.clearRect(0,0,canvas.width,canvas.height)
 })
-
-//Setting Eraser
-eraser.addEventListener("click", () => {
-  eraser.classList.add("selected");
-  brush.classList.remove("selected");
-  prevBrushColor = brushColor;
-  brushColor = "white";
-})
-
-//Setting Brush Color
-brush.addEventListener("click", () => {
-  eraser.classList.remove("selected");
-  brush.classList.add("selected");
-  brushColor = prevBrushColor;
-})
-
