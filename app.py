@@ -1,8 +1,14 @@
 from flask import Flask,render_template, request, redirect, url_for, flash
 app = Flask(__name__,template_folder='template')
 
-@app.route('/',methods = ['POST', 'GET'])
-def hello_world():
+
+
+@app.route('/')
+def home():
+    return render_template('homepage.html')
+
+@app.route('/paint',methods = ['POST', 'GET'])
+def paint():
     if request.method == 'GET':
         print('get')
     else:
