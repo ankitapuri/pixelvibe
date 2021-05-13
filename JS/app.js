@@ -60,10 +60,15 @@ submit.addEventListener("click",(e) => {
   false
 );
 
+<<<<<<< HEAD
 
 
 //Get Mouse Position
 window.addEventListener("load", (e) => {                //This event listener responds to whenever site loads
+=======
+//Get Mouse Position
+window.addEventListener("load", (e) => {
+>>>>>>> b1e7ed5bfab83b1d00985bf369a578677ab52ded
   canvas.addEventListener("mousedown", (e) => {
     isDrawing = true;
     draw(e);
@@ -104,7 +109,10 @@ palette.addEventListener('click', (e) => {
   const boxShadow = 'inset 0 0 6px #616161';
   brushColor = e.target.style.backgroundColor;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b1e7ed5bfab83b1d00985bf369a578677ab52ded
   for (var child of document.getElementById('palette').children) {
     child.style.boxShadow = null;
   }
@@ -112,7 +120,10 @@ palette.addEventListener('click', (e) => {
   if (e.target.className === 'palette-color') {
     e.target.style.boxShadow = boxShadow;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> b1e7ed5bfab83b1d00985bf369a578677ab52ded
 });
 
 
@@ -147,6 +158,7 @@ function showDropdownMenu(list) {
 clear.addEventListener("click", ()=>{
   context.clearRect(0,0,canvas.width,canvas.height)
 })
+<<<<<<< HEAD
 
 //Setting Eraser
 eraser.addEventListener("click", () => {
@@ -163,3 +175,5 @@ brush.addEventListener("click", () => {
   brushColor = prevBrushColor;
 })
 
+=======
+>>>>>>> b1e7ed5bfab83b1d00985bf369a578677ab52ded
