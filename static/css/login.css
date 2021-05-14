@@ -134,9 +134,9 @@ body {
     inset 0 4px 10px 0 rgba(0, 0, 0, 0.1),
     inset 0 0 3px 1px rgba(255, 255, 255, 0.3);
 }
-.push-toggle input:checked ~ .push-btn-label {
+.dark-mode .push-toggle .push-btn-label {
   top:4em;
-  color: #c3eb78;
+  color: #c3eb78 !important;
 }
 .dark-mode {
   background:#0c1618;
