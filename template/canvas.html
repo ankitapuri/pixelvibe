@@ -431,7 +431,7 @@ ul {
             <li id="dlt">Delete <i class="fas fa-trash"></i></li>
             <li>Undo</li>
             <li>Eraser</li>
-            <li>Color fill</li>
+            <li id="color-fill">Color fill</li>
           </ul>
         </div>
       </div>
@@ -476,6 +476,7 @@ const downloadLinkPNG = document.getElementById("png-download");          //Down
 const downloadLinkJPEG = document.getElementById("jpeg-download");        //Download 
 const palette = document.getElementById('palette')                        //palette
 const clear=document.getElementById('dlt')                                //clear
+const colorFill=document.getElementById("color-fill")                                     //Color-fill
 
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
@@ -586,6 +587,12 @@ function showDropdownMenu(list) {
 //Clear Canvas
 clear.addEventListener("click", ()=>{
   context.clearRect(0,0,canvas.width,canvas.height)
+})
+
+// Color-fill Canvas
+colorFill.addEventListener("click", () => {
+  context.fillStyle = brushColor; 
+  context.fillRect(0, 0, canvas.width, canvas.height);
 })
 
    </script>
