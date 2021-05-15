@@ -18,7 +18,7 @@ class Users(db.Model):
     email = db.Column(db.String(20), nullable=False)
     password = db.Column(db.String(120), nullable=False)
 
-
+session={}
 @app.route('/',methods = ['POST', 'GET'])
 def hello_world():
     if request.method == 'GET':
@@ -35,17 +35,47 @@ def hello_world():
 def loginpage():
     return render_template('login.html')
 
-@app.route('/login',methods = ['POST', 'GET'])
-def login():
+@app.route('/signup',methods = ['POST', 'GET'])
+def signup():
     if request.method == 'POST':
         username = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
         cpassword = request.form.get('cpassword')
         print(username, email, password,cpassword)
-        user = Users(username=username, email=email, password=password)
-        db.session.add(user)
-        db.session.commit()
+        user = Users.query.filter_by(username=username).first()
+        if user is None:  
+            user = Users(username=username, email=email, password=password)
+            db.session.add(user)
+            db.session.commit()
+            return redirect('loginpage')
+        else:
+            print('user exists')
+            return redirect('signup')
+    else:
+        return redirect('loginpage')
+
+@app.route('/login',methods = ['POST', 'GET'])
+def login():
+    if 'user' in session :
+        return redirect('/')
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        print(username,password)
+        user = Users.query.filter_by(username=username).first() 
+        if user is None:
+            print('no user')
+        else:
+            print('user')
+            if user.password == password:
+                print('password matched')
+                session['user'] = username
+                return redirect('/')
+            else:
+                print('wrong password')
+        # db.session.add(user)
+        # db.session.commit()
         return redirect('loginpage')
     else:
         return redirect('loginpage')

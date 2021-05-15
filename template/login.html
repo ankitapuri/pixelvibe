@@ -47,7 +47,7 @@
 
     <!-- Code for Signup section begins -->
     <div class="signup">
-      <form action="/login" method="post">
+      <form action="/signup" method="post">
         <div class="input-group">
           <div class="username">
             <span class="material-icons">person</span>
@@ -78,25 +78,28 @@
 
     <!-- Code for Login section begins -->
     <div class="login">
-      <div class="input-signin">
-        <div class="username">
-          <span class="material-icons">person</span>
-          <input type="username" class="user-input" placeholder="Username" />
+          <form action="/login" method="post">
+          <div class="input-signin">
+            <div class="username">
+              <span class="material-icons">person</span>
+              <input type="username" name="username" class="user-input" placeholder="Username" />
+            </div>
+    
+            <div class="password">
+              <span class="material-icons">lock</span>
+              <input type="password" name="password" class="pass-input" placeholder="Password" />
+            </div>
+    
+            <button class="signup-btn">Sign In</button>
+            <div class="link">
+              <a href="#" onclick="document.getElementById('id01').style.display='block'">Forgot password?</a>
+            </div>
+          </div>
         </div>
-
-        <div class="password">
-          <span class="material-icons">lock</span>
-          <input type="password" class="pass-input" placeholder="Password" />
-        </div>
-
-        <button class="signup-btn">Sign In</button>
-        <div class="link">
-          <a href="#" onclick="document.getElementById('id01').style.display='block'">Forgot password?</a>
-        </div>
+      </form>
       </div>
-    </div>
-  </div>
-
+    
+      <!-- login ends here -->
   <!-- Forgot password section -->
 
   <div id="id01" class="modal">
