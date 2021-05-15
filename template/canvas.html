@@ -191,6 +191,9 @@ ul {
 .show {
   display: block;
 }
+.selected{
+  background-color:lightgray;
+}
 
 /*CSS for the canvas*/
 
@@ -427,10 +430,10 @@ ul {
         </button>
         <div id="myDropdown" class="dropdown-content">
           <ul class="list">
-            <li>Brush</li>
-            <li id="dlt">Delete <i class="fas fa-trash"></i></li>
+            <li id="brush">Brush</li>
+            <li id="delete">Delete <i class="fas fa-trash"></i></li>
             <li>Undo</li>
-            <li>Eraser</li>
+            <li id="eraser">Eraser</li>
             <li id="color-fill">Color fill</li>
           </ul>
         </div>
@@ -475,8 +478,11 @@ const downloadBtn = document.getElementById("download-button");           //Down
 const downloadLinkPNG = document.getElementById("png-download");          //Download 
 const downloadLinkJPEG = document.getElementById("jpeg-download");        //Download 
 const palette = document.getElementById('palette')                        //palette
-const clear=document.getElementById('dlt')                                //clear
-const colorFill=document.getElementById("color-fill")                                     //Color-fill
+const brush=document.getElementById('brush')                              //brush
+const clear=document.getElementById('delete')                             //clear
+const eraser=document.getElementById('eraser')                             //eraser
+const colorFill=document.getElementById("color-fill")                     //Color-fill
+
 
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
@@ -546,6 +552,7 @@ function draw(e) {
 palette.addEventListener('click', (e) => {
   const boxShadow = 'inset 0 0 6px #616161';
   brushColor = e.target.style.backgroundColor;
+  prevBrushColor=brushColor;
 
   for (var child of document.getElementById('palette').children) {
     child.style.boxShadow = null;
@@ -584,16 +591,40 @@ function showDropdownMenu(list) {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
+//Brush
+brush.addEventListener("click", () => {
+  eraser.classList.remove("selected");
+  colorFill.classList.remove("selected");
+  brush.classList.add("selected");
+  brushColor = prevBrushColor;
+})
+
+
 //Clear Canvas
 clear.addEventListener("click", ()=>{
-  context.clearRect(0,0,canvas.width,canvas.height)
+  clear.classList.add("selected");
+  context.clearRect(0,0,canvas.width,canvas.height);
+  clear.classList.remove("selected");
+})
+
+//Eraser
+eraser.addEventListener("click", () => {
+  brush.classList.remove("selected");
+  colorFill.classList.remove("selected");
+  eraser.classList.add("selected");
+  prevBrushColor = brushColor;
+  brushColor = "white";
 })
 
 // Color-fill Canvas
 colorFill.addEventListener("click", () => {
-  context.fillStyle = brushColor; 
+  eraser.classList.remove("selected");
+  brush.classList.remove("selected");
+  colorFill.classList.add("selected");
+  context.fillStyle = prevBrushColor; 
   context.fillRect(0, 0, canvas.width, canvas.height);
 })
+
 
    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
