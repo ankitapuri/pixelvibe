@@ -607,15 +607,6 @@ clear.addEventListener("click", ()=>{
   clear.classList.remove("selected");
 })
 
-//Eraser
-eraser.addEventListener("click", () => {
-  brush.classList.remove("selected");
-  colorFill.classList.remove("selected");
-  eraser.classList.add("selected");
-  prevBrushColor = brushColor;
-  brushColor = "white";
-})
-
 // Color-fill Canvas
 colorFill.addEventListener("click", () => {
   eraser.classList.remove("selected");
