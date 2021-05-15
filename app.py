@@ -4,12 +4,13 @@ import json
 
 app = Flask(__name__,template_folder='template')
 
-#now we use config.json
-with open('config.json','r') as c:
-    params = json.load(c)['params']
-local_server = True
+server = "localhost"
+username = "root"
+password = ""
+database = "pixelvibe"
 
-app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://{}:{}@{}/{}'.format(username,password,server,database)
+# app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/pixelvibe"
 db = SQLAlchemy(app)
 class Users(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
@@ -47,6 +48,6 @@ def login():
         db.session.commit()
         return redirect('loginpage')
     else:
-        return "get"
+        return redirect('loginpage')
 if __name__ == '__main__':
     app.run(debug=True)
