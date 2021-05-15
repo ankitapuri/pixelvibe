@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__,template_folder='template')
 
+
+
 server = "localhost"
 username = "root"
 password = ""
@@ -19,8 +21,14 @@ class Users(db.Model):
     password = db.Column(db.String(120), nullable=False)
 
 session={}
-@app.route('/',methods = ['POST', 'GET'])
-def hello_world():
+params={}
+params['login'] = False
+@app.route('/')
+def home():
+    return render_template('homepage.html',params=params)
+
+@app.route('/paint',methods = ['POST', 'GET'])
+def paint():
     if request.method == 'GET':
         print('get')
     else:
