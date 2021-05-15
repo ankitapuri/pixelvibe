@@ -34,15 +34,21 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#">FeedBack</a>
-              </li>
+              </li> -->
+              {% if params['login'] %}
               <li class="nav-item">
                 <a class="nav-link" href="/login">Login/SignUp</a>
               </li>
+              {% else %}
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="/logout">Logout</a>
               </li>
+              {% endif %}
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li> -->
               
             </ul>
            

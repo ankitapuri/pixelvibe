@@ -65,7 +65,9 @@ def signup():
 
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
+    global params
     if 'user' in session :
+        params['login'] = False
         return redirect('/')
     if request.method == 'POST':
         username = request.form.get('username')
@@ -79,6 +81,7 @@ def login():
             if user.password == password:
                 print('password matched')
                 session['user'] = username
+                params['login'] = False
                 return redirect('/')
             else:
                 print('wrong password')
@@ -87,5 +90,13 @@ def login():
         return redirect('loginpage')
     else:
         return redirect('loginpage')
+
+@app.route('/logout')
+def logout():
+    global session
+    session = {}
+    params['login'] = True
+    # flash("Logged out Successfully","success")
+    return redirect('/')
 if __name__ == '__main__':
     app.run(debug=True)
