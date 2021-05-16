@@ -32,16 +32,22 @@
                 <a class="nav-link" href="/paint">Paint</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#section-2">About</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#">FeedBack</a>
-              </li>
+              </li> -->
+              {% if params['login'] %}
               <li class="nav-item">
                 <a class="nav-link" href="/login">Login/SignUp</a>
               </li>
+              {% else %}
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href="#section-4">Contact</a>
               </li>
               
             </ul>
@@ -63,10 +69,10 @@
         <h1 class="text-center mb-4">Meet Our Team Members</h1>
         <div class="row">
           <div class="col">
-            <div class="card" style="width: 18rem;">
+            <div class="card mx-auto" style="width: 18rem;">
               <img src="/static/person-2.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Name</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
                 <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -76,10 +82,10 @@
             </div>
           </div>
           <div class="col">
-            <div class="card" style="width: 18rem;">
+            <div class="card mx-auto" style="width: 18rem;">
               <img src="/static/person-2.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Name</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
                 <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -89,10 +95,10 @@
             </div>
           </div>
           <div class="col">
-            <div class="card" style="width: 18rem;">
+            <div class="card mx-auto" style="width: 18rem;">
               <img src="/static/person-2.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Name</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
                 <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i class="fab fa-facebook"></i></a>
