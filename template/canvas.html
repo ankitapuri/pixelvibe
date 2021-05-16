@@ -366,7 +366,7 @@ ul {
   margin-left: 10px;
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   /* border: 2px solid rgb(194, 58, 121); */
   padding: 5px;
 }
@@ -385,6 +385,18 @@ ul {
 
 .color.selected {
   border: 3px solid white;
+}
+
+#palette-choose-any-prompt {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#palette-color-input {
+  height: 100%;
+  width: 100%;
 }
 
 /* responsive css */
@@ -453,6 +465,8 @@ ul {
         <div class="palette-color" style="background-color: #d400ff;"></div>
         <div class="palette-color" style="background-color: #ff1d4e;"></div>
         <div class="palette-color" style="background-color: #952300;"></div>
+        <div id="palette-choose-any-prompt">Choose any color!</div>
+        <input id="palette-color-input" type="color">
       </div>
 
     </div>
@@ -475,6 +489,7 @@ const downloadBtn = document.getElementById("download-button");           //Down
 const downloadLinkPNG = document.getElementById("png-download");          //Download 
 const downloadLinkJPEG = document.getElementById("jpeg-download");        //Download 
 const palette = document.getElementById('palette')                        //palette
+const colorInput = document.getElementById('palette-color-input')                        //palette
 const clear=document.getElementById('dlt')                                //clear
 
 const canvas = document.querySelector("#canvas");
@@ -490,8 +505,8 @@ let isDrawing = false;
 
 width = parseInt(document.getElementById("input-width").value);           //user input width
     height = parseInt(document.getElementById("input-height").value);         //user input - height
-    width = parseInt(document.getElementById("input-width").value);           //user input width
-    height = parseInt(document.getElementById("input-height").value);         //user input - height
+    width = parseInt(document.getElementById("input-width").value) || 16;           //user input width
+    height = parseInt(document.getElementById("input-height").value) || 16;         //user input - height
     console.log(width, height)
 
     canvas.height = 20 * height;
@@ -540,6 +555,9 @@ function draw(e) {
   }
 }
 
+colorInput.addEventListener("change", () => {
+  brushColor = colorInput.value
+})
 
 //Color palette
 palette.addEventListener('click', (e) => {
