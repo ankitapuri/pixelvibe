@@ -333,4 +333,9 @@ border-color:#4ced69 ;
     {
         font-size:1.3rem;
     }
+      #section-3 h1
+    {
+      font-size:2.5rem;
+      font-weight:700;
+    }
 }
