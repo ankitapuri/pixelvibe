@@ -20,6 +20,14 @@ class Users(db.Model):
     email = db.Column(db.String(20), nullable=False)
     password = db.Column(db.String(120), nullable=False)
 
+class Contacts(db.Model):
+    sno = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+    email = db.Column(db.String(20), nullable=False)
+    number = db.Column(db.String(20), nullable=False)
+    msg = db.Column(db.String(20), nullable=False)
+
+
 session={}
 params={}
 params['login'] = False
@@ -97,6 +105,22 @@ def logout():
     session = {}
     params['login'] = True
     # flash("Logged out Successfully","success")
+    return redirect('/')
+    
+@app.route('/contact',methods = ['POST', 'GET'])
+def contact():
+    if request.method == 'POST':
+        print('post')
+        name = request.form.get('name')
+        email = request.form.get('email')
+        number = request.form.get('number')
+        msg = request.form.get('msg')
+        print(name, email,number,msg)
+        entry = Contacts(name=name, email=email,number=number,msg=msg)
+        db.session.add(entry)
+        db.session.commit()
+    else:
+        print('get')
     return redirect('/')
 if __name__ == '__main__':
     app.run(debug=True)

@@ -46,9 +46,9 @@
                 <a class="nav-link" href="/logout">Logout</a>
               </li>
               {% endif %}
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="#section-4">Contact</a>
+              </li>
               
             </ul>
            
@@ -109,7 +109,32 @@
           </div>
         </div>
       </div>
+      <!-- contact section -->
+      <div class="container col-lg-8 col-sm-11 my-5 py-5 px-3" style="background-color:#417add;" id="section-4">
+        <h1 class="text-center">Feel Free to Contact Us</h1>
+        <form action="contact" method="post">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" aria-describedby="emailHelp">
 
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Number</label>
+            <input type="tel" name="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <textarea class="form-control" name="msg" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-warning">Submit</button>
+        </form>
+      </div>
       <footer class="footer-distributed py-5 px-0 bg-dark mt-5 ">
         <div class="container px-2">
     
