@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2021 at 10:56 AM
+-- Generation Time: May 16, 2021 at 05:54 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -24,37 +24,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `contacts`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `contacts` (
   `sno` int(200) NOT NULL,
-  `username` varchar(200) NOT NULL,
+  `name` varchar(200) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(200) NOT NULL
+  `number` varchar(20) NOT NULL,
+  `msg` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `contacts`
 --
 
-INSERT INTO `users` (`sno`, `username`, `email`, `password`) VALUES
-(1, 'arpit', '111arpit1@gmail.com', '1'),
-(2, 'arpit', '111arpit1@gmail.com', '1'),
-(3, 'cs2019021042', 'arpit456jain@gmail.com', '123'),
-(4, 'cs2019021042', '111arpit1@gmail.com', '1234'),
-(5, 'testing ', 'testing@gmail.com', '1234'),
-(6, 'arpit', '111arpit1@gmail.com', '1'),
-(7, 'arpit', '111arpit1@gmail.com', '1');
+INSERT INTO `contacts` (`sno`, `name`, `email`, `number`, `msg`) VALUES
+(1, 'Arpit Jain', '111arpit1@gmail.com', '09455129077', 'a'),
+(2, 'Arpit Jain', '111arpit1@gmail.com', 'a', 'a'),
+(3, 'Arpit Jain', '111arpit1@gmail.com', '+919455129077', 'hello this is for testing'),
+(4, 'Arpit Jain', '111arpit1@gmail.com', '9455129088', 'egeargbbvwsgvbr');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `users`
+-- Indexes for table `contacts`
 --
-ALTER TABLE `users`
+ALTER TABLE `contacts`
   ADD PRIMARY KEY (`sno`);
 
 --
@@ -62,10 +60,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `contacts`
 --
-ALTER TABLE `users`
-  MODIFY `sno` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `contacts`
+  MODIFY `sno` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

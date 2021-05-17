@@ -192,7 +192,7 @@ The PixelVibe is released under the under terms of the [MIT License](LICENSE).
 <tr>
     <td align="center" thead="Mentor"><a href="https://github.com/avinal"><img src="https://avatars.githubusercontent.com/u/74113200?s=460&u=471841083a35420713383fb606d48ff7ccb38424&v=4" width="100px;" alt="Mentor"/><br /><sub><b>Avinal Kumar</b></sub></a></td>
     <td align="center" thead="Mentor"><a href="https://github.com/rish-singhal "><img src="https://avatars.githubusercontent.com/u/49281840?s=400&u=e6a8eeb6c6d68d6ec8eb2e9dd260bdf594f68c7b&v=4" width="100px;" alt="admin"/><br /><sub><b>Rishabh Singhal</b></sub></a></td>
-    <td align="center" thead="Mentor"><a href="https://github.com/adarshvulli"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQEUMEb3TRvtNA/profile-displayphoto-shrink_200_200/0/1607930807751?e=1620864000&v=beta&t=Z1O93rteAb2Xgh7chWoHxng60JWBu8NkKQQuKQ0DKBE" width="100px;" alt="admin"/><br /><sub><b>Adarsh Vulli</b></sub></a></td>
+    <td align="center" thead="Mentor"><a href="https://github.com/adarshvulli"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQEUMEb3TRvtNA/profile-displayphoto-shrink_200_200/0/1607930807751?e=1626912000&v=beta&t=Boux79e3-3IcU9wl5i7gkdPgSRGKhd9OapJW4ArrvvQ" width="100px;" alt="admin"/><br /><sub><b>Adarsh Vulli</b></sub></a></td>
   </tr>
   </table>
 

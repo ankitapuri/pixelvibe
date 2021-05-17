@@ -202,6 +202,77 @@ h2:first-of-type {
   margin: 10px;
   background: -webkit-linear-gradient(to left, #424e34, #91ff14);
 }
+.settings{
+    position: absolute;
+    right: 5px;
+    top:5px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .StyleSwitcher{
+    position: absolute;
+    top:0px;
+    right: -202px;
+    width: 200px;
+    color: #000;
+    font-weight: bolder;
+    background-color: white;
+    box-shadow: 5px 6px 8px rgb(61, 58, 58);
+    text-align: start;
+    padding: 10px;
+    transform: scale(0);
+  }
+  .unhideStylenav{
+    display: flex;
+    flex-direction: column;
+    transform: scale(1);
+    transition: transform.4s ease;
+  }
+  
+  #circlestyle1{
+    background-color: #FFD700;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 3px;
+    cursor: pointer;
+  }
+  #circlestyle2 {
+    background-color:#4feff7;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+     margin: 3px;
+      cursor: pointer;
+  }
+  
+  #circlestyle3 {
+    background-color:  #98ff98;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+      margin: 3px;
+       cursor: pointer;
+  }
+  #circlestyle4 {
+    background-color: #FFFDD0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+      margin: 3px;
+       cursor: pointer;
+  }
+  
+  #circlestyle5 {
+    background-color: rgb(5, 255, 5);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+      margin: 3px;
+       cursor: pointer;
+  }
+  
 
 
     </style>
@@ -222,6 +293,27 @@ h2:first-of-type {
   <!-- Grid Form -->
   <section id="grid-form">
     <form id="size-picker" class="size-picker-form scale-up-center" action="/paint" method="post"> 
+      <div class="settings"> <i class="fas fa-cog"></i></div>
+             <div class="StyleSwitcher ">
+                 <div style="padding-bottom: 3px;border-bottom: 1px solid rgb(110, 110, 110);">Style Switcher </div>
+                 <div style="display: flex; flex-direction: row;"> 
+                   <div id="circlestyle1"></div> 
+                   <div id="circlestyle2"></div>
+                   <div id="circlestyle3"></div>
+                   <div id="circlestyle4"></div>
+                    <div id="circlestyle5"></div>
+                </div>
+                <div style="padding-bottom: 3px;border-bottom: 1px solid rgb(110, 110, 110);"> Body Skin</div>
+                <div >
+                     <input type="radio" name="theme" value="light" id="lid">
+                    <label for="lid">Light</label> 
+                     <input type="radio" name="theme" value="dark" id="dar"> 
+                     <label for="dar">Dark</label>
+                     <input type="radio" name="theme" value="dim" id="dim"> 
+                     <label for="dim">Dim</label>
+
+                </div>
+           </div>
       <div class="form-group">
         <h2 class="section-heading"> Choose Grid Size </h2>
         <label>Height:</label>
@@ -241,5 +333,78 @@ h2:first-of-type {
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/59a498d1d1.js" crossorigin="anonymous"></script>
+    <script>
+      document.getElementsByClassName("settings")[0].addEventListener('click',()=>{
+     let styleclass=document.getElementsByClassName("StyleSwitcher")[0].classList;
+
+     if(styleclass.contains("unhideStylenav"))
+     {
+       styleclass.remove("unhideStylenav");
+     }
+     else{
+       styleclass.add("unhideStylenav");
+     }
+
+})
+
+document.getElementById("circlestyle1").addEventListener("click", () => {
+    
+     document.getElementsByClassName("section-heading")[0].style.color="#FFD700";
+     document.getElementsByClassName("form-group wagnasty-webfont")[0].style.color="#FFD700";
+     document.getElementById("wagnasty").style.color="#FFD700";
+     
+    
+});
+document.getElementById("circlestyle2").addEventListener("click", () => {
+  
+     document.getElementsByClassName("section-heading")[0].style.color =
+       "#4feff7";
+     document.getElementsByClassName(
+       "form-group wagnasty-webfont"
+     )[0].style.color = "#4feff7";
+     document.getElementById("wagnasty").style.color = "#4feff7";
+
+});
+document.getElementById("circlestyle3").addEventListener("click", () => {
+  document.getElementsByClassName("section-heading")[0].style.color =
+    " #98ff98";
+  document.getElementsByClassName(
+    "form-group wagnasty-webfont"
+  )[0].style.color = "#98ff98";
+  document.getElementById("wagnasty").style.color = "#98ff98";
+});
+document.getElementById("circlestyle4").addEventListener("click", () => {
+
+   document.getElementsByClassName("section-heading")[0].style.color =
+     "#FFFDD0";
+   document.getElementsByClassName(
+     "form-group wagnasty-webfont"
+   )[0].style.color = "#FFFDD0";
+   document.getElementById("wagnasty").style.color = "#FFFDD0";
+
+});
+document.getElementById("circlestyle5").addEventListener("click", () => {
+  
+   document.getElementsByClassName("section-heading")[0].style.color =
+     "rgb(5, 255, 5)";
+   document.getElementsByClassName(
+     "form-group wagnasty-webfont"
+   )[0].style.color = "rgb(5, 255, 5)";
+   document.getElementById("wagnasty").style.color = "rgb(5, 255, 5)";
+});
+
+document.getElementById("dar").addEventListener("click",()=>{
+      document.getElementsByTagName("body")[0].style.backgroundColor= "#0d1117";
+});
+
+document.getElementById("lid").addEventListener("click", () => {
+  document.getElementsByTagName("body")[0].style.backgroundColor = "#fdb1bb";
+});
+
+document.getElementById("dim").addEventListener("click", () => {
+  document.getElementsByTagName("body")[0].style.backgroundColor = "#696969";
+});
+
+    </script>
   </body>
 </html>
