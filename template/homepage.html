@@ -62,7 +62,7 @@
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
+            <a class="nav-link" onclick="confirmation()" href="#">Logout</a>
           </li>
           {% endif %}
 
@@ -297,6 +297,27 @@
     });
   </script>
   <script src="/static/JS/darkmode.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    function confirmation(){
+    swal({
+      title: "Are you sure?",
+      text: "You Want to LogOut!!",
+      icon: "warning",
+      buttons: true,
+      buttons: ['cancel','Yes, Log out'],
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        window.location = "/logout";
+      } else {
+        
+      }
+    });
+    }
+  </script>
 </body>
 
 </html>
