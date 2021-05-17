@@ -30,7 +30,7 @@ class Contacts(db.Model):
 
 session={}
 params={}
-params['login'] = False
+params['login'] = True
 @app.route('/')
 def home():
     return render_template('homepage.html',params=params)
