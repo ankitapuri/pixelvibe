@@ -316,6 +316,62 @@ background: #fefefe;
 border-color:#4ced69 ;
 }
 
+
+/* css for back to top start */
+html {
+  scroll-behavior: smooth;
+}
+a
+{
+  text-decoration: none;
+}
+#button {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 52px;
+  height: 52px;
+  text-align: center;
+  border-radius: 25px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: rgb(57, 26, 197);
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styles for the content section */
+
+
+@media (min-width: 500px) {
+  
+  #button {
+    margin: 30px;
+  }
+}
+/* css for back to top ends */
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (max-width: 992px) {
 #section-1
