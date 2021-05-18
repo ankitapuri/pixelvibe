@@ -191,9 +191,6 @@ ul {
 .show {
   display: block;
 }
-.selected{
-  background-color:lightgray;
-}
 
 /*CSS for the canvas*/
 
@@ -203,7 +200,7 @@ ul {
   width: 75%;
   max-width: 550px;
   background-color: white;
-  cursor:crosshair;
+  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADNklEQVRIS63UTWgUdxjH8e8zbvbFTXZ3dlXatLWHKoqhKFQpCD2UvpFKmsrGVYIoCoIoSsGT4EERz95z0IpU2mKlFltaWipF20MrscGmMVVjgtksJu1mM/v+MvMv89801dZosnFOc5hnPvz+z/N/5JW26DGBTCza8sPXhw/1y7sHyzzFRzasMQ9jGCd2drxZ2b7p9RFRXFI458LR8RvSdrSyUEu2dqzb0Nn+1pX329/w2elx7GLB/WfNn7/8u2/ykx2yjb6FIKJufeXDDP2KYrVj2xSSI9hWklD6OEJhDOiQOL2NIuIWqj9/PI5SR9x3p5Yn/9MBmPyDlggKuI9DpyT4uRGkDiSvrsLLb3bZ8jiTR2gyesmPgJOC5jAIpBA6Jc4v80XqgLrsIfntVcc6/WqmP0XwBfCGoTAKzig0N4MIaRza55tEAxq5ySoUl1C8lO5Hgs/XkWIKqkMQimjkLxSbZQtX5ppkBtBIPysw+Fw5tE3dAv8y8JtQGIfKMITdJIoJhG6J891ckIcAjQzyHA5fKsXazAAEngF/FAr3oToGoQCIjYVNQrbyzZOQ/wEa6aWVgD6udZlBxLcE/DEoTkA5CRE/iEMOxXbZwsXHIY8EpnvSClxUDuutIfCGILC0jpRGIeImqWEh7JYuPpsNmRXQyAAx4Aul2Oj2xBeBwLI6UnGPy6eRErBttiSPBR5ALgCvTd1GmhZD4Fkop6EwBGZQN97dL7uki0//m+SJwHTjl+DwkYK3c8NgeMAd45KL3AQzpEc4i8N+SXD2QWROgEausZggFxS8Y90BTwCCrXWkNABh98YbuKt+j8T/ReYMaKSPIF4+BjZN3UEWeetJKlOQvwGmqZO4yD7p4pRbMy9AI9eJ4OeMu2WzI/X6lhehnIF8H5gxjRQRPpA4PfMGNHKPAHnOoei0hhFjEXp/VVOQH4RwDAyDKrC7IWAGyXIaIeEmUQpalkNtEKwUmEs1crJhYKYnHnow6M4lwSlDKArVu5CdpBiN8fKCgOnpaiLIh0B37h4oG5pL5KTKLklwfsHA9Bb2YtCjFDsKSdK1MfZGdnK+oSmabefoxmd5jya+l5VM/PPd34paOjK8tyR0AAAAAElFTkSuQmCC") 0 0 , crosshair;
   touch-action: none;
   image-rendering: -moz-crisp-edges;
   image-rendering: -webkit-crisp-edges;
@@ -254,6 +251,10 @@ ul {
 
 #b-margin {
   padding-bottom: 30px;
+}
+
+.selected{
+  background-color: lightgray;
 }
 
 /* CSS for the back button */
@@ -360,7 +361,7 @@ ul {
   margin-left: 10px;
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   /* border: 2px solid rgb(194, 58, 121); */
   padding: 5px;
 }
@@ -379,6 +380,18 @@ ul {
 
 .color.selected {
   border: 3px solid white;
+}
+
+#palette-choose-any-prompt {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#palette-color-input {
+  height: 100%;
+  width: 100%;
 }
 
 /* responsive css */
@@ -490,6 +503,8 @@ ul {
         <div class="palette-color" style="background-color: #d400ff;"></div>
         <div class="palette-color" style="background-color: #ff1d4e;"></div>
         <div class="palette-color" style="background-color: #952300;"></div>
+        <div id="palette-choose-any-prompt">Choose any color!</div>
+        <input id="palette-color-input" type="color">
       </div>
 
     </div>
@@ -502,7 +517,7 @@ const downloadBtn = document.getElementById("download-button");           //Down
 const downloadLinkPNG = document.getElementById("png-download");          //Download 
 const downloadLinkJPEG = document.getElementById("jpeg-download");        //Download 
 const palette = document.getElementById('palette')                        //palette
-const colorInput = document.getElementById('palette-color-input')         //palette color input
+const colorInput = document.getElementById('palette-color-input')         //palette Color Input
 const brush=document.getElementById('brush')                              //brush
 const clear=document.getElementById('delete')                             //clear
 const eraser=document.getElementById('eraser')                             //eraser
@@ -516,15 +531,15 @@ context.globalAlpha = 1;
 canvas.style.display = "block";
 
 // Global Variables
-let brushColor = '#000000';         // default brush color (black)
-let prevBrushColor = '#000000';  
+let brushColor = '#000';         // default brush color (black)
+let prevBrushColor='#000';
 let isDrawing = false;
 
 
 width = parseInt(document.getElementById("input-width").value);           //user input width
     height = parseInt(document.getElementById("input-height").value);         //user input - height
-    width = parseInt(document.getElementById("input-width").value);           //user input width
-    height = parseInt(document.getElementById("input-height").value);         //user input - height
+    width = parseInt(document.getElementById("input-width").value) || 16;           //user input width
+    height = parseInt(document.getElementById("input-height").value) || 16;         //user input - height
     console.log(width, height)
 
     canvas.height = 20 * height;
@@ -573,6 +588,9 @@ function draw(e) {
   }
 }
 
+colorInput.addEventListener("change", () => {
+  brushColor = colorInput.value
+})
 
 //Color palette
 palette.addEventListener('click', (e) => {
@@ -633,7 +651,6 @@ clear.addEventListener("click", ()=>{
   clear.classList.remove("selected");
 })
 
-
 // Color-fill Canvas
 colorFill.addEventListener("click", () => {
   eraser.classList.remove("selected");
@@ -641,8 +658,7 @@ colorFill.addEventListener("click", () => {
   colorFill.classList.add("selected");
   context.fillStyle = prevBrushColor; 
   context.fillRect(0, 0, canvas.width, canvas.height);
-})
-
+}) 
 
    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
