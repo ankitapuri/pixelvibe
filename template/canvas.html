@@ -359,7 +359,9 @@ ul {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, 1fr);
   /* border: 2px solid rgb(194, 58, 121); */
-  padding: 5px;
+  padding: 10px;
+  background-color: whitesmoke;
+  border-radius: 10px;
 }
 
 #palette-prompt {
@@ -368,8 +370,9 @@ ul {
   font-size: 2rem;
 }
 
-.palette-color {
+.palette-color, #palette-color-input {
   cursor: pointer;
+  border-radius: 10px;
 }
 
 /* to highlight the currently chosen color, toggle the selected class on the color */
@@ -388,6 +391,7 @@ ul {
 #palette-color-input {
   height: 100%;
   width: 100%;
+  border: none;
 }
 
 /* responsive css */
@@ -500,7 +504,7 @@ ul {
         <div class="palette-color" style="background-color: #ff1d4e;"></div>
         <div class="palette-color" style="background-color: #952300;"></div>
         <div id="palette-choose-any-prompt">Choose any color!</div>
-        <input id="palette-color-input" type="color">
+        <input id="palette-color-input" type="color" value="#29FA98">
       </div>
 
     </div>
