@@ -24,387 +24,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
     <title>Canvas</title>
-    <style>
-        body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  text-align: center;
-  font-weight: bold;
-  background-color: #fdb1bb;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-        /* Title Section */
-
-.heading {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.title-img {
-  height: 130px;
-  width: 130px;
-  left: 30%;
-  transform: rotate(-20deg);
-}
-
-.color_change {
-  color: #313131;
-  font-size: 5rem;
-  font-weight: bold;
-  animation: colorchange 8s infinite alternate;
-}
-
-@keyframes colorchange {
-  0% {
-    color: #6e1224;
-  }
-  5% {
-    color: #5e17eb;
-  }
-  10% {
-    color: #8e44ad;
-  }
-  15% {
-    color: #b84352;
-  }
-  20% {
-    color: #1abc9c;
-  }
-  25% {
-    color: #d61ba7;
-  }
-
-  30% {
-    color: #d35400;
-  }
-
-  40% {
-    color: #7f91aa;
-  }
-
-  50% {
-    color: #34495e;
-  }
-
-  60% {
-    color: blue;
-  }
-
-  70% {
-    color: #383a3b;
-  }
-  80% {
-    color: #0a7029;
-  }
-
-  90% {
-    color: #2980b9;
-  }
-
-  100% {
-  }
-}
-
-
-/* Canvas-div Section */
-
-#canvas-div {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-
-/* Dropdown Button */
-.dropbtn {
-  display: inline-block;
-  cursor: pointer;
-  padding: 12px;
-  margin: 10px;
-  border: none;
-  outline: none;
-  background: whitesmoke;
-  border-radius: 3px;
-}
-
-.bar1,
-.bar2,
-.bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-.change .bar2 {
-  opacity: 0;
-}
-
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 200px;
-  z-index: 1;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.dropdown-content li {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  padding-left: 0;
-}
-
-.dropdown-content li:hover {
-  background-color: #ddd;
-  cursor: pointer;
-}
-
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-.show {
-  display: block;
-}
-
-/*CSS for the canvas*/
-
-.main-canvas {
-  margin: 10px;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
-  width: 75%;
-  max-width: 550px;
-  background-color: white;
-  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADNklEQVRIS63UTWgUdxjH8e8zbvbFTXZ3dlXatLWHKoqhKFQpCD2UvpFKmsrGVYIoCoIoSsGT4EERz95z0IpU2mKlFltaWipF20MrscGmMVVjgtksJu1mM/v+MvMv89801dZosnFOc5hnPvz+z/N/5JW26DGBTCza8sPXhw/1y7sHyzzFRzasMQ9jGCd2drxZ2b7p9RFRXFI458LR8RvSdrSyUEu2dqzb0Nn+1pX329/w2elx7GLB/WfNn7/8u2/ykx2yjb6FIKJufeXDDP2KYrVj2xSSI9hWklD6OEJhDOiQOL2NIuIWqj9/PI5SR9x3p5Yn/9MBmPyDlggKuI9DpyT4uRGkDiSvrsLLb3bZ8jiTR2gyesmPgJOC5jAIpBA6Jc4v80XqgLrsIfntVcc6/WqmP0XwBfCGoTAKzig0N4MIaRza55tEAxq5ySoUl1C8lO5Hgs/XkWIKqkMQimjkLxSbZQtX5ppkBtBIPysw+Fw5tE3dAv8y8JtQGIfKMITdJIoJhG6J891ckIcAjQzyHA5fKsXazAAEngF/FAr3oToGoQCIjYVNQrbyzZOQ/wEa6aWVgD6udZlBxLcE/DEoTkA5CRE/iEMOxXbZwsXHIY8EpnvSClxUDuutIfCGILC0jpRGIeImqWEh7JYuPpsNmRXQyAAx4Aul2Oj2xBeBwLI6UnGPy6eRErBttiSPBR5ALgCvTd1GmhZD4Fkop6EwBGZQN97dL7uki0//m+SJwHTjl+DwkYK3c8NgeMAd45KL3AQzpEc4i8N+SXD2QWROgEausZggFxS8Y90BTwCCrXWkNABh98YbuKt+j8T/ReYMaKSPIF4+BjZN3UEWeetJKlOQvwGmqZO4yD7p4pRbMy9AI9eJ4OeMu2WzI/X6lhehnIF8H5gxjRQRPpA4PfMGNHKPAHnOoei0hhFjEXp/VVOQH4RwDAyDKrC7IWAGyXIaIeEmUQpalkNtEKwUmEs1crJhYKYnHnow6M4lwSlDKArVu5CdpBiN8fKCgOnpaiLIh0B37h4oG5pL5KTKLklwfsHA9Bb2YtCjFDsKSdK1MfZGdnK+oSmabefoxmd5jya+l5VM/PPd34paOjK8tyR0AAAAAElFTkSuQmCC") 0 0 , crosshair;
-  touch-action: none;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -webkit-crisp-edges;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-  margin-left: 20%;
-}
-
-.area {
-  background: rgb(0, 0, 0);
-  background: -webkit-linear-gradient(to left, #363583, #1b25e4);
-  width: 100%;
-  height: 100vh;
-}
-
-.wrap {
-  position: relative;
-  top: 70%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  animation: rotate 25s infinite linear;
-  margin: 10px;
-  background: -webkit-linear-gradient(to left, #424e34, #91ff14);
-}
-
-@keyframes rotate {
-  100% {
-    transform: rotateY(360deg) rotateX(360deg);
-  }
-}
-
-.c {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  opacity: 0;
-}
-
-.c:nth-child(1) {
-  animation: orbit1 25s infinite;
-  animation-delay: 0.01s;
-  background-color: rgba(255, 85, 0, 1);
-}
-
-#b-margin {
-  padding-bottom: 30px;
-}
-
-/* CSS for the back button */
-
-.round {
-  position: fixed;
-  top: 84%;
-  left: 10%;
-  border: 4px solid #000;
-  width: 80px;
-  height: 80px;
-  border-radius: 100%;
-  padding-top: 8px;
-  padding-left: 5px;
-  cursor: pointer;
-}
-
-#cta {
-  width: 100%;
-  position: absolute;
-}
-
-#cta .arrow {
-  left: 14%;
-}
-
-.arrow {
-  position: absolute;
-  bottom: 0;
-  margin-left: 0px;
-  width: 24px;
-  height: 24px;
-  background-size: contain;
-  top: 17px;
-}
-
-.segunda {
-  margin-left: 16px;
-}
-
-.next {
-  background-image: url(https://image.flaticon.com/icons/png/128/271/271220.png);
-}
-
-@keyframes bounceAlpha {
-  0% {
-    opacity: 1;
-    transform: translateX(0px) scale(1);
-  }
-  25% {
-    opacity: 0;
-    transform: translateX(10px) scale(0.9);
-  }
-  26% {
-    opacity: 0;
-    transform: translateX(-10px) scale(0.9);
-  }
-  55% {
-    opacity: 1;
-    transform: translateX(0px) scale(1);
-  }
-}
-
-.bounceAlpha {
-  animation-name: bounceAlpha;
-  animation-duration: 1.4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-.arrow.primera.bounceAlpha {
-  animation-name: bounceAlpha;
-  animation-duration: 1.4s;
-  animation-delay: 0.2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-.round:hover .arrow {
-  animation-name: bounceAlpha;
-  animation-duration: 1.4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-.round:hover .arrow.primera {
-  animation-name: bounceAlpha;
-  animation-duration: 1.4s;
-  animation-delay: 0.2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-
-
-
-
-/* Colour palette styles */
-
-#palette {
-  display: grid;
-  height: 50vh;
-  width: 20vw;
-  margin-left: 10px;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  /* border: 2px solid rgb(194, 58, 121); */
-  padding: 5px;
-}
-
-#palette-prompt {
-  font-family: "Chewy", cursive;
-  grid-column: span 3;
-  font-size: 2rem;
-}
-
-.palette-color {
-  cursor: pointer;
-}
-
-/* to highlight the currently chosen color, toggle the selected class on the color */
-
-.color.selected {
-  border: 3px solid white;
-}
-
-#palette-choose-any-prompt {
-  grid-column: span 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#palette-color-input {
-  height: 100%;
-  width: 100%;
-}
-
-/* responsive css */
-
-@media (max-width: 400px) {
-  .size-picker-form {
-    margin-left: 8%;
-    margin-right: 8%;
-  }
-}
-
-.navbar {
-    background: #203a68;
-    font-size: 1.1rem;
-    box-shadow: 0 0.3rem 2rem rgb(0 0 0 / 10%);
-}
-    </style>
+    <link rel="stylesheet" href="/static/css/canvas.css">
   </head>
   <body>
     <!-- navbar start -->
@@ -446,19 +66,19 @@ ul {
   <!-- navbar ends -->
 
        <!-- Title -->
-  <section id="title">
-    <div class="row heading">
-      <div>
+  <div class="container" id="section-1">
+    <div class="row mx-auto">
+      <div class="col mx-auto">
         <img src="/static/favicon_pixelVibe.png" class="title-img">
-      </div>
-      <div>
         <h1 class="color_change main-heading">PixelVibe</h1>
       </div>
     </div>
-  </section>
+  </div>
+   <!-- Title -->
 
-  <input type="text" id="input-height" placeholder="16" name="height" required value={{height}} style="visibility:hidden">
-   <input type="text" id="input-width" placeholder="16" name="width" required value={{width}} style="visibility:hidden">
+  <!-- Hidden inputs do not remove this at any cost -->
+    <input type="text" id="input-height" placeholder="16" name="height" required value={{height}} style="visibility:hidden">
+  <input type="text" id="input-width" placeholder="16" name="width" required value={{width}} style="visibility:hidden">
 
   <!-- Canvas supposed to be hidden before submitting -->
   <section id=canvas-section>
@@ -508,11 +128,6 @@ ul {
 
   
    <script>
-     
-const downloadBtn = document.getElementById("download-button");           //Download 
-const downloadLinkPNG = document.getElementById("png-download");          //Download 
-const downloadLinkJPEG = document.getElementById("jpeg-download");        //Download 
-const palette = document.getElementById('palette')                        //palette
 const colorInput = document.getElementById('palette-color-input')                        //palette
 const clear=document.getElementById('dlt')                                //clear
 
@@ -527,7 +142,7 @@ let brushColor = '#000000';         // default brush color (black)
 let isDrawing = false;
 
 
-width = parseInt(document.getElementById("input-width").value);           //user input width
+    width = parseInt(document.getElementById("input-width").value);           //user input width
     height = parseInt(document.getElementById("input-height").value);         //user input - height
     width = parseInt(document.getElementById("input-width").value) || 16;           //user input width
     height = parseInt(document.getElementById("input-height").value) || 16;         //user input - height
@@ -584,6 +199,7 @@ colorInput.addEventListener("change", () => {
 })
 
 //Color palette
+const palette = document.getElementById('palette')                        //palette
 palette.addEventListener('click', (e) => {
   const boxShadow = 'inset 0 0 6px #616161';
   brushColor = e.target.style.backgroundColor;
@@ -599,6 +215,8 @@ palette.addEventListener('click', (e) => {
 
 
 //Download Image
+const downloadLinkPNG = document.getElementById("png-download");          //Download 
+const downloadLinkJPEG = document.getElementById("jpeg-download");        //Download 
 downloadLinkPNG.addEventListener("click", (e) => {          //PNG
   e.preventDefault();
   
