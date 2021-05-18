@@ -253,6 +253,10 @@ ul {
   padding-bottom: 30px;
 }
 
+.selected{
+  background-color: lightgray;
+}
+
 /* CSS for the back button */
 
 .round {
@@ -473,11 +477,11 @@ ul {
         </button>
         <div id="myDropdown" class="dropdown-content">
           <ul class="list">
-            <li>Brush</li>
-            <li id="dlt">Delete <i class="fas fa-trash"></i></li>
+            <li id="brush">Brush</li>
+            <li id="delete">Delete <i class="fas fa-trash"></i></li>
             <li>Undo</li>
-            <li>Eraser</li>
-            <li>Color fill</li>
+            <li id="eraser">Eraser</li>
+            <li id="color-fill">Color fill</li>
           </ul>
         </div>
       </div>
@@ -513,8 +517,12 @@ const downloadBtn = document.getElementById("download-button");           //Down
 const downloadLinkPNG = document.getElementById("png-download");          //Download 
 const downloadLinkJPEG = document.getElementById("jpeg-download");        //Download 
 const palette = document.getElementById('palette')                        //palette
-const colorInput = document.getElementById('palette-color-input')                        //palette
-const clear=document.getElementById('dlt')                                //clear
+const colorInput = document.getElementById('palette-color-input')         //palette Color Input
+const brush=document.getElementById('brush')                              //brush
+const clear=document.getElementById('delete')                             //clear
+const eraser=document.getElementById('eraser')                             //eraser
+const colorFill=document.getElementById("color-fill")                     //Color-fill
+
 
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
@@ -523,7 +531,8 @@ context.globalAlpha = 1;
 canvas.style.display = "block";
 
 // Global Variables
-let brushColor = '#000000';         // default brush color (black)
+let brushColor = '#000';         // default brush color (black)
+let prevBrushColor='#000';
 let isDrawing = false;
 
 
@@ -587,6 +596,7 @@ colorInput.addEventListener("change", () => {
 palette.addEventListener('click', (e) => {
   const boxShadow = 'inset 0 0 6px #616161';
   brushColor = e.target.style.backgroundColor;
+  prevBrushColor=brushColor;
 
   for (var child of document.getElementById('palette').children) {
     child.style.boxShadow = null;
@@ -625,10 +635,30 @@ function showDropdownMenu(list) {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
+//Brush
+brush.addEventListener("click", () => {
+  eraser.classList.remove("selected");
+  colorFill.classList.remove("selected");
+  brush.classList.add("selected");
+  brushColor = prevBrushColor;
+})
+
+
 //Clear Canvas
 clear.addEventListener("click", ()=>{
-  context.clearRect(0,0,canvas.width,canvas.height)
+  clear.classList.add("selected");
+  context.clearRect(0,0,canvas.width,canvas.height);
+  clear.classList.remove("selected");
 })
+
+// Color-fill Canvas
+colorFill.addEventListener("click", () => {
+  eraser.classList.remove("selected");
+  brush.classList.remove("selected");
+  colorFill.classList.add("selected");
+  context.fillStyle = prevBrushColor; 
+  context.fillRect(0, 0, canvas.width, canvas.height);
+}) 
 
    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
