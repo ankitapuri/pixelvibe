@@ -347,16 +347,7 @@ ul {
   animation-timing-function: linear;
 }
 
-/* Download button */
 
-.btn-download {
-
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-}
 
 
 
@@ -399,9 +390,52 @@ ul {
   }
 }
 
+.navbar {
+    background: #203a68;
+    font-size: 1.1rem;
+    box-shadow: 0 0.3rem 2rem rgb(0 0 0 / 10%);
+}
     </style>
   </head>
   <body>
+    <!-- navbar start -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="home.html"><img src="/static/assets/nav.png"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/#section-2">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#section-4">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Download
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" id="png-download" href="#">PNG</a></li>
+              <li><a class="dropdown-item" id="jpeg-download" href="#">JPEG</a></li>
+            </ul>
+          </li>
+        
+          
+          </ul>
+
+      </div>
+    </div>
+  </nav>
+  <!-- navbar ends -->
+
        <!-- Title -->
   <section id="title">
     <div class="row heading">
@@ -460,17 +494,7 @@ ul {
 
     </div>
   </section>
-<!-- Download button -->
-<section id="download"></section>
-<div class="dropdown" id="download-button">
-  <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Download
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" id="png-download" href="#">PNG</a></li>
-    <li><a class="dropdown-item" id="jpeg-download" href="#">JPEG</a></li>
-  </ul>
-</div>
+
   
    <script>
      
