@@ -21,7 +21,10 @@
     crossorigin="anonymous" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-
+    i
+    {
+      font-size:1.5rem !important;
+    }
   </style>
 </head>
 
@@ -63,7 +66,14 @@
           </li>
           {% endif %}
 
-
+          <li class="nav-item">
+            <!-- partial:index.partial.html -->
+            <label id ="switch" class="switch">
+              <input type="checkbox" onclick="myFunction()" id="slider">
+              <span class="slider round"></span>
+            </label>
+            <!-- partial -->
+          </li>
         </ul>
 
       </div>
@@ -88,7 +98,7 @@
 
 
   <!-- our team members start -->
-  <div class="container" id="section-3">
+  <div class="container mb-5 pb-5" id="section-3">
     <h1 class="text-center mb-4">Meet Our Team Members</h1>
     <div class="row">
       <div class="col">
@@ -286,6 +296,7 @@
       $('html, body').animate({ scrollTop: 0 }, '300');
     });
   </script>
+  <script src="/static/JS/darkmode.js"></script>
 </body>
 
 </html>
