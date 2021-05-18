@@ -203,7 +203,7 @@ ul {
   width: 75%;
   max-width: 550px;
   background-color: white;
-  cursor: crosshair;
+  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADNklEQVRIS63UTWgUdxjH8e8zbvbFTXZ3dlXatLWHKoqhKFQpCD2UvpFKmsrGVYIoCoIoSsGT4EERz95z0IpU2mKlFltaWipF20MrscGmMVVjgtksJu1mM/v+MvMv89801dZosnFOc5hnPvz+z/N/5JW26DGBTCza8sPXhw/1y7sHyzzFRzasMQ9jGCd2drxZ2b7p9RFRXFI458LR8RvSdrSyUEu2dqzb0Nn+1pX329/w2elx7GLB/WfNn7/8u2/ykx2yjb6FIKJufeXDDP2KYrVj2xSSI9hWklD6OEJhDOiQOL2NIuIWqj9/PI5SR9x3p5Yn/9MBmPyDlggKuI9DpyT4uRGkDiSvrsLLb3bZ8jiTR2gyesmPgJOC5jAIpBA6Jc4v80XqgLrsIfntVcc6/WqmP0XwBfCGoTAKzig0N4MIaRza55tEAxq5ySoUl1C8lO5Hgs/XkWIKqkMQimjkLxSbZQtX5ppkBtBIPysw+Fw5tE3dAv8y8JtQGIfKMITdJIoJhG6J891ckIcAjQzyHA5fKsXazAAEngF/FAr3oToGoQCIjYVNQrbyzZOQ/wEa6aWVgD6udZlBxLcE/DEoTkA5CRE/iEMOxXbZwsXHIY8EpnvSClxUDuutIfCGILC0jpRGIeImqWEh7JYuPpsNmRXQyAAx4Aul2Oj2xBeBwLI6UnGPy6eRErBttiSPBR5ALgCvTd1GmhZD4Fkop6EwBGZQN97dL7uki0//m+SJwHTjl+DwkYK3c8NgeMAd45KL3AQzpEc4i8N+SXD2QWROgEausZggFxS8Y90BTwCCrXWkNABh98YbuKt+j8T/ReYMaKSPIF4+BjZN3UEWeetJKlOQvwGmqZO4yD7p4pRbMy9AI9eJ4OeMu2WzI/X6lhehnIF8H5gxjRQRPpA4PfMGNHKPAHnOoei0hhFjEXp/VVOQH4RwDAyDKrC7IWAGyXIaIeEmUQpalkNtEKwUmEs1crJhYKYnHnow6M4lwSlDKArVu5CdpBiN8fKCgOnpaiLIh0B37h4oG5pL5KTKLklwfsHA9Bb2YtCjFDsKSdK1MfZGdnK+oSmabefoxmd5jya+l5VM/PPd34paOjK8tyR0AAAAAElFTkSuQmCC") 0 0 , crosshair;
   touch-action: none;
   image-rendering: -moz-crisp-edges;
   image-rendering: -webkit-crisp-edges;
@@ -369,7 +369,7 @@ ul {
   margin-left: 10px;
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   /* border: 2px solid rgb(194, 58, 121); */
   padding: 5px;
 }
@@ -388,6 +388,18 @@ ul {
 
 .color.selected {
   border: 3px solid white;
+}
+
+#palette-choose-any-prompt {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#palette-color-input {
+  height: 100%;
+  width: 100%;
 }
 
 /* responsive css */
@@ -456,6 +468,8 @@ ul {
         <div class="palette-color" style="background-color: #d400ff;"></div>
         <div class="palette-color" style="background-color: #ff1d4e;"></div>
         <div class="palette-color" style="background-color: #952300;"></div>
+        <div id="palette-choose-any-prompt">Choose any color!</div>
+        <input id="palette-color-input" type="color">
       </div>
 
     </div>
@@ -478,10 +492,8 @@ const downloadBtn = document.getElementById("download-button");           //Down
 const downloadLinkPNG = document.getElementById("png-download");          //Download 
 const downloadLinkJPEG = document.getElementById("jpeg-download");        //Download 
 const palette = document.getElementById('palette')                        //palette
-const brush=document.getElementById('brush')                              //brush
-const clear=document.getElementById('delete')                             //clear
-const eraser=document.getElementById('eraser')                             //eraser
-const colorFill=document.getElementById("color-fill")                     //Color-fill
+const colorInput = document.getElementById('palette-color-input')                        //palette
+const clear=document.getElementById('dlt')                                //clear
 
 
 const canvas = document.querySelector("#canvas");
@@ -497,8 +509,8 @@ let isDrawing = false;
 
 width = parseInt(document.getElementById("input-width").value);           //user input width
     height = parseInt(document.getElementById("input-height").value);         //user input - height
-    width = parseInt(document.getElementById("input-width").value);           //user input width
-    height = parseInt(document.getElementById("input-height").value);         //user input - height
+    width = parseInt(document.getElementById("input-width").value) || 16;           //user input width
+    height = parseInt(document.getElementById("input-height").value) || 16;         //user input - height
     console.log(width, height)
 
     canvas.height = 20 * height;
@@ -547,6 +559,9 @@ function draw(e) {
   }
 }
 
+colorInput.addEventListener("change", () => {
+  brushColor = colorInput.value
+})
 
 //Color palette
 palette.addEventListener('click', (e) => {

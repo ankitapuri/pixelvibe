@@ -1,76 +1,302 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- font-awsome cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <title>Home</title>
-    <link rel="stylesheet" href="/static/css/homepage.css">
-    <style>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
-    </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-          <a class="navbar-brand" href="home.html"><img src="/static/assets/nav.png"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/paint">Paint</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">FeedBack</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Login/SignUp</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-              
-            </ul>
-           
+  <!-- font-awsome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <title>Home</title>
+  <link rel="stylesheet" href="/static/css/homepage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    i
+    {
+      font-size:1.5rem !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Back to top button -->
+  <a id="button" style="text-decoration:none"></a>
+
+
+  <!-- navbar start -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="home.html"><img src="/static/assets/nav.png"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#section-2">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section-4">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/paint">Paint</a>
+          </li>
+          {% if params['login'] %}
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login/SignUp</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+          {% endif %}
+
+          <li class="nav-item">
+            <!-- partial:index.partial.html -->
+            <label id ="switch" class="switch">
+              <input type="checkbox" onclick="myFunction()" id="slider">
+              <span class="slider round"></span>
+            </label>
+            <!-- partial -->
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <!-- navbar ends -->
+
+
+  <div class="container-fluid" id="section-1">
+    <!-- gif in background -->
+  </div>
+
+
+  <div class="container my-5 py-3 py-5 col-lg-8" id="section-2">
+    <h1 class="text-center">Let Us Paint</h1>
+    <p class="mt-5">You are never too old to paint. Let your dreams get colors with our brush. Painting sharpens the
+      mind through conceptual visualization and implementation, plus, boosts memory skills. People using creative
+      outlets such as writing, painting and drawing have less chance of developing memory loss illnesses when they get
+      older.
+    </p>
+  </div>
+
+
+  <!-- our team members start -->
+  <div class="container mb-5 pb-5" id="section-3">
+    <h1 class="text-center mb-4">Meet Our Team Members</h1>
+    <div class="row">
+      <div class="col">
+        <div class="card mx-auto" style="width: 18rem;">
+          <img src="/static/person-2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Name</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i
+                class="fab fa-github"></i></a>
+            <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i
+                class="fab fa-facebook"></i></a>
+            <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
+            <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i
+                class="fab fa-instagram"></i></a>
           </div>
         </div>
-      </nav>
-
-      <div class="container-fluid" id="section-1">
-            <!-- gif in background -->
       </div>
-   
-      <div class="container my-5 py-3 py-5 col-lg-8" id="section-2">
-        <h1 class="text-center">Let Us Paint</h1>
-        <p class="mt-5">You are never too old to paint. Let your dreams get colors with our brush. Painting sharpens the mind through conceptual visualization and implementation, plus, boosts memory skills. People using creative outlets such as writing, painting and drawing have less chance of developing memory loss illnesses when they get older.
-        </p>
+      <div class="col">
+        <div class="card mx-auto" style="width: 18rem;">
+          <img src="/static/person-2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Name</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i
+                class="fab fa-github"></i></a>
+            <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i
+                class="fab fa-facebook"></i></a>
+            <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
+            <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i
+                class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mx-auto" style="width: 18rem;">
+          <img src="/static/person-2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Name</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i
+                class="fab fa-github"></i></a>
+            <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i
+                class="fab fa-facebook"></i></a>
+            <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
+            <a class="social-button github btn btn-primary" href="https://www.github.com" target="_blank"><i
+                class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- our team members ends -->
+
+
+  <!-- contact section -->
+  <div class="container col-lg-8 col-sm-11 my-5 py-5 px-3" style="background-color:#417add;" id="section-4">
+    <h1 class="text-center">Feel Free to Contact Us</h1>
+    <form action="contact" method="post">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" aria-describedby="emailHelp">
+
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Number</label>
+        <input type="tel" name="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+        <textarea class="form-control" name="msg" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-warning">Submit</button>
+    </form>
+  </div>
+  <!-- contact section ends -->
+
+  <!-- footer start -->
+  <footer class="footer-distributed py-5 px-0 bg-dark mt-5 ">
+    <div class="container px-2">
+
+      <div class="row">
+        <div class="col-lg-4 col-sm-11">
+          <div class="footer-left">
+
+            <h3>Pixel<span>Vibe</span></h3>
+
+            <p class="footer-links">
+              <a href="/" class="link-1">Home</a>
+
+              <a href="#section-2">About</a>
+
+              <a href="/paint">Paint</a>
+
+              <a href="#section-3">Team</a>
+
+              <a href="/login">Login</a>
+            </p>
+
+
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-sm-11">
+          <div class="footer-center">
+
+            <div class="inner-footer-center">
+              <i class="fa fa-map-marker"></i>
+              <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+            </div>
+
+            <div class="inner-footer-center">
+              <i class="fa fa-phone"></i>
+
+              <p>Call Us +1.555.555.5555</p>
+            </div>
+
+            <div class="inner-footer-center">
+              <i class="fa fa-envelope"></i>
+              <p><a href="mailto:support@company.com">support@company.com</a></p>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-sm-11">
+          <div class="footer-right text-center">
+
+            <p class="footer-company-about">
+              <span>About us</span>
+              Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+              vehicula sit amet.
+            </p>
+
+            <div class="rounded-social-buttons py-3">
+              <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i
+                  class="fab fa-facebook-f"></i></a>
+              <a class="social-button twitter" href="https://www.twitter.com/" target="_blank"><i
+                  class="fab fa-twitter"></i></a>
+              <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i
+                  class="fab fa-linkedin"></i></a>
+              <a class="social-button github" href="https://www.github.com" target="_blank"><i
+                  class="fab fa-github"></i></a>
+              <a class="social-button instagram" href="https://www.instagram.com/" target="_blank"><i
+                  class="fab fa-instagram"></i></a>
+              <a class="social-button whatsapp" href="https://web.whatsapp.com/" target="_blank"><i
+                  class="fab fa-whatsapp"></i></a>
+            </div>
+
+
+          </div>
+
+        </div>
       </div>
 
-    <div class="container-fluid bg-dark text-light text-center px-1 py-3 mt-2 footer">
-      <div class="rounded-social-buttons py-3">
-        <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a class="social-button twitter" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a class="social-button github" href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
-        <a class="social-button instagram" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a class="social-button whatsapp" href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
     </div>
-        <p>Copyright &copy; PIXELVIBE</p>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-  </body>
+  </footer>
+  <div class="container-fluid bg-dark text-light text-center px-1 py-3 footer">
+    <p>Copyright &copy; PIXELVIBE</p>
+  </div>
+  <!-- footer ends -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+    crossorigin="anonymous"></script>
+  <!-- js for back to top button -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    var btn = $('#button');
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+      } else {
+        btn.removeClass('show');
+      }
+    });
+
+    btn.on('click', function (e) {
+      e.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, '300');
+    });
+  </script>
+  <script src="/static/JS/darkmode.js"></script>
+</body>
+
 </html>

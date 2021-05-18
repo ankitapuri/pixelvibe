@@ -20,9 +20,17 @@ class Users(db.Model):
     email = db.Column(db.String(20), nullable=False)
     password = db.Column(db.String(120), nullable=False)
 
+class Contacts(db.Model):
+    sno = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+    email = db.Column(db.String(20), nullable=False)
+    number = db.Column(db.String(20), nullable=False)
+    msg = db.Column(db.String(20), nullable=False)
+
+
 session={}
 params={}
-params['login'] = False
+params['login'] = True
 @app.route('/')
 def home():
     return render_template('homepage.html',params=params)
@@ -65,7 +73,9 @@ def signup():
 
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
+    global params
     if 'user' in session :
+        params['login'] = False
         return redirect('/')
     if request.method == 'POST':
         username = request.form.get('username')
@@ -79,6 +89,7 @@ def login():
             if user.password == password:
                 print('password matched')
                 session['user'] = username
+                params['login'] = False
                 return redirect('/')
             else:
                 print('wrong password')
@@ -87,5 +98,29 @@ def login():
         return redirect('loginpage')
     else:
         return redirect('loginpage')
+
+@app.route('/logout')
+def logout():
+    global session
+    session = {}
+    params['login'] = True
+    # flash("Logged out Successfully","success")
+    return redirect('/')
+    
+@app.route('/contact',methods = ['POST', 'GET'])
+def contact():
+    if request.method == 'POST':
+        print('post')
+        name = request.form.get('name')
+        email = request.form.get('email')
+        number = request.form.get('number')
+        msg = request.form.get('msg')
+        print(name, email,number,msg)
+        entry = Contacts(name=name, email=email,number=number,msg=msg)
+        db.session.add(entry)
+        db.session.commit()
+    else:
+        print('get')
+    return redirect('/')
 if __name__ == '__main__':
     app.run(debug=True)
