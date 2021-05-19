@@ -20,6 +20,7 @@
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/css/preloader.css">
   <style>
     i
     {
@@ -375,14 +376,7 @@
     });
     }
   </script>
-  <script>
-    //preloader
-let foldingCube = document.querySelector('.folding-cube');
-window.addEventListener('load', function () {
-  setTimeout(function(){ foldingCube.parentElement.removeChild(foldingCube);}, 3000);  
-});
-
-  </script>
+  <script src="/static/JS/preloader.js"></script>
 </body>
 
 </html>
