@@ -222,13 +222,14 @@ function draw(e) {
 
 colorInput.addEventListener("change", () => {
   brushColor = colorInput.value
+  eraser.classList.remove("selected");
+  brush.classList.add("selected");
 })
 
 //Color palette
 palette.addEventListener('click', (e) => {
   const boxShadow = 'inset 0 0 6px #616161';
   brushColor = e.target.style.backgroundColor;
-  prevBrushColor=brushColor;
 
   for (var child of document.getElementById('palette').children) {
     child.style.boxShadow = null;
@@ -238,7 +239,15 @@ palette.addEventListener('click', (e) => {
     e.target.style.boxShadow = boxShadow;
   }
 });
-
+     
+// eraser
+     
+eraser.addEventListener("click", () => {
+  eraser.classList.add("selected");
+  brush.classList.remove("selected");
+  prevBrushColor = brushColor;
+  brushColor = "white";
+}
 
 //Download Image
 downloadLinkPNG.addEventListener("click", (e) => {          //PNG
