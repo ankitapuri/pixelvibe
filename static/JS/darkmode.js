@@ -1,5 +1,8 @@
 var element = document.body;
 // var togglebutton = document.getElementById("toggle");
+
+var forgetPassword=getElementById("id01");           
+
 const currentTheme = localStorage.getItem("theme");
 console.log("helo", currentTheme);
 // If the current theme in localStorage is "dark"...
@@ -22,6 +25,7 @@ function myFunction() {
   if (currentTheme == "dark") {
     console.log("prev itss dark now it is light");
     element.classList.toggle("dark-mode");
+    forgetPassword.classList.toggle("dark-mode");
     theme = "light";
     localStorage.setItem("theme", theme);
     // togglebutton.innerHTML = "Dark Mode";
