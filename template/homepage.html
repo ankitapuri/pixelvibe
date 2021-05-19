@@ -32,6 +32,15 @@
   <!-- Back to top button -->
   <a id="button" style="text-decoration:none"></a>
 
+  <!-- Preloader -->
+  <div class='folding-cube'>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+  </div>
 
   <!-- navbar start -->
   <nav class="navbar navbar-expand-lg navbar-dark">
@@ -328,6 +337,7 @@
   <!-- js for back to top button -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- back to top -->
   <script>
     var btn = $('#button');
     $(window).scroll(function () {
@@ -364,6 +374,14 @@
       }
     });
     }
+  </script>
+  <script>
+    //preloader
+let foldingCube = document.querySelector('.folding-cube');
+window.addEventListener('load', function () {
+  setTimeout(function(){ foldingCube.parentElement.removeChild(foldingCube);}, 3000);  
+});
+
   </script>
 </body>
 
