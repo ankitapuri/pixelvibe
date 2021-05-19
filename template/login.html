@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="static/css/login.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <style type="text/css">
     * {
       margin: 0;
@@ -21,6 +22,10 @@
       justify-content: center;
       align-items: center;
     }
+    i {
+    margin-left: -10px;
+    cursor: pointer;
+}
   </style>
 </head>
 
@@ -61,12 +66,14 @@
 
           <div class="password">
             <span class="material-icons">lock</span>
-            <input type="password" name="password" class="pass-input" placeholder="Password" />
+            <input type="password" name="password" id="password1" class="pass-input" placeholder="Password" />
+            <i class="far fa-eye" id="togglePassword1"></i>
           </div>
 
           <div class="password">
             <span class="material-icons">check_circle</span>
-            <input type="password" name="cpassword" class="pass-input" placeholder="Confirm Password" />
+            <input type="password" name="cpassword" id="password2" class="pass-input" placeholder="Confirm Password" />
+            <i class="far fa-eye" id="togglePassword2"></i>
           </div>
 
           <button class="signup-btn" type="submit">Sign Up</button>
@@ -87,7 +94,8 @@
     
             <div class="password">
               <span class="material-icons">lock</span>
-              <input type="password" name="password" class="pass-input" placeholder="Password" />
+              <input type="password" name="password" id="password3" class="pass-input" placeholder="Password" />
+              <i class="far fa-eye" id="togglePassword3"></i>
             </div>
     
             <button class="signup-btn">Sign In</button>

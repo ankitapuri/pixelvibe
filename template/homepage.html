@@ -20,6 +20,7 @@
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/css/preloader.css">
   <style>
     i
     {
@@ -32,11 +33,20 @@
   <!-- Back to top button -->
   <a id="button" style="text-decoration:none"></a>
 
+  <!-- Preloader -->
+  <div class='folding-cube'>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+  </div>
 
   <!-- navbar start -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="home.html"><img src="/static/assets/nav.png"></a>
+      <a class="navbar-brand" href="/"><img src="/static/assets/nav.png"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -235,8 +245,52 @@
   </div>
   <!-- contact section ends -->
 
+  <!-- wave start -->
+   <div class="container-fluid px-0" id="wavesection">
+    <footer>
+      <svg viewBox="0 0 120 28">
+       <defs> 
+         <mask id="xxx">
+           <circle cx="7" cy="12" r="40" fill="#fff" />
+         </mask>
+         
+         <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="
+                 1 0 0 0 0  
+                 0 1 0 0 0  
+                 0 0 1 0 0  
+                 0 0 0 13 -9" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+           <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+        </defs> 
+      
+         <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2" ></use> 
+         <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0" ></use>
+       
+        
+        <g class="gooeff">
+        <circle class="drop drop1" cx="20" cy="2" r="1.8"  />
+        <circle class="drop drop2" cx="25" cy="2.5" r="1.5"  />
+        <circle class="drop drop3" cx="16" cy="2.8" r="1.2"  />
+          <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
+        
+          <!-- g mask="url(#xxx)">
+          <path   id="wave1"  class="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+          </g>
+        </g -->
+      
+      </svg>
+      
+       
+      </footer>
+         
+   </div>
+    
+  <!-- wave ends -->
   <!-- footer start -->
-  <footer class="footer-distributed py-5 px-0 bg-dark mt-5 ">
+  <footer class="footer-distributed py-5 px-0 bg-dark">
     <div class="container px-2">
 
       <div class="row">
@@ -328,6 +382,7 @@
   <!-- js for back to top button -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- back to top -->
   <script>
     var btn = $('#button');
     $(window).scroll(function () {
@@ -365,6 +420,7 @@
     });
     }
   </script>
+  <script src="/static/JS/preloader.js"></script>
 </body>
 
 </html>
