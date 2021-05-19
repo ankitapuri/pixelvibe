@@ -224,6 +224,7 @@ colorInput.addEventListener("change", () => {
   brushColor = colorInput.value
   eraser.classList.remove("selected");
   brush.classList.add("selected");
+  canvas.classList.remove("erasing");
 })
 
 //Color palette
@@ -237,17 +238,19 @@ palette.addEventListener('click', (e) => {
 
   if (e.target.className === 'palette-color') {
     e.target.style.boxShadow = boxShadow;
+    canvas.classList.remove("erasing");
   }
 });
      
 // eraser
      
 eraser.addEventListener("click", () => {
+  canvas.classList.add("erasing");
   eraser.classList.add("selected");
   brush.classList.remove("selected");
   prevBrushColor = brushColor;
   brushColor = "white";
-}
+})
 
 //Download Image
 downloadLinkPNG.addEventListener("click", (e) => {          //PNG
@@ -271,6 +274,7 @@ var download = function (img) {
 
 //Brush
 brush.addEventListener("click", () => {
+  canvas.classList.remove("erasing");
   eraser.classList.remove("selected");
   colorFill.classList.remove("selected");
   brush.classList.add("selected");
