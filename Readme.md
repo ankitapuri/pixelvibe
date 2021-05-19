@@ -98,7 +98,7 @@ pip install -r requirements.txt
 **4. Run server using**
 
 ```bash
-py.exe app.py
+python3 -m flask run
 ```
 
 **5.** Go to ` http://127.0.0.1:5000/` and enjoy the application.

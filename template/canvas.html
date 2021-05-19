@@ -72,21 +72,7 @@
               <li><a class="dropdown-item" id="jpeg-download" href="#">JPEG</a></li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Tools
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#" id="brush">Brush</a></li>
-              <li><a class="dropdown-item" href="#" id="delete">Delete <i class="fas fa-trash"></i></a></li>
-              <li><a class="dropdown-item" href="#">Undo</a></li>
-              <li><a class="dropdown-item" href="#" id="eraser">Eraser</a></li>
-              <li><a class="dropdown-item" href="#" id="color-fill">Color fill</a></li>
-              
-            </ul>
-          </li>
-          
-          </ul>
+        </ul>
 
       </div>
     </div>
@@ -118,6 +104,23 @@
   <section id=canvas-section>
     <div id="canvas-div">
     
+      <!-- Dropdown Menu -->
+      <div class="dropdown">
+        <button onclick="showDropdownMenu(this)" class="dropbtn">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+          <ul class="list">
+            <li id="brush">Brush</li>
+            <li id="delete">Delete <i class="fas fa-trash"></i></li>
+            <li>Undo</li>
+            <li id="eraser">Eraser</li>
+            <li id="color-fill">Color fill</li>
+          </ul>
+        </div>
+      </div>
       <canvas id="canvas" class="main-canvas"></canvas>
 
       <!-- Color Palette -->
@@ -221,24 +224,36 @@ function draw(e) {
 }
 
 colorInput.addEventListener("change", () => {
-  brushColor = colorInput.value
+  brushColor = colorInput.value;
+  prevBrushColor = brushColor;
+  eraser.classList.remove("selected");
+  brush.classList.add("selected");
+  canvas.classList.remove("erasing");
 })
 
 //Color palette
 palette.addEventListener('click', (e) => {
   const boxShadow = 'inset 0 0 6px #616161';
   brushColor = e.target.style.backgroundColor;
-  prevBrushColor=brushColor;
-
+  prevBrushColor = brushColor;
   for (var child of document.getElementById('palette').children) {
     child.style.boxShadow = null;
   }
 
   if (e.target.className === 'palette-color') {
     e.target.style.boxShadow = boxShadow;
+    canvas.classList.remove("erasing");
   }
 });
-
+     
+// eraser
+     
+eraser.addEventListener("click", () => {
+  canvas.classList.add("erasing");
+  eraser.classList.add("selected");
+  brush.classList.remove("selected");
+  brushColor = "white";
+})
 
 //Download Image
 downloadLinkPNG.addEventListener("click", (e) => {          //PNG
@@ -262,6 +277,7 @@ var download = function (img) {
 
 //Brush
 brush.addEventListener("click", () => {
+  canvas.classList.remove("erasing");
   eraser.classList.remove("selected");
   colorFill.classList.remove("selected");
   brush.classList.add("selected");
@@ -290,9 +306,15 @@ colorFill.addEventListener("click", () => {
   eraser.classList.remove("selected");
   brush.classList.remove("selected");
   colorFill.classList.add("selected");
-  context.fillStyle = prevBrushColor; 
+  context.fillStyle = brushColor; 
   context.fillRect(0, 0, canvas.width, canvas.height);
 }) 
+
+//Dropdown Menu
+function showDropdownMenu(list) {
+  list.classList.toggle("change");
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
