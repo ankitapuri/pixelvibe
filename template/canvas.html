@@ -221,7 +221,8 @@ function draw(e) {
 }
 
 colorInput.addEventListener("change", () => {
-  brushColor = colorInput.value
+  brushColor = colorInput.value;
+  prevBrushColor = brushColor;
   eraser.classList.remove("selected");
   brush.classList.add("selected");
   canvas.classList.remove("erasing");
@@ -231,7 +232,7 @@ colorInput.addEventListener("change", () => {
 palette.addEventListener('click', (e) => {
   const boxShadow = 'inset 0 0 6px #616161';
   brushColor = e.target.style.backgroundColor;
-
+  prevBrushColor = brushColor;
   for (var child of document.getElementById('palette').children) {
     child.style.boxShadow = null;
   }
@@ -248,7 +249,6 @@ eraser.addEventListener("click", () => {
   canvas.classList.add("erasing");
   eraser.classList.add("selected");
   brush.classList.remove("selected");
-  prevBrushColor = brushColor;
   brushColor = "white";
 })
 
@@ -294,7 +294,7 @@ colorFill.addEventListener("click", () => {
   eraser.classList.remove("selected");
   brush.classList.remove("selected");
   colorFill.classList.add("selected");
-  context.fillStyle = prevBrushColor; 
+  context.fillStyle = brushColor; 
   context.fillRect(0, 0, canvas.width, canvas.height);
 }) 
 
