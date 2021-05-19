@@ -81,6 +81,79 @@ body {
     }
   }
   
+   /* Dropdown Button */
+   .dropbtn {
+    display: inline-block;
+    cursor: pointer;
+    padding: 12px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    background: whitesmoke;
+    border-radius: 3px;
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dropdown-content li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    padding-left: 0;
+  }
+
+  .dropdown-content li:hover {
+    background-color: #ddd;
+    cursor: pointer;
+  }
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .show {
+    display: block;
+  }
+  /* css for  Dropdown Button end*/
   
   /* Canvas-div Section */
   
