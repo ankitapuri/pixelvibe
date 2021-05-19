@@ -221,24 +221,36 @@ function draw(e) {
 }
 
 colorInput.addEventListener("change", () => {
-  brushColor = colorInput.value
+  brushColor = colorInput.value;
+  prevBrushColor = brushColor;
+  eraser.classList.remove("selected");
+  brush.classList.add("selected");
+  canvas.classList.remove("erasing");
 })
 
 //Color palette
 palette.addEventListener('click', (e) => {
   const boxShadow = 'inset 0 0 6px #616161';
   brushColor = e.target.style.backgroundColor;
-  prevBrushColor=brushColor;
-
+  prevBrushColor = brushColor;
   for (var child of document.getElementById('palette').children) {
     child.style.boxShadow = null;
   }
 
   if (e.target.className === 'palette-color') {
     e.target.style.boxShadow = boxShadow;
+    canvas.classList.remove("erasing");
   }
 });
-
+     
+// eraser
+     
+eraser.addEventListener("click", () => {
+  canvas.classList.add("erasing");
+  eraser.classList.add("selected");
+  brush.classList.remove("selected");
+  brushColor = "white";
+})
 
 //Download Image
 downloadLinkPNG.addEventListener("click", (e) => {          //PNG
@@ -262,6 +274,7 @@ var download = function (img) {
 
 //Brush
 brush.addEventListener("click", () => {
+  canvas.classList.remove("erasing");
   eraser.classList.remove("selected");
   colorFill.classList.remove("selected");
   brush.classList.add("selected");
@@ -281,7 +294,7 @@ colorFill.addEventListener("click", () => {
   eraser.classList.remove("selected");
   brush.classList.remove("selected");
   colorFill.classList.add("selected");
-  context.fillStyle = prevBrushColor; 
+  context.fillStyle = brushColor; 
   context.fillRect(0, 0, canvas.width, canvas.height);
 }) 
 
