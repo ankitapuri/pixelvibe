@@ -112,10 +112,10 @@
 
   <div id="id01" class="modal">
     <form class="modal-content animate" action="#" method="post">
-      <div class="container">
-        <span class="material-icons" style="font-size:140px; color: black;">lock</span>
+      <div id="forget-password" class="container" >
+        <span class="material-icons lock-image" style="font-size:140px; ">lock</span>
         <h1><b>Forgot Password ?</b></h1>
-        <p>you can reset your pasword here</p>
+        <p>you can reset your password here</p>
         <div class="email">
           <span class="material-icons">email</span>
           <input type="email" class="user-input" placeholder="Enter your Email" name="uname" />
@@ -144,6 +144,15 @@
 
   <br>
 
+  <script>
+    var forgetPassword = document.getElementById("forget-password");  
+    var togglebutton = document.getElementByClassName("push-toggle");
+
+    togglebutton.addEventListener("click",function(){
+      forgetPassword.classList.toggle("dark-mode");
+    });
+
+  </script>
 
   <script src="/static/JS/login.js"></script>
   <script src="/static/JS/darkmode.js"></script>
