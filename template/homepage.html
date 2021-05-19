@@ -20,6 +20,7 @@
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/css/preloader.css">
   <style>
     i
     {
@@ -32,6 +33,15 @@
   <!-- Back to top button -->
   <a id="button" style="text-decoration:none"></a>
 
+  <!-- Preloader -->
+  <div class='folding-cube'>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+  </div>
 
   <!-- navbar start -->
   <nav class="navbar navbar-expand-lg navbar-dark">
@@ -372,6 +382,7 @@
   <!-- js for back to top button -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- back to top -->
   <script>
     var btn = $('#button');
     $(window).scroll(function () {
@@ -409,6 +420,7 @@
     });
     }
   </script>
+  <script src="/static/JS/preloader.js"></script>
 </body>
 
 </html>
