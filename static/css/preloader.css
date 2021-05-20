@@ -1,8 +1,8 @@
 /* preloader */
 .folding-cube ul{
     position: absolute;
-    top: calc(50% - 40px);
-    left: calc(50% - 40px);
+    top: 48vh;
+    left: 45vw;
     margin: 0;
     padding: 0;
     width: 80px;
@@ -83,7 +83,7 @@
   }
   .folding-cube{
     width: 100%;
-    height: 100%;
+    height: 550vh;
     overflow: hidden;
     background-color:#FFECCB;
     position: absolute;
