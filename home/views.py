@@ -3,7 +3,7 @@ from django.http import HttpResponse, request
 # now for using login sys we import user model
 from django.contrib.auth.models import User,auth
 from django.contrib.auth  import authenticate,  login, logout
-
+from home.models import Contact
 
 # Create your views here.
 def home(request):
@@ -83,4 +83,18 @@ def logout(request):
     return redirect('/login')
 
 def contact(request):
+    if request.method=="POST":
+        print('post')
+        firstname = request.POST['firstname']
+        lastname = request.POST['lastname']
+        email = request.POST['email']
+        number = request.POST['number']
+        content = request.POST['content ']
+        print(firstname,email,content,number)
+        ins = Contact(firstname=firstname,lastname=lastname,email=email,content=content,number=number)
+        ins.save()
+        # messages.success(request,'Thank You for contacting me!! Your message has been saved ')
+        print('data has been saved to database')
+    else:
+        print('not post')
     return render(request,'contact.html')

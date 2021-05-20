@@ -150,7 +150,8 @@ form p {
       </div>
     <div class="right-container">
       <div class="right-inner-container">
-        <form action="#">
+        <form action="/contact/" method="post">
+          {% csrf_token %}
 			     <h2>Contact us</h2>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -161,7 +162,7 @@ form p {
           <input type="text" placeholder="Last Name *" name="lastname" required />
       <input type="email" placeholder="email *" name="email"  required/>
 			<input type="tel" placeholder="Phone Number" name="number" required />
-          <textarea rows="4" placeholder="Message" name="msg" required></textarea>
+          <textarea rows="4" placeholder="Message" name="content" required></textarea>
 			<button style="
     outline: none;">Submit</button>
 		</form>
