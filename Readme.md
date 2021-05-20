@@ -113,7 +113,7 @@ pip install -r requirements.txt
   python manage.py createsuperuser
 ```
 
-**5.** Go to ` http://127.0.0.1:5000/` and enjoy the application.
+**5.** Go to ` http://127.0.0.1:8000/` and enjoy the application.
 
 #### Step 5: Contribute
 Make relevant changes according to the issue that you were assigned on. Contribute in any way you feel like :)
