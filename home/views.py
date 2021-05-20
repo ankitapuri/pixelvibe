@@ -81,3 +81,6 @@ def Handlelogin(request):
 def logout(request):
     auth.logout(request)
     return redirect('/login')
+
+def contact(request):
+    return render(request,'contact.html')
