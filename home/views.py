@@ -89,7 +89,7 @@ def contact(request):
         lastname = request.POST['lastname']
         email = request.POST['email']
         number = request.POST['number']
-        content = request.POST['content ']
+        content = request.POST['content']
         print(firstname,email,content,number)
         ins = Contact(firstname=firstname,lastname=lastname,email=email,content=content,number=number)
         ins.save()
