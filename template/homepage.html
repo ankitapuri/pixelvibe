@@ -69,7 +69,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/paint">Paint</a>
           </li>
-          {% if not user.is_authenticated %}
+          {% if params['login'] %}
           <li class="nav-item">
             <a class="nav-link" href="/login">Login/SignUp</a>
           </li>
