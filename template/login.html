@@ -4,7 +4,7 @@
   <title>Login/Signup Form</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+  <link rel="stylesheet" type="text/css" href="static/css/login.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <style type="text/css">
@@ -85,8 +85,7 @@
 
     <!-- Code for Login section begins -->
     <div class="login">
-          <form action="/login/" method="post">
-            {% csrf_token %}
+          <form action="/login" method="post">
           <div class="input-signin">
             <div class="username">
               <span class="material-icons">person</span>
