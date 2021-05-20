@@ -1,6 +1,6 @@
 /* preloader */
 .folding-cube ul{
-    position: absolute;
+    position: fixed;
     top: 48vh;
     left: 45vw;
     margin: 0;
