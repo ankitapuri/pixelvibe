@@ -1,0 +1,15 @@
+1. Run These Commands 
+
+    if running first time
+
+    1. python manage.py makemigrations
+    2. python manage.py migrate
+    3. python manage.py runserver
+
+    if you already run above commands before
+    just run command 3
+
+    python manage.py runserver
+
+2. For creating Superuser
+    python manage.py createsuperuser
