@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse, request
 # now for using login sys we import user model
 from django.contrib.auth.models import User,auth
+from django.contrib.auth  import authenticate,  login, logout
 
 
 # Create your views here.
@@ -28,29 +29,52 @@ def paint(request):
         return render(request,"canvas.html",params)
     return render(request, 'user_input.html')
 
+
+def handleSignUp(request):
+    if request.method=="POST":
+        # Get the post parameters
+        username=request.POST['username']
+        email=request.POST['email']
+        pass1=request.POST['password']
+        pass2=request.POST['cpassword']
+
+        exist = User.objects.all().filter(email=email)
+        print(exist)
+        # Create the user
+        myuser = User.objects.create_user(username, email, pass1)
+        myuser.save()
+        # messages.success(request, " Your iCoder has been successfully created")
+        print(" Your Account has been successfully created")
+        return redirect('/login')
+                  
+
+    else:
+        return HttpResponse("404 - Not found")
+
+
+
 def loginpage(request):
     return render(request,'login.html')
 
-def login(request):
+def Handlelogin(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         print(username,password)
-        # user = Users.query.filter_by(username=username).first() 
-        # if user is None:
-        #     print('no user')
-        # else:
-        #     print('user')
-        #     if user.password == password:
-        #         print('password matched')
-        #         session['user'] = username
-        #         params['login'] = False
-        #         return redirect('/')
-        #     else:
-                # print('wrong password')
-        # db.session.add(user)
-        # db.session.commit()
-        return redirect('loginpage')
+        exist = User.objects.all().filter(username=username)
+        print(exist)
+        if len(exist)==0:
+            print(" username not Found Please Sign Up")
+            return redirect('/login')
+        user=authenticate(username=username, password=password) 
+        if user is not None:
+            login(request, user)
+            print("Successfully Logged In")
+            print('loged in')
+            return redirect("/")
+        else:
+            print("Invalid credentials! Please try again")
+            return redirect("/login")
     else:
         return redirect('loginpage')
 

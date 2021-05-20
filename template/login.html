@@ -52,7 +52,8 @@
 
     <!-- Code for Signup section begins -->
     <div class="signup">
-      <form action="/signup" method="post">
+      <form action="/signup/" method="post">
+        {% csrf_token %}
         <div class="input-group">
           <div class="username">
             <span class="material-icons">person</span>

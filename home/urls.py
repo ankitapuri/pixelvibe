@@ -19,7 +19,8 @@ from home import views
 urlpatterns = [
     path('',views.home , name='home' ),
     path('paint/',views.paint , name='paint' ),
-    path('login/',views.login , name='login' ),
+    path('signup/',views.handleSignUp , name='handleSignUp' ),
+    path('login/',views.Handlelogin , name='login' ),
     path('loginpage/',views.loginpage , name='loginpage' ),
     path('logout/',views.logout , name='logout' ),
 ]
