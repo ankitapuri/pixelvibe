@@ -24,10 +24,11 @@ PixelVibe uses a number of open source projects to work properly:
 <img alt="BootStrap" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/> 
 
 ### Back-End:
-<img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/> <img alt="Flask" src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"/> 
+<img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/> <img alt="Django" src="https://img.shields.io/badge/django%20-%23092E20.svg?&style=for-the-badge&logo=django&logoColor=white"/>    
 
 ### Data-Base:
-<img alt="MySQL" src="https://img.shields.io/badge/mysql-%2300f.svg?&style=for-the-badge&logo=mysql&logoColor=white"/>
+<img alt="SQLite" src ="https://img.shields.io/badge/sqlite-%2307405e.svg?&style=for-the-badge&logo=sqlite&logoColor=white"/> 
+
 
 ### Other:
 <img alt="Progressive Web Apps" src="https://img.shields.io/badge/Progressive Web Apps%20-%2300C4CC.svg?&style=for-the-badge&logo=ProgressiveWebApps&logoColor=white"/>
@@ -68,7 +69,7 @@ git pull origin main
 
 #### Step 4: Setting up Project
 
-##### For Flask:
+##### For Django:
 **1. Create a Virtual Environment**
 
 - *On macOS and Linux:*
@@ -95,10 +96,21 @@ git pull origin main
 pip install -r requirements.txt
 ```
 
-**4. Run server using**
+**4. Make Migrations**
 
 ```bash
-python3 -m flask run
+  python manage.py makemigrations
+  python manage.py migrate
+```
+**5. Run Server**
+
+```bash
+  python manage.py runserver
+```
+**6. Create admin**
+
+```bash
+  python manage.py createsuperuser
 ```
 
 **5.** Go to ` http://127.0.0.1:5000/` and enjoy the application.
