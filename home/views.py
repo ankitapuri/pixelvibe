@@ -99,3 +99,7 @@ def contact(request):
     else:
         print('not post')
     return render(request,'contact.html')
+
+def error_404(request, *args, **argv):
+        data = {}
+        return render(request,'404.html', data)
