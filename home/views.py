@@ -95,6 +95,7 @@ def contact(request):
         ins.save()
         # messages.success(request,'Thank You for contacting me!! Your message has been saved ')
         print('data has been saved to database')
+        return redirect('/')
     else:
         print('not post')
     return render(request,'contact.html')
