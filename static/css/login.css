@@ -189,6 +189,18 @@ body {
     color: #ffffff;
 }
 
+.dark-mode h1 {
+  color:lightgrey;
+}
+
+.dark-mode p{
+  color:lightgrey;
+}
+
+.dark-mode .lock-image{
+  color:grey;
+}
+
 .light-mode {
   margin: top;
   right: 8783rem;
@@ -252,6 +264,11 @@ body {
   padding:10px 0px 15px 5px;
   color: gray;
 }
+.lock-image{
+  color: black;
+}
+
+
 .username, .password, .email {
   margin-bottom: 20px;
   border-radius: 25px;

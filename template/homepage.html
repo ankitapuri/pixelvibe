@@ -26,6 +26,11 @@
     {
       font-size:1.5rem !important;
     }
+    .dropdown-menu
+    {
+      min-width: 4rem !important;
+      padding: 0px !important;
+    }
   </style>
 </head>
 
@@ -64,18 +69,23 @@
             <a class="nav-link" href="#section-3">Team</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#section-4">Contact</a>
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/paint">Paint</a>
           </li>
-          {% if params['login'] %}
+          {% if not user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="/login">Login/SignUp</a>
           </li>
           {% else %}
-          <li class="nav-item">
-            <a class="nav-link" onclick="confirmation()" href="#">Logout</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{user}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="nav-link text-center" onclick="confirmation()" href="#" style="color: black !important">Logout</a></li>
+            </ul>
           </li>
           {% endif %}
 
@@ -217,33 +227,7 @@
   <!-- our team members ends -->
 
 
-  <!-- contact section -->
-  <div class="container col-lg-8 col-sm-11 my-5 py-5 px-3" style="background-color:#417add;" id="section-4">
-    <h1 class="text-center">Feel Free to Contact Us</h1>
-    <form action="contact" method="post">
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Name</label>
-        <input type="text" class="form-control" name="name" aria-describedby="emailHelp">
-
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email</label>
-        <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
-
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Number</label>
-        <input type="tel" name="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-        <textarea class="form-control" name="msg" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-warning">Submit</button>
-    </form>
-  </div>
-  <!-- contact section ends -->
+ 
 
   <!-- wave start -->
    <div class="container-fluid px-0" id="wavesection">

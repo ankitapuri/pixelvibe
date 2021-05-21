@@ -1,7 +1,7 @@
 var element = document.body;
 // var togglebutton = document.getElementById("toggle");
 
-var forgetPassword=getElementById("id01");           
+var forgetPassword = document.getElementById("forget-password");           
 
 const currentTheme = localStorage.getItem("theme");
 console.log("helo", currentTheme);
@@ -10,6 +10,7 @@ if (currentTheme == "dark") {
   console.log("Its dark");
   // togglebutton.innerHTML = "Light Mode";
   element.classList.toggle("dark-mode");
+  forgetPassword.classList.toggle("dark-mode");
   theme = "dark";
   localStorage.setItem("theme", theme);
 } else {
@@ -32,6 +33,7 @@ function myFunction() {
   } else {
     console.log("prev is light now its dark");
     element.classList.toggle("dark-mode");
+    forgetPassword.classList.toggle("dark-mode");
     theme = "dark";
     localStorage.setItem("theme", theme);
     // togglebutton.innerHTML = "Light Mode";
