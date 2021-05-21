@@ -56,6 +56,9 @@ def handleSignUp(request):
 def loginpage(request):
     return render(request,'login.html')
 
+def login2(request):
+    return render(request,'login_new.html')
+
 def Handlelogin(request):
     if request.method == 'POST':
         username = request.POST['username']
