@@ -718,4 +718,40 @@ font-weight:700;
     to {transform: translateY(20%);}
   }
   
-  
+ /* Custom Scrollbar */
+ ::-webkit-scrollbar
+ {
+   width: 12px;
+ }
+ 
+ ::-webkit-scrollbar-thumb
+ {
+   background-color: #ffb4bd;	
+ }
+ ::-webkit-scrollbar-thumb:hover
+ {
+   background-color: #ffa1b8;	
+ }
+ 
+ ::-webkit-scrollbar-button:single-button {
+     background-color: rgb(255, 253, 253);
+     display: block;
+     background-size: 10px;
+     background-repeat: no-repeat;
+ }
+ 
+ /* Up */
+ ::-webkit-scrollbar-button:single-button:vertical:decrement {
+     height: 16px;
+     width: 16px;
+     background-position: center 4px;
+     background-image: url("../assets/uparrow.png");
+     }
+ 
+ /* Down */
+ ::-webkit-scrollbar-button:single-button:vertical:increment {
+     height: 16px;
+     width: 16px;
+     background-position: center 2px;
+     background-image: url("../assets/downarrow.png");
+ } 

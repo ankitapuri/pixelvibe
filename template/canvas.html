@@ -30,6 +30,15 @@
        {
          padding-left:15px;
        }
+       .dropdown-menu
+    {
+      min-width: 4rem !important;
+      padding: 0px !important;
+    }
+    .dropdown-menu[data-bs-popper]
+    {
+      left:30px !important;
+    }
     </style>
   </head>
   <body>
@@ -61,7 +70,7 @@
             <a class="nav-link" href="/#section-2">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#section-4">Contact</a>
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,6 +80,22 @@
               <li><a class="dropdown-item" id="png-download" href="#">PNG</a></li>
               <li><a class="dropdown-item" id="jpeg-download" href="#">JPEG</a></li>
             </ul>
+            {% if not user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login/SignUp</a>
+          </li>
+          {% else %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{user}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="nav-link text-center" onclick="confirmation()" href="#" style="color: black !important">Logout</a></li>
+            </ul>
+          </li>
+          {% endif %}
+
+
           </li>
         </ul>
 
@@ -320,5 +345,26 @@ function showDropdownMenu(list) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/59a498d1d1.js" crossorigin="anonymous"></script>
     <script src="/static/JS/preloader.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+<script>
+  function confirmation(){
+  swal({
+    title: "Are you sure?",
+    text: "You Want to LogOut!!",
+    icon: "warning",
+    buttons: true,
+    buttons: ['cancel','Yes, Log out'],
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      window.location = "/logout";
+    } else {
+      
+    }
+  });
+  }
+</script>
   </body>
 </html>
