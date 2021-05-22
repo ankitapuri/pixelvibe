@@ -51,13 +51,7 @@ def handleSignUp(request):
     else:
         return HttpResponse("404 - Not found")
 
-
-
-def loginpage(request):
-    return render(request,'login.html')
-
-def login2(request):
-    return render(request,'login_new.html')
+    
 
 def Handlelogin(request):
     if request.method == 'POST':
@@ -79,7 +73,7 @@ def Handlelogin(request):
             print("Invalid credentials! Please try again")
             return redirect("/login")
     else:
-        return redirect('loginpage')
+        return render(request,'login_new.html')
 
 def logout(request):
     auth.logout(request)
