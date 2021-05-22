@@ -4,6 +4,7 @@ from django.http import HttpResponse, request
 from django.contrib.auth.models import User,auth
 from django.contrib.auth  import authenticate,  login, logout
 from home.models import Contact
+from django.contrib import  messages
 
 # Create your views here.
 def home(request):
@@ -91,11 +92,13 @@ def contact(request):
         number = request.POST['number']
         content = request.POST['content']
         print(firstname,email,content,number)
-        ins = Contact(firstname=firstname,lastname=lastname,email=email,content=content,number=number)
-        ins.save()
-        # messages.success(request,'Thank You for contacting me!! Your message has been saved ')
-        print('data has been saved to database')
-        return redirect('/')
+        if len(firstname)<2 or len(email)<3 or len(number)<10 or len(content)<4:
+            messages.error(request, "Please fill the form correctly")
+        else:
+            ins = Contact(firstname=firstname,lastname=lastname,email=email,content=content,number=number)
+            ins.save()
+            messages.success(request,'Thank You for contacting Us!! Your message has been saved ')
+        return redirect('/contact')
     else:
         print('not post')
     return render(request,'contact.html')
