@@ -62,7 +62,7 @@ def Handlelogin(request):
         exist = User.objects.all().filter(username=username)
         print(exist)
         if len(exist)==0:
-            print(" username not Found Please Sign Up")
+            messages.error(request," username not Found Please Sign Up")
             return redirect('/login')
         user=authenticate(username=username, password=password) 
         if user is not None:
@@ -71,7 +71,7 @@ def Handlelogin(request):
             print('loged in')
             return redirect("/")
         else:
-            print("Invalid credentials! Please try again")
+            messages.error(request,"Invalid credentials! Please try again")
             return redirect("/login")
     else:
         return render(request,'login_new.html')
