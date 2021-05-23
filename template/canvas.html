@@ -140,7 +140,7 @@
           <ul class="list">
             <li id="brush">Brush</li>
             <li id="delete">Delete <i class="fas fa-trash"></i></li>
-            <li>Undo</li>
+            <li id="undo">Undo</li>
             <li id="eraser">Eraser</li>
             <li id="color-fill">Color fill</li>
           </ul>
@@ -180,6 +180,7 @@ const palette = document.getElementById('palette')                        //pale
 const colorInput = document.getElementById('palette-color-input')         //palette Color Input
 const brush=document.getElementById('brush')                              //brush
 const clear=document.getElementById('delete')                             //clear
+const undo=document.getElementById('undo')                                //undo
 const eraser=document.getElementById('eraser')                             //eraser
 const colorFill=document.getElementById("color-fill")                     //Color-fill
 
@@ -194,6 +195,8 @@ canvas.style.display = "block";
 let brushColor = '#000';         // default brush color (black)
 let prevBrushColor='#000';
 let isDrawing = false;
+let undoArray = []
+let index = -1
 
 
     width = parseInt(document.getElementById("input-width").value);           //user input width
@@ -221,6 +224,10 @@ window.addEventListener("load", (e) => {
   canvas.addEventListener("mouseup", (e) => {
     isDrawing = false;
     context.beginPath();
+    if (event.type != 'mouseout'){
+    undoArray.push(context.getImageData(0,0,canvas.width,canvas.height))
+    index+=1
+  }
   });
   canvas.addEventListener("mousemove", draw);
 });
@@ -280,6 +287,19 @@ eraser.addEventListener("click", () => {
   brushColor = "white";
 })
 
+// undo
+     
+undo.addEventListener("click", () => {
+  if (index <=0 ){
+    clear.click()
+  }
+  else {
+    index -= 1;
+    undoArray.pop();
+    context.putImageData(undoArray[index],0,0);
+  }
+})
+
 //Download Image
 downloadLinkPNG.addEventListener("click", (e) => {          //PNG
   e.preventDefault();
@@ -315,6 +335,8 @@ clear.addEventListener("click", ()=>{
   clear.classList.add("selected");
   context.clearRect(0,0,canvas.width,canvas.height);
   clear.classList.remove("selected");
+  undoArray = []
+  index = -1
 })
 
 // Color-fill Canvas
