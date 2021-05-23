@@ -141,6 +141,12 @@
             <li id="brush">Brush</li>
             <li id="delete">Delete <i class="fas fa-trash"></i></li>
             <li id="undo">Undo</li>
+            <label for="bsize">Brush Size</label>
+            <select name="bsize" id="bsize"  onChange="setBrushSize(this);">
+              <option value="0" selected>•</option>
+              <option value="1">●</option>
+              <option value="2">⬤</option>
+            </select>
             <li id="eraser">Eraser</li>
             <li id="color-fill">Color fill</li>
           </ul>
@@ -184,12 +190,12 @@ const undo=document.getElementById('undo')                                //undo
 const eraser=document.getElementById('eraser')                             //eraser
 const colorFill=document.getElementById("color-fill")                     //Color-fill
 
-
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
 
 context.globalAlpha = 1;
 canvas.style.display = "block";
+var brushSize=0
 
 // Global Variables
 let brushColor = '#000';         // default brush color (black)
@@ -232,6 +238,10 @@ window.addEventListener("load", (e) => {
   canvas.addEventListener("mousemove", draw);
 });
 
+function setBrushSize(sel) {
+  brushSize=parseInt(sel.options[sel.selectedIndex].value)
+}
+
 //Draw Function
 function draw(e) {
   if (!isDrawing)              // Mouse is not pressed
@@ -243,15 +253,18 @@ function draw(e) {
   x = Math.floor((width * x) / canvas.clientWidth);
   y = Math.floor((height * y) / canvas.clientHeight);
 
-  if (x >= 0 && x < width && y >= 0 && y < height) {
-    context.fillStyle = brushColor;
-
-    context.fillRect(
-      Math.floor(x * (w / width)),
-      Math.floor(y * (h / height)),
-      Math.floor(canvas.width / width),
-      Math.floor(canvas.height / height)
-    );
+  for (var i=x;i<=x+brushSize;i++) {
+    for (var j=y;j<=y+brushSize;j++) {
+      if (i >= 0 && i < width && j >= 0 && j < height) {
+        context.fillStyle = brushColor;
+        context.fillRect(
+          Math.floor(i * (w / width)),
+          Math.floor(j * (h / height)),
+          Math.floor(canvas.width / width),
+          Math.floor(canvas.height / height)
+        );
+      }
+    }
   }
 }
 
