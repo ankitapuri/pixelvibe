@@ -50,7 +50,7 @@ def handleSignUp(request):
                   
 
     else:
-        return HttpResponse("404 - Not found")
+        return render(request,'signup.html')
 
     
 
