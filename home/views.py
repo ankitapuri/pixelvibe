@@ -49,6 +49,7 @@ def handleSignUp(request):
                     return redirect('/signup')
                 elif len(pass1)<=5:
                     messages.error(request,'Password must be at least 6 characters Long!!')
+                    return redirect('/signup')
                 else:
                     # Create the user
                     myuser = User.objects.create_user(username, email, pass1)
