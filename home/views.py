@@ -38,17 +38,27 @@ def handleSignUp(request):
         email=request.POST['email']
         pass1=request.POST['password']
         pass2=request.POST['cpassword']
-
-        exist = User.objects.all().filter(email=email)
-        print(exist)
-        # Create the user
-        myuser = User.objects.create_user(username, email, pass1)
-        myuser.save()
-        # messages.success(request, " Your iCoder has been successfully created")
-        print(" Your Account has been successfully created")
-        return redirect('/login')
-                  
-
+        if pass1 == pass2:
+            # checking if username is exist
+            if User.objects.filter(username=username).exists():
+                messages.error(request,'user already exist Try a different username!')
+                return redirect('/signup')
+            else:
+                if User.objects.filter(email=email).exists():
+                    messages.error(request,'email already exist Try a different email!')
+                    return redirect('/signup')
+                elif len(pass1)<=5:
+                    messages.error(request,'Password must be at least 6 characters Long!!')
+                else:
+                    # Create the user
+                    myuser = User.objects.create_user(username, email, pass1)
+                    myuser.save()
+                    messages.success(request,'Successfully!! Registred Please Login')
+                    return redirect('/login')
+           
+        else:
+            messages.error(request,'password not matched Please Try Again!')
+            return redirect('/signup')
     else:
         return render(request,'signup.html')
 
