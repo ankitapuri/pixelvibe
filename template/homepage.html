@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-
+{% load static %}
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -21,6 +21,8 @@
     crossorigin="anonymous" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/static/css/preloader.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css" rel="stylesheet">
   <style>
     i
     {
@@ -31,6 +33,29 @@
       min-width: 4rem !important;
       padding: 0px !important;
     }
+    .item
+    {
+      width:17vw;
+    }
+    .item img
+    {
+      margin:15px;
+      padding:8px;
+    }
+    .heading-title 
+    {
+      font-size: 5rem;
+    font-weight: 700;
+    }
+    .dark-mode .heading-title  {
+      color:#fff;
+    }
+    @media screen and (max-width: 992px) {
+    .heading-title  {
+        font-size: 2.9rem !important;
+        font-weight: 700;
+    }
+    }
   </style>
 </head>
 
@@ -39,14 +64,14 @@
   <a id="button" style="text-decoration:none"></a>
 
   <!-- Preloader -->
-  <div class='folding-cube'>
+  {% comment %} <div class='folding-cube'>
       <ul>
         <li></li>
         <li></li>
         <li></li>
         <li></li>
       </ul>
-  </div>
+  </div> {% endcomment %}
 
   <!-- navbar start -->
   <nav class="navbar navbar-expand-lg navbar-dark">
@@ -67,6 +92,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#section-3">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section-4">Gallery</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/contact">Contact</a>
@@ -111,7 +139,7 @@
 
 
   <div class="container my-5 py-3 py-5 col-lg-8" id="section-2">
-    <h1 class="text-center">Let Us Paint</h1>
+    <h1 class="text-center heading-title">Let Us Paint</h1>
     <p class="mt-5">You are never too old to paint. Let your dreams get colors with our brush. Painting sharpens the
       mind through conceptual visualization and implementation, plus, boosts memory skills. People using creative
       outlets such as writing, painting and drawing have less chance of developing memory loss illnesses when they get
@@ -226,8 +254,39 @@
 
   <!-- our team members ends -->
 
-
+<div class="container" id="section-4">
+  <h1 class="text-center heading-title mb-3">Our Art Gallery</h1>
+  <div class="owl-carousel owl-theme">
+  <div class="item">
+      <h4><img src="/static/arts/1.png" class="img-responsive" alt="logo1"> </h4>
+  </div>
+  <div class="item">
+      <h4><img src="/static/arts/3.png" class="img-responsive" alt="logo1"></h4>
+  </div>
+  <div class="item">
+      <h4><img src="/static/arts/2.jpg" class="img-responsive" alt="logo1"></h4>
+  </div>
+  <div class="item">
+      <h4><img src="/static/arts/4.jpg" class="img-responsive" alt="logo1"></h4>
+  </div>
+  
+  <div class="item">
+      <h4><img src="/static/arts/1.png" class="img-responsive" alt="logo1"> </h4>
+  </div>
+  <div class="item">
+      <h4><img src="/static/arts/3.png" class="img-responsive" alt="logo1"></h4>
+  </div>
+  <div class="item">
+      <h4><img src="/static/arts/2.jpg" class="img-responsive" alt="logo1"></h4>
+  </div>
+  <div class="item">
+      <h4><img src="/static/arts/4.jpg" class="img-responsive" alt="logo1"></h4>
+  </div>
+  
+  </div>
+</div>
  
+
 
   <!-- wave start -->
    <div class="container-fluid px-0" id="wavesection">
@@ -405,6 +464,8 @@
     }
   </script>
   <script src="/static/JS/preloader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src=" {% static 'JS/crousel.js' %} "></script>
 </body>
 
 </html>
