@@ -138,15 +138,15 @@
         </button>
         <div id="myDropdown" class="dropdown-content">
           <ul class="list">
-            <li id="brush">Brush</li>
-            <li id="delete">Delete <i class="fas fa-trash"></i></li>
-            <li id="undo">Undo</li>
-            <label for="bsize">Brush Size</label>
-            <select name="bsize" id="bsize"  onChange="setBrushSize(this);">
+            <label id="brush" for="bsize">Brush Size</label>
+            <select name="bsize" onChange="setBrushSize(this);">
               <option value="0" selected>•</option>
               <option value="1">●</option>
               <option value="2">⬤</option>
             </select>
+            <!-- <li id="brush">Brush</li> -->
+            <li id="delete">Delete <i class="fas fa-trash"></i></li>
+            <li id="undo">Undo</li>
             <li id="eraser">Eraser</li>
             <li id="color-fill">Color fill</li>
           </ul>
