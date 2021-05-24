@@ -195,11 +195,12 @@ const context = canvas.getContext("2d");
 
 context.globalAlpha = 1;
 canvas.style.display = "block";
-var brushSize=0
 
 // Global Variables
 let brushColor = '#000';         // default brush color (black)
 let prevBrushColor='#000';
+let brushSize=0
+let prevBrushSize=0
 let isDrawing = false;
 let undoArray = []
 let index = -1
@@ -271,6 +272,7 @@ function draw(e) {
 colorInput.addEventListener("change", () => {
   brushColor = colorInput.value;
   prevBrushColor = brushColor;
+  prevBrushSize =
   eraser.classList.remove("selected");
   brush.classList.add("selected");
   canvas.classList.remove("erasing");
@@ -298,6 +300,8 @@ eraser.addEventListener("click", () => {
   eraser.classList.add("selected");
   brush.classList.remove("selected");
   brushColor = "white";
+  prevBrushSize = brushSize
+  brushSize = 0
 })
 
 // undo
@@ -340,6 +344,7 @@ brush.addEventListener("click", () => {
   colorFill.classList.remove("selected");
   brush.classList.add("selected");
   brushColor = prevBrushColor;
+  brushSize = prevBrushSize
 })
 
 
