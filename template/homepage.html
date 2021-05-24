@@ -21,6 +21,8 @@
     crossorigin="anonymous" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/static/css/preloader.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css" rel="stylesheet">
   <style>
     i
     {
@@ -228,32 +230,37 @@
 
 <div class="container">
   <h1 class="text-center mb-3">Our Art Gallery</h1>
-  <div class="row">
-
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img src=" {% static 'arts/1.png' %} " class="card-img-top" alt="...">
-      </div>
-    </div>
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img src=" {% static 'arts/3.png' %} " class="card-img-top" alt="...">
-      </div>
-    </div>
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img src=" {% static 'arts/2.jpg' %} " class="card-img-top" alt="...">
-      </div>
-    </div>
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img src=" {% static 'arts/4.jpg' %} " class="card-img-top" alt="...">
-      </div>
-    </div>
-
+  <div class="owl-carousel owl-theme">
+  <div class="item">
+      <h4><img src="/static/arts/1.png" class="img-responsive" alt="logo1"> </h4>
+  </div>
+  <div class="item">
+      <h4><img src="/static/arts/3.png" class="img-responsive" alt="logo1"></h4>
+  </div>
+  <div class="item">
+      <h4><img src="/static/arts/2.jpg" class="img-responsive" alt="logo1"></h4>
+  </div>
+  <div class="item">
+      <h4><img src="/static/arts/4.jpg" class="img-responsive" alt="logo1"></h4>
+  </div>
+  
+  <div class="item">
+      <h4><img src="/static/arts/1.png" class="img-responsive" alt="logo1"> </h4>
+  </div>
+  <div class="item">
+      <h4><img src="/static/arts/3.png" class="img-responsive" alt="logo1"></h4>
+  </div>
+  <div class="item">
+      <h4><img src="/static/arts/2.jpg" class="img-responsive" alt="logo1"></h4>
+  </div>
+  <div class="item">
+      <h4><img src="/static/arts/4.jpg" class="img-responsive" alt="logo1"></h4>
+  </div>
+  
   </div>
 </div>
  
+
 
   <!-- wave start -->
    <div class="container-fluid px-0" id="wavesection">
@@ -431,6 +438,8 @@
     }
   </script>
   <script src="/static/JS/preloader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src=" {% static 'JS/crousel.js' %} "></script>
 </body>
 
 </html>
