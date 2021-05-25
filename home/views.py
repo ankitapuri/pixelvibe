@@ -5,17 +5,18 @@ from django.contrib.auth.models import User,auth
 from django.contrib.auth  import authenticate,  login, logout
 from home.models import Contact
 from django.contrib import  messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
-    print(User.is_authenticated)
-    if request.user.is_authenticated:
-        pass
-    else:
-        return redirect('/login')
     return render(request, 'homepage.html')
 
 def paint(request):
+    if request.user.is_authenticated:
+        pass
+    else:
+        messages.error(request,"Please Login First !!")
+        return redirect('/login')
     if request.method == 'GET':
         print('get')
     else:
