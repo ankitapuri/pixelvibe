@@ -115,3 +115,21 @@ def contact(request):
 def error_404(request, *args, **argv):
         data = {}
         return render(request,'404.html', data)
+
+def forgotPass(request):
+    if request.method == 'POST':
+        return redirect('/otp')
+    else:
+
+        return render(request,'forgot.html')
+
+def otpVerification(request):
+    if request.method == 'POST':
+        return redirect('/passwordReset')
+    else:
+        return render(request,'otp.html')
+def passwordReset(request):
+    if request.method == 'POST':
+        return redirect('/')
+    else:
+        return render(request,'passwordReset.html')

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Forgot Password{% endblock title %}
+{% block body %}
+	<div class="content">
+		<div class="text">Enter Email</div>
+		<form action="/forgotPass/" method="post">
+			{% csrf_token %} 
+			<div class="field">
+				<span class="fas fa-user"></span>
+				<input type="email" required name="email">
+				<label>Email</label>
+			</div>
+			<button>Get Otp</button>
+		</form>
+    	<!-- <button class="google"><i class="fab fa-google"></i> sign in with Google</button>
+		<button class="facebook"><i class="fab fa-facebook-f"></i> sign in with Facebook</button> -->
+	</div>
+	{% endblock body %}
