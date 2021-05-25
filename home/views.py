@@ -130,6 +130,7 @@ def otpVerification(request):
         return render(request,'otp.html')
 def passwordReset(request):
     if request.method == 'POST':
-        return redirect('/')
+        messages.success(request,"Password reset successfully! Please Login")
+        return redirect('/login')
     else:
         return render(request,'passwordReset.html')
