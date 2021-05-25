@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-{% load static %}
-<head>
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Sign Up Form</title>
-	<link rel="stylesheet" href=" {% static 'css/form.css' %} ">
-	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-	{% for message in messages %}
-	<div class="alert alert-warning alert-dismissible fade show" role="alert">
-		 {{message}}
-	</div>
-    {% endfor %}
+{% extends 'base.html' %}
+{% block title %}Sign Up Form{% endblock title %}
+{% block body %}
 	<div class="content">
 		<div class="text">Sign Up</div>
 		<form action="/signup/" method="post">
@@ -47,6 +33,4 @@
     	<!-- <button class="google"><i class="fab fa-google"></i> sign in with Google</button>
 		<button class="facebook"><i class="fab fa-facebook-f"></i> sign in with Facebook</button> -->
 	</div>
-
-</body>
-</html>
+{% endblock body %}
