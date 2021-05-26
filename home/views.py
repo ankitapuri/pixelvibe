@@ -6,7 +6,9 @@ from django.contrib.auth  import authenticate,  login, logout
 from home.models import Contact
 from django.contrib import  messages
 from django.contrib.auth.decorators import login_required
-
+import math
+import random
+from django.contrib.auth.hashers import make_password, check_password
 # Create your views here.
 def home(request):
     return render(request, 'homepage.html')
@@ -71,12 +73,15 @@ def Handlelogin(request):
         username = request.POST['username']
         password = request.POST['password']
         print(username,password)
-        exist = User.objects.all().filter(username=username)
+        exist = User.objects.filter(username=username).exists()
         print(exist)
-        if len(exist)==0:
+        if not exist:
             messages.error(request," username not Found Please Sign Up")
             return redirect('/login')
-        user=authenticate(username=username, password=password) 
+        user = User.objects.filter(username=username).first()
+        print(user,user.password,password)
+        
+        user=authenticate(username=username,password=password) 
         if user is not None:
             login(request, user)
             print("Successfully Logged In")
@@ -116,20 +121,67 @@ def error_404(request, *args, **argv):
         data = {}
         return render(request,'404.html', data)
 
+
+def send_email_to_user(otp,email):
+    import smtplib
+    con = smtplib.SMTP("smtp.gmail.com",587)
+    con.ehlo()
+    con.starttls()
+    admin_email = ""
+    admin_password = ""
+    con.login(admin_email,admin_password)
+    msg = "Otp is "+str(otp)
+    con.sendmail("email",email,"Subject:Password Reset \n\n"+msg)
+
+
+global_dict = {'otp':"",'email':"",'otpcheck':""} 
+def generate_otp():
+    digits = [i for i in range(0, 10)]
+    random_str = ""
+    for i in range(6):
+        index = math.floor(random.random() * 10)
+        random_str += str(digits[index])
+    print(random_str,type(random_str))
+    global_dict['otp'] = random_str
+    send_email_to_user(random_str,global_dict['email'])
+    return
+
 def forgotPass(request):
     if request.method == 'POST':
-        return redirect('/otp')
+        email = request.POST['email']
+        if User.objects.filter(email=email).exists():
+            print("exist")
+            global_dict['email'] = email
+            generate_otp()
+            messages.success(request, 'An otp is send to your Email please Enter that otp')
+            return redirect('/otp')
+        else:
+            messages.error(request,"Email Not Found! Please Sign Up")
+            return redirect('/signup')
     else:
-
         return render(request,'forgot.html')
 
 def otpVerification(request):
     if request.method == 'POST':
-        return redirect('/passwordReset')
+        get_otp = request.POST["otp"]
+        if global_dict['otp'] == get_otp:
+            print("match")
+            return redirect('/passwordReset')
+        else:
+            # print("otp is",global_dict['otp'])
+            # messages.error(request, 'Otp not Matched Please Try Again')
+            return redirect("/otp")
     else:
         return render(request,'otp.html')
+
 def passwordReset(request):
     if request.method == 'POST':
+        password = request.POST["password"]
+        cpassword = request.POST["cpassword"]
+        user = User.objects.filter(email=global_dict['email']).first()
+        user.password = make_password(password)
+        print(user,user.email,user.password)
+        user.save()
         messages.success(request,"Password reset successfully! Please Login")
         return redirect('/login')
     else:
