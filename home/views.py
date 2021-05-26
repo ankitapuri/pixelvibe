@@ -3,15 +3,19 @@ from django.http import HttpResponse, request
 # now for using login sys we import user model
 from django.contrib.auth.models import User,auth
 from django.contrib.auth  import authenticate,  login, logout
-from home.models import Contact
+from home.models import Contact,Gallery
 from django.contrib import  messages
 from django.contrib.auth.decorators import login_required
 import math
 import random
 from django.contrib.auth.hashers import make_password, check_password
+
+params={}
 # Create your views here.
 def home(request):
-    return render(request, 'homepage.html')
+    allArts = Gallery.objects.all()
+    params['allArts']=allArts
+    return render(request, 'homepage.html',params)
 
 def paint(request):
     if request.user.is_authenticated:

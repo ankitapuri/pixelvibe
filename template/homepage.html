@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 {% load static %}
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -22,39 +23,42 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/static/css/preloader.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css"
+    rel="stylesheet">
   <style>
-    i
-    {
-      font-size:1.5rem !important;
+    i {
+      font-size: 1.5rem !important;
     }
-    .dropdown-menu
-    {
+
+    .dropdown-menu {
       min-width: 4rem !important;
       padding: 0px !important;
     }
-    .item
-    {
-      width:17vw;
+
+    .item {
+      width: 17vw;
     }
-    .item img
-    {
-      margin:15px;
-      padding:8px;
+
+    .item img {
+      margin: 15px;
+      padding: 8px;
+      height: 30vh;
     }
-    .heading-title 
-    {
+
+    .heading-title {
       font-size: 5rem;
-    font-weight: 700;
+      font-weight: 700;
     }
-    .dark-mode .heading-title  {
-      color:#fff;
+
+    .dark-mode .heading-title {
+      color: #fff;
     }
+
     @media screen and (max-width: 992px) {
-    .heading-title  {
+      .heading-title {
         font-size: 2.9rem !important;
         font-weight: 700;
-    }
+      }
     }
   </style>
 </head>
@@ -65,12 +69,12 @@
 
   <!-- Preloader -->
   {% comment %} <div class='folding-cube'>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div> {% endcomment %}
 
   <!-- navbar start -->
@@ -108,18 +112,20 @@
           </li>
           {% else %}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               {{user}}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="nav-link text-center" onclick="confirmation()" href="#" style="color: black !important">Logout</a></li>
+              <li><a class="nav-link text-center" onclick="confirmation()" href="#"
+                  style="color: black !important">Logout</a></li>
             </ul>
           </li>
           {% endif %}
 
           <li class="nav-item">
             <!-- partial:index.partial.html -->
-            <label id ="switch" class="switch">
+            <label id="switch" class="switch">
               <input type="checkbox" onclick="myFunction()" id="slider">
               <span class="slider round"></span>
             </label>
@@ -152,152 +158,132 @@
 
   <div class="demo mb-5 pb-5">
     <div class="container mb-5" id="section-3">
-        <div class="row text-center">
-            <h1 class="heading-title mb-5"> Meet Our Team </h1>
+      <div class="row text-center">
+        <h1 class="heading-title mb-5"> Meet Our Team </h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-11">
+          <div class="our-team">
+            <div class="pic">
+              <img src="/static/images/person-2.jpg" alt="" />
+              <ul class="social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+            <div class="team-content">
+              <h3 class="title">Williamson</h3>
+              <small class="post">web developer</small>
+              <small>Email: <b>mail@example.com</b></small>
+            </div>
+            <div class="team-layer">
+              <a href="#">Williamson</a>
+              <span class="post">web developer</span>
+            </div>
+          </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-3 col-sm-11">
-                <div class="our-team">
-                    <div class="pic">
-                        <img src="/static/images/person-2.jpg" alt=""/>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-github"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Williamson</h3>
-                        <small class="post">web developer</small>
-                        <small>Email: <b>mail@example.com</b></small>
-                    </div>
-                    <div class="team-layer">
-                        <a href="#">Williamson</a>
-                        <span class="post">web developer</span>
-                    </div>
-                </div>
+        <div class="col-md-3 col-sm-11">
+          <div class="our-team">
+            <div class="pic">
+              <img src="/static/images/Sam-Revilter.jpg" alt="" />
+              <ul class="social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
             </div>
-
-            <div class="col-md-3 col-sm-11">
-                <div class="our-team">
-                    <div class="pic">
-                        <img src="/static/images/Sam-Revilter.jpg" alt=""/>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-github"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">kristina</h3>
-                        <small class="post">Web Designer</small>
-                        <small>Email: <b>mail@example.com</b></small>
-                    </div>
-                    <div class="team-layer">
-                        <a href="#">kristina</a>
-                        <span class="post">Web Designer</span>
-                    </div>
-                </div>
+            <div class="team-content">
+              <h3 class="title">kristina</h3>
+              <small class="post">Web Designer</small>
+              <small>Email: <b>mail@example.com</b></small>
             </div>
-
-            <div class="col-md-3 col-sm-6">
-                <div class="our-team">
-                    <div class="pic">
-                        <img src="/static/images/team4-large.jpg" alt=""/>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-github"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Steve Thomas</h3>
-                        <small class="post">web developer</small>
-                        <small>Email: <b>mail@example.com</b></small>
-                    </div>
-                    <div class="team-layer">
-                        <a href="#">Steve Thomas</a>
-                        <span class="post">web developer</span>
-                    </div>
-                </div>
+            <div class="team-layer">
+              <a href="#">kristina</a>
+              <span class="post">Web Designer</span>
             </div>
-
-            <div class="col-md-3 col-sm-6">
-                <div class="our-team">
-                    <div class="pic">
-                        <img src="/static/images/Affluent-Women-Mailing-Lists.jpg" alt=""/>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-github"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Miranda joy</h3>
-                        <small class="post">Web Designer</small>
-                        <small>Email: <b>mail@example.com</b></small>
-                    </div>
-                    <div class="team-layer">
-                        <a href="#">Miranda joy</a>
-                        <span class="post">Web Designer</span>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="our-team">
+            <div class="pic">
+              <img src="/static/images/team4-large.jpg" alt="" />
+              <ul class="social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+            <div class="team-content">
+              <h3 class="title">Steve Thomas</h3>
+              <small class="post">web developer</small>
+              <small>Email: <b>mail@example.com</b></small>
+            </div>
+            <div class="team-layer">
+              <a href="#">Steve Thomas</a>
+              <span class="post">web developer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="our-team">
+            <div class="pic">
+              <img src="/static/images/Affluent-Women-Mailing-Lists.jpg" alt="" />
+              <ul class="social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+            <div class="team-content">
+              <h3 class="title">Miranda joy</h3>
+              <small class="post">Web Designer</small>
+              <small>Email: <b>mail@example.com</b></small>
+            </div>
+            <div class="team-layer">
+              <a href="#">Miranda joy</a>
+              <span class="post">Web Designer</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+
 
   <!-- our team members ends -->
 
-<div class="container" id="section-4">
-  <h1 class="text-center heading-title mb-3">Our Art Gallery</h1>
-  <div class="owl-carousel owl-theme">
-  <div class="item">
-      <h4><img src="/static/arts/1.png" class="img-responsive" alt="logo1"> </h4>
+  <div class="container" id="section-4">
+    <h1 class="text-center heading-title mb-3">Our Art Gallery</h1>
+    <div class="owl-carousel owl-theme">
+      {% for art in allArts %}
+      <div class="item">
+        <h4><img src="/media/{{art.img}}" class="img-responsive" alt="logo1"> </h4>
+      </div>
+      {% endfor %}
+    </div>
   </div>
-  <div class="item">
-      <h4><img src="/static/arts/3.png" class="img-responsive" alt="logo1"></h4>
-  </div>
-  <div class="item">
-      <h4><img src="/static/arts/2.jpg" class="img-responsive" alt="logo1"></h4>
-  </div>
-  <div class="item">
-      <h4><img src="/static/arts/4.jpg" class="img-responsive" alt="logo1"></h4>
-  </div>
-  
-  <div class="item">
-      <h4><img src="/static/arts/1.png" class="img-responsive" alt="logo1"> </h4>
-  </div>
-  <div class="item">
-      <h4><img src="/static/arts/3.png" class="img-responsive" alt="logo1"></h4>
-  </div>
-  <div class="item">
-      <h4><img src="/static/arts/2.jpg" class="img-responsive" alt="logo1"></h4>
-  </div>
-  <div class="item">
-      <h4><img src="/static/arts/4.jpg" class="img-responsive" alt="logo1"></h4>
-  </div>
-  
-  </div>
-</div>
- 
+
 
 
   <!-- wave start -->
-   <div class="container-fluid px-0" id="wavesection">
+  <div class="container-fluid px-0" id="wavesection">
     <footer>
       <svg viewBox="0 0 120 28">
-       <defs> 
-         <mask id="xxx">
-           <circle cx="7" cy="12" r="40" fill="#fff" />
-         </mask>
-         
-         <filter id="goo">
+        <defs>
+          <mask id="xxx">
+            <circle cx="7" cy="12" r="40" fill="#fff" />
+          </mask>
+
+          <filter id="goo">
             <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
             <feColorMatrix in="blur" mode="matrix" values="
                  1 0 0 0 0  
@@ -306,31 +292,32 @@
                  0 0 0 13 -9" result="goo" />
             <feBlend in="SourceGraphic" in2="goo" />
           </filter>
-           <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
-        </defs> 
-      
-         <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2" ></use> 
-         <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0" ></use>
-       
-        
+          <path id="wave"
+            d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+        </defs>
+
+        <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2"></use>
+        <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0"></use>
+
+
         <g class="gooeff">
-        <circle class="drop drop1" cx="20" cy="2" r="1.8"  />
-        <circle class="drop drop2" cx="25" cy="2.5" r="1.5"  />
-        <circle class="drop drop3" cx="16" cy="2.8" r="1.2"  />
+          <circle class="drop drop1" cx="20" cy="2" r="1.8" />
+          <circle class="drop drop2" cx="25" cy="2.5" r="1.5" />
+          <circle class="drop drop3" cx="16" cy="2.8" r="1.2" />
           <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
-        
+
           <!-- g mask="url(#xxx)">
           <path   id="wave1"  class="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
           </g>
         </g -->
-      
+
       </svg>
-      
-       
-      </footer>
-         
-   </div>
-    
+
+
+    </footer>
+
+  </div>
+
   <!-- wave ends -->
   <!-- footer start -->
   <footer class="footer-distributed py-5 px-0 bg-dark">
@@ -425,7 +412,7 @@
   <!-- js for back to top button -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- back to top -->
+  <!-- back to top -->
   <script>
     var btn = $('#button');
     $(window).scroll(function () {
@@ -444,23 +431,23 @@
   <script src="/static/JS/darkmode.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<script>
-    function confirmation(){
-    swal({
-      title: "Are you sure?",
-      text: "You Want to LogOut!!",
-      icon: "warning",
-      buttons: true,
-      buttons: ['cancel','Yes, Log out'],
-      dangerMode: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        window.location = "/logout";
-      } else {
-        
-      }
-    });
+  <script>
+    function confirmation() {
+      swal({
+        title: "Are you sure?",
+        text: "You Want to LogOut!!",
+        icon: "warning",
+        buttons: true,
+        buttons: ['cancel', 'Yes, Log out'],
+        dangerMode: true,
+      })
+        .then((willDelete) => {
+          if (willDelete) {
+            window.location = "/logout";
+          } else {
+
+          }
+        });
     }
   </script>
   <script src="/static/JS/preloader.js"></script>
