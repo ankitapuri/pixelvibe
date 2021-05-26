@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Otp varification{% endblock title %}
+{% block body %}
+	<div class="content">
+		<div class="text">Enter Otp</div>
+		<form action="/otp/" method="post">
+			{% csrf_token %} 
+			<div class="field">
+				<span class="fas fa-user"></span>
+				<input type="text" required name="otp">
+				<label>Otp</label>
+			</div>
+			<button>Submit</button>
+		</form>
+    	<!-- <button class="google"><i class="fab fa-google"></i> sign in with Google</button>
+		<button class="facebook"><i class="fab fa-facebook-f"></i> sign in with Facebook</button> -->
+	</div>
+	{% endblock body %}

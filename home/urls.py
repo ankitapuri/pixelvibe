@@ -23,5 +23,9 @@ urlpatterns = [
     path('login/',views.Handlelogin , name='login' ),
     path('logout/',views.logout , name='logout' ),
     path('contact/',views.contact , name='contact' ),
+    path('forgotPass/',views.forgotPass , name='forgotPass' ),
+    path('otp/',views.otpVerification , name='otpVerification' ),
+    path('passwordReset/',views.passwordReset , name='passwordReset' ),
+    
     
 ]
