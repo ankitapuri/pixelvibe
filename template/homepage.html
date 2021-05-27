@@ -117,6 +117,10 @@
               {{user}}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% if request.user.is_superuser %}
+              <li><a class="nav-link text-center"  href="/admin"
+                  style="color: black !important" target="_blank">Admin</a></li>
+              {% endif %}
               <li><a class="nav-link text-center" onclick="confirmation()" href="#"
                   style="color: black !important">Logout</a></li>
             </ul>
