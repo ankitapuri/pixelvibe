@@ -148,6 +148,7 @@ def generate_otp():
     print(random_str,type(random_str))
     global_dict['otp'] = random_str
     send_email_to_user(random_str,global_dict['email'])
+    
     return
 
 def forgotPass(request):
@@ -170,18 +171,32 @@ def otpVerification(request):
         get_otp = request.POST["otp"]
         if global_dict['otp'] == get_otp:
             print("match")
+            global_dict['otpcheck'] = "1"
             return redirect('/passwordReset')
         else:
-            # print("otp is",global_dict['otp'])
-            # messages.error(request, 'Otp not Matched Please Try Again')
+            print("otp is",global_dict['otp'])
+            messages.error(request, 'Otp not Matched Please Try Again')
             return redirect("/otp")
     else:
-        return render(request,'otp.html')
+        if global_dict['email']!="":
+            return render(request,'otp.html')
+        else:
+            messages.error(request, 'Please Enter a Valid Email First!')
+            return redirect('/forgotPass')
 
 def passwordReset(request):
     if request.method == 'POST':
         password = request.POST["password"]
         cpassword = request.POST["cpassword"]
+        if password != cpassword:
+            messages.error(request,"Password not Matched")
+            return redirect("/passwordReset")
+        else:
+            if len(password)<=5:
+                messages.error(request,'Password must be at least 6 characters Long!!')
+                return redirect("/passwordReset")
+            else:
+                pass
         user = User.objects.filter(email=global_dict['email']).first()
         user.password = make_password(password)
         print(user,user.email,user.password)
@@ -189,4 +204,13 @@ def passwordReset(request):
         messages.success(request,"Password reset successfully! Please Login")
         return redirect('/login')
     else:
-        return render(request,'passwordReset.html')
+        if global_dict['email']!="":
+            if global_dict['otp']!="" and global_dict['otpcheck'] == "1":
+                return render(request,'passwordReset.html')
+            else:
+                messages.error(request,"Please Enter a Valid Otp First!")
+                return redirect('/otp')
+        else:
+            messages.error(request, 'Please Enter a Valid Email First!')
+            return redirect('/forgotPass')
+        
