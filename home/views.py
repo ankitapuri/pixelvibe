@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 import math
 import random
 from django.contrib.auth.hashers import make_password, check_password
+import smtplib
 
 params={}
 # Create your views here.
@@ -101,6 +102,16 @@ def logout(request):
     auth.logout(request)
     return redirect('/login')
 
+def send_email_to_Admin(msg,email):
+    con = smtplib.SMTP("smtp.gmail.com",587)
+    con.ehlo()
+    con.starttls()
+    admin_email = "pixelzvibe@gmail.com"
+    admin_password = "pixelvibeart123"
+    con.login(admin_email,admin_password)
+    msg = str(msg)
+    con.sendmail("email",admin_email,"Subject:Contact Response To PixelVibe \n\n"+msg)
+
 def contact(request):
     if request.method=="POST":
         print('post')
@@ -115,6 +126,8 @@ def contact(request):
         else:
             ins = Contact(firstname=firstname,lastname=lastname,email=email,content=content,number=number)
             ins.save()
+            msg = str(firstname) + "is trying to contact with us. \nmsg : " + str(content) 
+            send_email_to_Admin(msg,email)
             messages.success(request,'Thank You for contacting Us!! Your message has been saved ')
         return redirect('/contact')
     else:
