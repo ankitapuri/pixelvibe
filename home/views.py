@@ -228,6 +228,11 @@ def passwordReset(request):
             return redirect('/forgotPass')
         
 def changePassword(request):
+    if request.user.is_authenticated:
+        pass
+    else:
+        messages.error(request,"Please Login First !!")
+        return redirect('/login')
     if request.method == "POST":
         current_password = request.POST["current_password"]
         new_password = request.POST["new_password"]
