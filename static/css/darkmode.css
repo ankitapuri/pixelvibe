@@ -1,0 +1,75 @@
+/* css for dark mode start */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 3.8rem;
+    height: 2.1rem;
+    margin-top:0.6rem;
+  }
+  
+  /*   // Hide checkbox
+   */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /*   // The slider
+     */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: lightblue;
+    transition: 0.4s ease-in-out;
+  }
+  
+  /*   
+    // Design of slider for light mode
+   */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 23px;
+    width: 23px;
+    left: 6px;
+    bottom: 6px;
+    background-color: yellow;
+    box-shadow: 0px 0px 5px 4px #ffd900;
+    transition: 0.4s;
+  }
+  /*   // When theme is dark, background is dark */
+  .dark-mode .slider {
+    background-color: #3a2864;
+  }
+  
+  /*    // If theme is dark, but slider is to the left, move it to the right and turn it into a moon
+   */
+  .dark-mode .slider:before {
+    transform: translateX(26px);
+    height: 3px;
+    width: 3px;
+    background-color: lightgrey;
+    bottom: 15px;
+    left: 10px;
+    box-shadow: 10px -7px 0px 1px lightgrey, -4px -8px 0px 0px lightgrey, 6px 6px 0px 1px lightgrey, 5px -1px 5px 13px white, 5px -1px 0px 12px white;
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  .dark-mode{
+    background-color: rgb(36, 35, 35);
+  }
+  
+/* css for dark mode ends */
