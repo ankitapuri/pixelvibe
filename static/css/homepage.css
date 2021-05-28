@@ -496,14 +496,14 @@ text-decoration: none;
 }
 #button {
 display: inline-block;
-background-color: #FF9800;
+background: linear-gradient(16deg, rgba(254,167,186,1) 16%, rgba(255,237,204,1) 61%);
 width: 52px;
 height: 52px;
 text-align: center;
 border-radius: 25px;
 position: fixed;
-bottom: 10px;
-right: 10px;
+bottom: 5px;
+left: -5px;
 transition: background-color .3s,
 opacity .5s, visibility .5s;
 opacity: 0;
