@@ -26,15 +26,15 @@
 		<button class="facebook"><i class="fab fa-facebook-f"></i> sign in with Facebook</button> -->
 	</div>
 	<script>
-		// for show password
+				// for show password for one
 		const togglePassword1 = document.querySelector('#togglePassword1');
 		const password1 = document.querySelector('#password1');
 		togglePassword1.addEventListener('click', function (e) {
-    // toggle the type attribute
-    const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
-    password1.setAttribute('type', type);
-    // toggle the eye slash icon
-    this.classList.toggle('fa-eye-slash');
-});
+		// toggle the type attribute
+		const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
+		password1.setAttribute('type', type);
+		// toggle the eye slash icon
+		this.classList.toggle('fa-eye-slash');
+		});
 	</script>
 	{% endblock body %}
