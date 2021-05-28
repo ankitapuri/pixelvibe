@@ -227,3 +227,35 @@ def passwordReset(request):
             messages.error(request, 'Please Enter a Valid Email First!')
             return redirect('/forgotPass')
         
+def changePassword(request):
+    if request.user.is_authenticated:
+        pass
+    else:
+        messages.error(request,"Please Login First !!")
+        return redirect('/login')
+    if request.method == "POST":
+        current_password = request.POST["current_password"]
+        new_password = request.POST["new_password"]
+        confirm_password = request.POST["confirm_password"]
+        print(new_password,confirm_password)
+        user = User.objects.filter(username=request.user).first()
+        print(user.password)
+
+        if check_password(current_password,user.password):
+            pass
+        else:
+            messages.error(request,"Current Password Not Matched")
+            return redirect("/changePassword")
+        if new_password != confirm_password:
+            messages.error(request,"Password not Matched")
+            return redirect("/changePassword")
+        else:
+            user.password = make_password(new_password)
+            user.save()
+            # login(request,user)
+            messages.success(request,"Password changed successfully Please Login Again!")
+            return redirect("/login")
+    else:
+        pass
+    
+    return render(request,"changePassword.html")
