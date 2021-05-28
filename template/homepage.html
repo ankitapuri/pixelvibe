@@ -268,6 +268,21 @@
   <div class="container" id="section-4">
     <h1 class="text-center heading-title mb-3">Our Art Gallery</h1>
     <div class="owl-carousel owl-theme">
+    <div class="item">
+        <h4><img src="{% static 'images/arts/1.png' %}" class="img-responsive" alt="logo1"> </h4>
+      </div>
+      <div class="item">
+        <h4><img src="{% static 'images/arts/1.jpg' %}" class="img-responsive" alt="logo1"> </h4>
+      </div>
+      <div class="item">
+        <h4><img src="{% static 'images/arts/2.jpg' %}" class="img-responsive" alt="logo1"> </h4>
+      </div>
+      <div class="item">
+        <h4><img src="{% static 'images/arts/1.png' %}" class="img-responsive" alt="logo1"> </h4>
+      </div>
+      <div class="item">
+        <h4><img src="{% static 'images/arts/2.png' %}" class="img-responsive" alt="logo1"> </h4>
+      </div>
       {% for art in allArts %}
       <div class="item">
         <h4><img src="/media/{{art.img}}" class="img-responsive" alt="logo1"> </h4>
