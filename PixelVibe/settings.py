@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -100,6 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
