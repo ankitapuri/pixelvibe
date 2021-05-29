@@ -7,6 +7,7 @@ if (currentTheme == "dark") {
   console.log("Its dark");
   // togglebutton.innerHTML = "Light Mode";
   element.classList.toggle("dark-mode");
+ 
   theme = "dark";
   localStorage.setItem("theme", theme);
 } else {

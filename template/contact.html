@@ -16,9 +16,10 @@
 }
 
 body {
-  background: rgb(254,167,186);
-background: linear-gradient(16deg, rgba(254,167,186,1) 16%, rgba(255,237,204,1) 61%);
- 
+background-color: #ee9ca7;   /* fallback for old browsers */
+ background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);   /* Chrome 10-25, Safari 5.1-6 */
+ background-image: linear-gradient(to right, #ffdde1, #ee9ca7);  /*  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   height: 120vh;
@@ -46,11 +47,12 @@ background: linear-gradient(16deg, rgba(254,167,186,1) 16%, rgba(255,237,204,1) 
   display: flex;
 }
 
-#contact .left-container {
+ .left-container {
   flex: 1;
   height: 480px;
-  background: rgb(102,73,77);
-background: linear-gradient(16deg, rgba(102,73,77,1) 7%, rgba(66,25,31,1) 66%);
+ background-color: #FF0099;   /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #493240, #FF0099); /*  Chrome 10-25, Safari 5.1-6  */
+background-image: linear-gradient(to right, #493240, #FF0099);  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+  */
 }
 #contact .right-container {
   display: flex;
@@ -100,10 +102,10 @@ background: linear-gradient(16deg, rgba(102,73,77,1) 7%, rgba(66,25,31,1) 66%);
   outline: 1px solid #df93df;
 }
 
-#contact button {
+ button {
   border-radius: 20px;
   border: 1px solid #df93df;
-  background-color: #7dc7dd;
+  background-color: #3edbf0;;
   color: #0f0f0f;
   font-size: 12px;
   font-weight: bold;
@@ -135,14 +137,31 @@ button:hover {
     min-height:515px;
   }
 }
+
+#contact form p {
+  text-align: left;
+}
+
+.darkmode {
+  background-color: #7f5a83;
+background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+}
+
+.darkmode-left-container{
+  background-color: #9dc5c3;
+background-image: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
+}
+
+.darkmode-button{
+  background-color: #ED4264;
+}
+
 @media only screen and (min-width: 600px) {
   #contact  .sm-view {
     display: none;
   }
 }
-#contact form p {
-  text-align: left;
-}
+
 </style>
 <link rel="stylesheet" href="/static/css/homepage.css">
 </head>
@@ -191,7 +210,7 @@ button:hover {
         <li class="nav-item">
           <!-- partial:index.partial.html -->
           <label id ="switch" class="switch">
-            <input type="checkbox" onclick="myFunction()" id="slider">
+            <input type="checkbox" onclick="myFunction();changeToDarkmode()" id="slider">
             <span class="slider round"></span>
           </label>
           <!-- partial -->
@@ -218,7 +237,7 @@ button:hover {
         <p>Whether you have a question , or simply want to connect.</p>
           <br>
           <p>Feel free to send me a message in the contact form</p>
-          <a href="/"><button style="background:#7dc7dd;">home</button>  </a>
+          <a href="/"><button style="background:#fb9300;">home</button>  </a>
       </div>
         </div>
       <div class="right-container">
@@ -236,7 +255,7 @@ button:hover {
         <input type="email" placeholder="email *" name="email"  required/>
         <input type="tel" placeholder="Phone Number" name="number" required />
             <textarea rows="4" placeholder="Message" name="content" required></textarea>
-        <button style="
+        <button class="submit-button" style="
       outline: none;">Submit</button>
       </form>
         </div>
@@ -244,6 +263,19 @@ button:hover {
     </div>
   </div>
 </div>
+
+<script>
+function changeToDarkmode(){
+  document.querySelector("body").classList.toggle("darkmode");
+  document.querySelector(".left-container").classList.toggle("darkmode-left-container");
+  document.querySelector(".submit-button").classList.toggle("darkmode-button")
+}
+const currTheme = localStorage.getItem("theme");
+if (currTheme == "dark") {
+changeToDarkmode();
+}
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <script src="/static/JS/darkmode.js"></script>
 </body>
