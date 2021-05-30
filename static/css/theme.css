@@ -1,0 +1,71 @@
+.settings{
+    position: absolute;
+    right: 5px;
+    top:5px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .StyleSwitcher{
+    position: absolute;
+    top:0px;
+    right: -202px;
+    width: 200px;
+    color: #000;
+    font-weight: bolder;
+    background-color: white;
+    box-shadow: 5px 6px 8px rgb(61, 58, 58);
+    text-align: start;
+    padding: 10px;
+    transform: scale(0);
+  }
+  .unhideStylenav{
+    display: flex;
+    flex-direction: column;
+    transform: scale(1);
+    transition: transform.4s ease;
+  }
+  
+  #circlestyle1{
+    background-color: #FFD700;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 3px;
+    cursor: pointer;
+  }
+  #circlestyle2 {
+    background-color:#4feff7;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+     margin: 3px;
+      cursor: pointer;
+  }
+  
+  #circlestyle3 {
+    background-color:  #98ff98;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+      margin: 3px;
+       cursor: pointer;
+  }
+  #circlestyle4 {
+    background-color: #FFFDD0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+      margin: 3px;
+       cursor: pointer;
+  }
+  
+  #circlestyle5 {
+    background-color: rgb(5, 255, 5);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+      margin: 3px;
+       cursor: pointer;
+  }
+  

@@ -204,77 +204,6 @@ h2:first-of-type {
   margin: 10px;
   background: -webkit-linear-gradient(to left, #424e34, #91ff14);
 }
-.settings{
-    position: absolute;
-    right: 5px;
-    top:5px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .StyleSwitcher{
-    position: absolute;
-    top:0px;
-    right: -202px;
-    width: 200px;
-    color: #000;
-    font-weight: bolder;
-    background-color: white;
-    box-shadow: 5px 6px 8px rgb(61, 58, 58);
-    text-align: start;
-    padding: 10px;
-    transform: scale(0);
-  }
-  .unhideStylenav{
-    display: flex;
-    flex-direction: column;
-    transform: scale(1);
-    transition: transform.4s ease;
-  }
-  
-  #circlestyle1{
-    background-color: #FFD700;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    margin: 3px;
-    cursor: pointer;
-  }
-  #circlestyle2 {
-    background-color:#4feff7;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-     margin: 3px;
-      cursor: pointer;
-  }
-  
-  #circlestyle3 {
-    background-color:  #98ff98;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-      margin: 3px;
-       cursor: pointer;
-  }
-  #circlestyle4 {
-    background-color: #FFFDD0;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-      margin: 3px;
-       cursor: pointer;
-  }
-  
-  #circlestyle5 {
-    background-color: rgb(5, 255, 5);
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-      margin: 3px;
-       cursor: pointer;
-  }
-  
 
   @media screen and (max-width: 992px) {
     .size-picker-form
@@ -283,6 +212,7 @@ h2:first-of-type {
     }
   }
     </style>
+    <link rel="stylesheet" href="/static/css/theme.css">
   </head>
   <body>
     <!-- Title -->
@@ -341,8 +271,9 @@ h2:first-of-type {
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/59a498d1d1.js" crossorigin="anonymous"></script>
-    <script>
-      document.getElementsByClassName("settings")[0].addEventListener('click',()=>{
+   <script>
+     
+     document.getElementsByClassName("settings")[0].addEventListener('click',()=>{
      let styleclass=document.getElementsByClassName("StyleSwitcher")[0].classList;
 
      if(styleclass.contains("unhideStylenav"))
@@ -413,6 +344,7 @@ document.getElementById("dim").addEventListener("click", () => {
   document.getElementsByTagName("body")[0].style.backgroundColor = "#696969";
 });
 
-    </script>
+
+   </script>
   </body>
 </html>
