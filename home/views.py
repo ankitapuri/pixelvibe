@@ -10,7 +10,13 @@ import math
 import random
 from django.contrib.auth.hashers import make_password, check_password
 import smtplib
-
+import re
+regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+def check(email):
+    if(re.search(regex,email)):
+        return True
+    else:
+        return False
 params={}
 # Create your views here.
 def home(request):
@@ -46,6 +52,12 @@ def handleSignUp(request):
         email=request.POST['email']
         pass1=request.POST['password']
         pass2=request.POST['cpassword']
+        # form validations for signup added by arpit jain
+        if(check(email) == True):
+            pass
+        else:
+            messages.error(request,"Email is not valid :( Please Try Again")
+            return redirect('/signup')
         if pass1 == pass2:
             # checking if username is exist
             if User.objects.filter(username=username).exists():
