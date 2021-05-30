@@ -17,6 +17,7 @@
     crossorigin="anonymous" />
   <title>Home</title>
   <link rel="stylesheet" href="/static/css/homepage.css">
+  <link rel="stylesheet" href=" {% static 'css/darkmode.css' %} ">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" />
@@ -26,56 +27,25 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css"
     rel="stylesheet">
   <style>
-    i {
-      font-size: 1.5rem !important;
-    }
-
-    .dropdown-menu {
-      min-width: 4rem !important;
-      padding: 0px !important;
-    }
-
-    .item {
-      width: 17vw;
-    }
-
-    .item img {
-      margin: 15px;
-      padding: 8px;
-      height: 30vh;
-    }
-
-    .heading-title {
-      font-size: 5rem;
-      font-weight: 700;
-    }
-
-    .dark-mode .heading-title {
-      color: #fff;
-    }
-
-    @media screen and (max-width: 992px) {
-      .heading-title {
-        font-size: 2.9rem !important;
-        font-weight: 700;
-      }
-    }
+    
   </style>
 </head>
 
 <body>
+  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-0002118a-876d-4434-bd3a-3f4d1c5aa5bd"></div>
   <!-- Back to top button -->
   <a id="button" style="text-decoration:none"></a>
 
   <!-- Preloader -->
-  {% comment %} <div class='folding-cube'>
+   <div class='folding-cube'>
     <ul>
       <li></li>
       <li></li>
       <li></li>
       <li></li>
     </ul>
-  </div> {% endcomment %}
+  </div>
 
   <!-- navbar start -->
   <nav class="navbar navbar-expand-lg navbar-dark">
@@ -117,8 +87,14 @@
               {{user}}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% if request.user.is_superuser %}
+              <li><a class="nav-link text-center"  href="/admin"
+                 target="_blank">Admin</a></li>
+              {% endif %}
+              <li><a class="nav-link text-center"  href="/changePassword"
+              >Change Password</a></li>
               <li><a class="nav-link text-center" onclick="confirmation()" href="#"
-                  style="color: black !important">Logout</a></li>
+                >Logout</a></li>
             </ul>
           </li>
           {% endif %}
@@ -264,6 +240,21 @@
   <div class="container" id="section-4">
     <h1 class="text-center heading-title mb-3">Our Art Gallery</h1>
     <div class="owl-carousel owl-theme">
+    <div class="item">
+        <h4><img src="{% static 'images/arts/1.png' %}" class="img-responsive" alt="logo1"> </h4>
+      </div>
+      <div class="item">
+        <h4><img src="{% static 'images/arts/1.jpg' %}" class="img-responsive" alt="logo1"> </h4>
+      </div>
+      <div class="item">
+        <h4><img src="{% static 'images/arts/2.jpg' %}" class="img-responsive" alt="logo1"> </h4>
+      </div>
+      <div class="item">
+        <h4><img src="{% static 'images/arts/1.png' %}" class="img-responsive" alt="logo1"> </h4>
+      </div>
+      <div class="item">
+        <h4><img src="{% static 'images/arts/2.png' %}" class="img-responsive" alt="logo1"> </h4>
+      </div>
       {% for art in allArts %}
       <div class="item">
         <h4><img src="/media/{{art.img}}" class="img-responsive" alt="logo1"> </h4>
@@ -372,8 +363,7 @@
 
             <p class="footer-company-about">
               <span>About us</span>
-              Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
-              vehicula sit amet.
+              PixelVibe is a pixel-art maker which is mainly made for the creative art lover in you 
             </p>
 
             <div class="rounded-social-buttons py-3">

@@ -3,7 +3,7 @@
 <p align="center"><img src="https://github.com/FOSS-Cell-GECPKD/pixelvibe/blob/main/static/assets/pixelVibe.gif"></p>
 
 <p>
-
+  
   [![Number of Contributors](https://img.shields.io/github/contributors/FOSS-Cell-GECPKD/pixelvibe)](https://github.com/FOSS-Cell-GECPKD/pixelvibe/graphs/contributors)
   [![Issues opened](https://img.shields.io/github/issues/FOSS-Cell-GECPKD/pixelvibe)](https://github.com/FOSS-Cell-GECPKD/pixelvibe/issues)
   [![Issues closed](https://img.shields.io/github/issues-closed/FOSS-Cell-GECPKD/pixelvibe)](https://github.com/FOSS-Cell-GECPKD/pixelvibe/issues)
@@ -13,7 +13,7 @@
 
 ### 📋 Description
 
-PixelVibe is a pixel-art maker which is mainly made for the creative art lover of the images in a pixel -art format.
+PixelVibe is a pixel-art maker which is mainly made for the creative art lover in you 😃
 
 
 ### 💻 Tech Stack

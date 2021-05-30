@@ -496,14 +496,14 @@ text-decoration: none;
 }
 #button {
 display: inline-block;
-background-color: #FF9800;
+background: linear-gradient(16deg, rgba(254,167,186,1) 16%, rgba(255,237,204,1) 61%);
 width: 52px;
 height: 52px;
 text-align: center;
 border-radius: 25px;
 position: fixed;
-bottom: 10px;
-right: 10px;
+bottom: 5px;
+left: -5px;
 transition: background-color .3s,
 opacity .5s, visibility .5s;
 opacity: 0;
@@ -517,7 +517,7 @@ font-weight: normal;
 font-style: normal;
 font-size: 2em;
 line-height: 50px;
-color: #fff;
+color: #421921;
 }
 #button:hover {
 cursor: pointer;
@@ -542,80 +542,7 @@ margin: 30px;
 }
 /* css for back to top ends */
 
-/* css for dark mode start */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 3.8rem;
-    height: 2.1rem;
-    margin-top:0.6rem;
-  }
-  
-  /*   // Hide checkbox
-   */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /*   // The slider
-     */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: lightblue;
-    transition: 0.4s ease-in-out;
-  }
-  
-  /*   
-    // Design of slider for light mode
-   */
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 23px;
-    width: 23px;
-    left: 6px;
-    bottom: 6px;
-    background-color: yellow;
-    box-shadow: 0px 0px 5px 4px #ffd900;
-    transition: 0.4s;
-  }
-  /*   // When theme is dark, background is dark */
-  .dark-mode .slider {
-    background-color: #3a2864;
-  }
-  
-  /*    // If theme is dark, but slider is to the left, move it to the right and turn it into a moon
-   */
-  .dark-mode .slider:before {
-    transform: translateX(26px);
-    height: 3px;
-    width: 3px;
-    background-color: lightgrey;
-    bottom: 15px;
-    left: 10px;
-    box-shadow: 10px -7px 0px 1px lightgrey, -4px -8px 0px 0px lightgrey, 6px 6px 0px 1px lightgrey, 5px -1px 5px 13px white, 5px -1px 0px 12px white;
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-  
-  .dark-mode{
-    background-color: rgb(36, 35, 35);
-  }
-  .dark-mode .navbar
+.dark-mode .navbar
   {
   background:#172a4b;
   }
@@ -623,8 +550,6 @@ margin: 30px;
   {
       color: #fff !important;
   }
-/* css for dark mode ends */
-
 /* for small screens media queries will be here */
 
 @media screen and (max-width: 992px) {
@@ -747,3 +672,54 @@ font-size:1.3rem;
      background-position: center 2px;
      background-image: url("../assets/downarrow.png");
  } 
+ i {
+  font-size: 1.5rem !important;
+}
+
+.dropdown-menu {
+  min-width: 8rem !important;
+  padding: 0px !important;
+}
+.dropdown-menu li a
+{
+  font-size: 15px !important;
+  padding: 5px 4px !important;
+  color:black !important;
+}
+.dropdown-menu li a:hover
+{
+  background-color: #1d3866;
+  color:#fff !important;
+}
+.item {
+  width: 17vw;
+}
+
+.item img {
+  margin: 15px;
+  padding: 8px;
+  height: 30vh;
+}
+
+.heading-title {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.dark-mode .heading-title {
+  color: #fff;
+}
+
+@media screen and (max-width: 992px) {
+  .heading-title {
+    font-size: 2.9rem !important;
+    font-weight: 700;
+  }
+}
+.nav-item:hover
+  {
+    background-color: #eba7af !important;
+    color:black !important;
+    border-radius:30px;
+    transition:1s;
+  }

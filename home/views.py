@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 import math
 import random
 from django.contrib.auth.hashers import make_password, check_password
+import smtplib
 
 params={}
 # Create your views here.
@@ -70,8 +71,18 @@ def handleSignUp(request):
     else:
         return render(request,'signup.html')
 
-    
-
+def send_warning_email(email):
+    import smtplib
+    con = smtplib.SMTP("smtp.gmail.com",587)
+    con.ehlo()
+    con.starttls()
+    admin_email = "pixelzvibe@gmail.com"
+    admin_password = "pixelvibeart123"
+    con.login(admin_email,admin_password)
+    msg = "Some One is Trying To Login With Your Account !!"
+    con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)
+  
+login_users = {}
 def Handlelogin(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -87,11 +98,25 @@ def Handlelogin(request):
         
         user=authenticate(username=username,password=password) 
         if user is not None:
+            if username in login_users.keys():
+                del(login_users[user.username])
             login(request, user)
             print("Successfully Logged In")
             print('loged in')
             return redirect("/")
         else:
+            print("Someone tried to login and failed.")
+            if username in login_users.keys():
+                login_users[username]+=1
+            else:
+                login_users[username]=1
+            print(login_users)
+            if login_users[username] == 5:
+                user1 = User.objects.filter(username=username).first()
+                print(user1.email)
+                send_warning_email(user1.email)
+                print("They used username: {} and password: {}".format(username,password))
+                
             messages.error(request,"Invalid credentials! Please try again")
             return redirect("/login")
     else:
@@ -100,6 +125,16 @@ def Handlelogin(request):
 def logout(request):
     auth.logout(request)
     return redirect('/login')
+
+def send_email_to_Admin(msg,email):
+    con = smtplib.SMTP("smtp.gmail.com",587)
+    con.ehlo()
+    con.starttls()
+    admin_email = "pixelzvibe@gmail.com"
+    admin_password = "pixelvibeart123"
+    con.login(admin_email,admin_password)
+    msg = str(msg)
+    con.sendmail("email",admin_email,"Subject:Contact Response To PixelVibe \n\n"+msg)
 
 def contact(request):
     if request.method=="POST":
@@ -115,6 +150,8 @@ def contact(request):
         else:
             ins = Contact(firstname=firstname,lastname=lastname,email=email,content=content,number=number)
             ins.save()
+            msg = str(firstname) + "is trying to contact with us. \nmsg : " + str(content) 
+            send_email_to_Admin(msg,email)
             messages.success(request,'Thank You for contacting Us!! Your message has been saved ')
         return redirect('/contact')
     else:
@@ -148,6 +185,7 @@ def generate_otp():
     print(random_str,type(random_str))
     global_dict['otp'] = random_str
     send_email_to_user(random_str,global_dict['email'])
+    
     return
 
 def forgotPass(request):
@@ -170,18 +208,32 @@ def otpVerification(request):
         get_otp = request.POST["otp"]
         if global_dict['otp'] == get_otp:
             print("match")
+            global_dict['otpcheck'] = "1"
             return redirect('/passwordReset')
         else:
-            # print("otp is",global_dict['otp'])
-            # messages.error(request, 'Otp not Matched Please Try Again')
+            print("otp is",global_dict['otp'])
+            messages.error(request, 'Otp not Matched Please Try Again')
             return redirect("/otp")
     else:
-        return render(request,'otp.html')
+        if global_dict['email']!="":
+            return render(request,'otp.html')
+        else:
+            messages.error(request, 'Please Enter a Valid Email First!')
+            return redirect('/forgotPass')
 
 def passwordReset(request):
     if request.method == 'POST':
         password = request.POST["password"]
         cpassword = request.POST["cpassword"]
+        if password != cpassword:
+            messages.error(request,"Password not Matched")
+            return redirect("/passwordReset")
+        else:
+            if len(password)<=5:
+                messages.error(request,'Password must be at least 6 characters Long!!')
+                return redirect("/passwordReset")
+            else:
+                pass
         user = User.objects.filter(email=global_dict['email']).first()
         user.password = make_password(password)
         print(user,user.email,user.password)
@@ -189,4 +241,45 @@ def passwordReset(request):
         messages.success(request,"Password reset successfully! Please Login")
         return redirect('/login')
     else:
-        return render(request,'passwordReset.html')
+        if global_dict['email']!="":
+            if global_dict['otp']!="" and global_dict['otpcheck'] == "1":
+                return render(request,'passwordReset.html')
+            else:
+                messages.error(request,"Please Enter a Valid Otp First!")
+                return redirect('/otp')
+        else:
+            messages.error(request, 'Please Enter a Valid Email First!')
+            return redirect('/forgotPass')
+        
+def changePassword(request):
+    if request.user.is_authenticated:
+        pass
+    else:
+        messages.error(request,"Please Login First !!")
+        return redirect('/login')
+    if request.method == "POST":
+        current_password = request.POST["current_password"]
+        new_password = request.POST["new_password"]
+        confirm_password = request.POST["confirm_password"]
+        print(new_password,confirm_password)
+        user = User.objects.filter(username=request.user).first()
+        print(user.password)
+
+        if check_password(current_password,user.password):
+            pass
+        else:
+            messages.error(request,"Current Password Not Matched")
+            return redirect("/changePassword")
+        if new_password != confirm_password:
+            messages.error(request,"Password not Matched")
+            return redirect("/changePassword")
+        else:
+            user.password = make_password(new_password)
+            user.save()
+            # login(request,user)
+            messages.success(request,"Password changed successfully Please Login Again!")
+            return redirect("/login")
+    else:
+        pass
+    
+    return render(request,"changePassword.html")
