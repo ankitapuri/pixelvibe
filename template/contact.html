@@ -204,21 +204,28 @@ background-image: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
           <a class="nav-link" href="/paint">Paint</a>
         </li>
         {% if not user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Login/SignUp</a>
-        </li>
-        {% else %}
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {{user}}
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="nav-link text-center" onclick="confirmation()" href="#" style="color: black !important">Logout</a></li>
-          </ul>
-        </li>
-        {% endif %}
-
-        <li class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login/SignUp</a>
+          </li>
+          {% else %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              {{user}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% if request.user.is_superuser %}
+              <li><a class="nav-link text-center"  href="/admin"
+                 target="_blank">Admin</a></li>
+              {% endif %}
+              <li><a class="nav-link text-center"  href="/changePassword"
+              >Change Password</a></li>
+              <li><a class="nav-link text-center" onclick="confirmation()" href="#"
+                >Logout</a></li>
+            </ul>
+          </li>
+          {% endif %}
+        <li class="nav-item2">
           <!-- partial:index.partial.html -->
           <label id ="switch" class="switch">
             <input type="checkbox" onclick="myFunction();changeToDarkmode()" id="slider">
