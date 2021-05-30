@@ -54,7 +54,7 @@
       <li></li>
     </ul>
 </div>
-    <!-- navbar start -->
+   <!-- navbar start -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="/"><img src="/static/assets/nav.png"></a>
@@ -72,39 +72,46 @@
             <a class="nav-link" href="/#section-2">About</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/#section-3">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#section-4">Gallery</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/contact">Contact</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Download
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" id="png-download" href="#">PNG</a></li>
-              <li><a class="dropdown-item" id="jpeg-download" href="#">JPEG</a></li>
-            </ul>
-            {% if not user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="/paint">Paint</a>
+          </li>
+          {% if not user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="/login">Login/SignUp</a>
           </li>
           {% else %}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               {{user}}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="nav-link text-center" onclick="confirmation()" href="#" style="color: black !important">Logout</a></li>
+              {% if request.user.is_superuser %}
+              <li><a class="nav-link text-center"  href="/admin"
+                 target="_blank">Admin</a></li>
+              {% endif %}
+              <li><a class="nav-link text-center"  href="/changePassword"
+              >Change Password</a></li>
+              <li><a class="nav-link text-center" onclick="confirmation()" href="#"
+                >Logout</a></li>
             </ul>
           </li>
           {% endif %}
-
-
-          </li>
         </ul>
 
       </div>
     </div>
   </nav>
   <!-- navbar ends -->
+
 
      <!-- Title -->
   <section id="title">
