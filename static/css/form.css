@@ -12,7 +12,11 @@ body{
 	display: grid;
 	place-items: center;
 	background: linear-gradient(16deg, rgba(254,167,186,1) 16%, rgba(255,237,204,1) 61%);
-	text-align: center;
+
+}
+.field
+{
+		text-align: center;
 }
 .content{
 	margin-top: 11vh;
