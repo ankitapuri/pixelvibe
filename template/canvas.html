@@ -103,9 +103,15 @@
           <li class="nav-item">
             <a class="nav-link" href="/contact">Contact</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/paint">Paint</a>
-          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Download
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" id="png-download" href="#">PNG</a></li>
+              <li><a class="dropdown-item" id="jpeg-download" href="#">JPEG</a></li>
+            </ul>
           {% if not user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="/login">Login/SignUp</a>
