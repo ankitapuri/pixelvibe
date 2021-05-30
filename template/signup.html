@@ -1,6 +1,51 @@
 {% extends 'base.html' %}
 {% block title %}Sign Up Form{% endblock title %}
 {% block body %}
+<style>
+	#message {
+  display:none;
+  
+  }
+  
+  #message p {
+    padding: 0px 5px;
+    font-size: 11px;
+    margin-bottom: 0px;
+  }
+
+  #message2 {
+  display:none;
+  
+  }
+  
+  #message2 p {
+    padding: 0px 5px;
+    font-size: 11px;
+    margin-bottom: 0px;
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+  }
+  
+  .valid:before {
+    position: relative;
+    left: -3px;
+    content: "✔";
+  }
+  
+  /* Add a red text color and an "x" when the requirements are wrong */
+  .invalid {
+    color: red;
+  }
+  
+  .invalid:before {
+    position: relative;
+    left: -3px;
+    content: "✖";
+  }
+</style>
 	<div class="content">
 		<div class="text">Sign Up</div>
 		<form action="/signup/" method="post">
@@ -17,15 +62,26 @@
 			</div>
 			<div class="field">
 				<span class="fas fa-lock"></span>
-				<input type="password" required name="password" id="password2">
+				<input type="password" required name="password" id="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
 				<i class="far fa-eye" id="togglePassword2"></i>
-				<label>Password</label>
+				<label id="label">Password</label>
 			</div>
+			<div class="row px-1 errorarea">
+                <div id="message" class="col col-11">
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                </div>
+      		</div>
             <div class="field">
 				<span class="fas fa-lock"></span>
-				<input type="password" required name="cpassword" id="password3">
+				<input type="password" required name="cpassword" id="password3" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
 				<i class="far fa-eye" id="togglePassword3"></i>
-				<label>Confirm Password</label>
+				<label id="label2">Confirm Password</label>
+			</div>
+			<div id="message2" class="col col-11">
+				<p id="passwordmatch" class="invalid"> <b>Password</b>Matched</p>
 			</div>
 			<button>sign Up</button>
 			<div class="signup">Have a Acccount ?
@@ -37,4 +93,106 @@
 	</div>
 	<script src="/static/JS/showPassword.js">
 	</script>
+	<script>
+		var label = document.getElementById("label");
+		var label2 = document.getElementById("label2");
+		var myInput = document.getElementById("password2");
+	  var myinput2 = document.getElementById("password3");
+	  // document.getElementById('submitBtn').disabled = true;
+		var letter = document.getElementById("letter");
+		var capital = document.getElementById("capital");
+		var number = document.getElementById("number");
+		var length = document.getElementById("length");
+		var passwordmatch = document.getElementById("passwordmatch");
+		console.log(passwordmatch)
+		// When the user clicks on the password field, show the message box
+		myInput.onfocus = function() {
+		  document.getElementById("message").style.display = "block";
+		}
+		
+		// When the user clicks outside of the password field, hide the message box
+		myInput.onblur = function() {
+		  document.getElementById("message").style.display = "none";
+		}
+	  
+		
+	  
+		// for confirm password
+		
+	   // When the user clicks on the password field, show the message box
+	   myinput2.onfocus = function() {
+		document.getElementById("message2").style.display = "block";
+	  }
+	  
+	  // When the user clicks outside of the password field, hide the message box
+	  myinput2.onblur = function() {
+		document.getElementById("message2").style.visibility = "none";
+	  }
+	  
+		
+		// When the user starts to type something inside the password field
+		myInput.onkeyup = function() {
+		  // document.getElementById('submitBtn').disabled = true;
+		  // Validate lowercase letters
+		  label.style.display = "none";
+		 
+		  var lowerCaseLetters = /[a-z]/g;
+		  if(myInput.value.match(lowerCaseLetters)) {  
+			letter.classList.remove("invalid");
+			letter.classList.add("valid");
+		  } else {
+			letter.classList.remove("valid");
+			letter.classList.add("invalid");
+		  }
+		  
+		  // Validate capital letters
+		  var upperCaseLetters = /[A-Z]/g;
+		  if(myInput.value.match(upperCaseLetters)) {  
+			capital.classList.remove("invalid");
+			capital.classList.add("valid");
+		  } else {
+			capital.classList.remove("valid");
+			capital.classList.add("invalid");
+		  }
+		
+		  // Validate numbers
+		  var numbers = /[0-9]/g;
+		  if(myInput.value.match(numbers)) {  
+			number.classList.remove("invalid");
+			number.classList.add("valid");
+		  } else {
+			number.classList.remove("valid");
+			number.classList.add("invalid");
+		  }
+		  
+		  // Validate length
+		  if(myInput.value.length >= 8) {
+			length.classList.remove("invalid");
+			length.classList.add("valid");
+		  } else {
+			length.classList.remove("valid");
+			length.classList.add("invalid");
+		  }
+		}
+	  
+		myinput2.onkeyup = function() {
+			
+			label2.style.display = "none";
+		  console.log(myInput.value,myinput2.value);
+		  // validating confirm password
+		  if (myInput.value == myinput2.value)
+		  {
+			  passwordmatch.classList.remove("invalid");
+			  passwordmatch.classList.add("valid");
+			  // document.getElementById('submitBtn').disabled = false;
+		  }
+		  else
+		  {
+			  passwordmatch.classList.remove("valid");
+			  passwordmatch.classList.add("invalid");
+		  }
+		
+		}
+	  
+		</script>
 {% endblock body %}
