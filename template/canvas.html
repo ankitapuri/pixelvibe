@@ -28,7 +28,20 @@
     <link rel="stylesheet" href="/static/css/preloader.css">
   
     <title>Canvas</title>
+    <link rel="stylesheet" href="/static/css/theme.css">
     <style>
+      .settings
+      {
+        position: absolute;
+        top:40vh;
+        right:1vw;
+      }
+      .StyleSwitcher
+      {
+        position: absolute;
+        top:40vh;
+        right:4vw;
+      }
        .dropdown-menu {
   min-width: 8rem !important;
   padding: 0px !important;
@@ -90,9 +103,15 @@
           <li class="nav-item">
             <a class="nav-link" href="/contact">Contact</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/paint">Paint</a>
-          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Download
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" id="png-download" href="#">PNG</a></li>
+              <li><a class="dropdown-item" id="jpeg-download" href="#">JPEG</a></li>
+            </ul>
           {% if not user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="/login">Login/SignUp</a>
@@ -121,6 +140,21 @@
     </div>
   </nav>
   <!-- navbar ends -->
+  <div class="settings"> <i class="fas fa-cog"></i></div>
+             <div class="StyleSwitcher ">
+                 
+                <div style="padding-bottom: 3px;border-bottom: 1px solid rgb(110, 110, 110);"> Body Skin</div>
+                <div >
+                     <input type="radio" name="theme" value="light" id="lid">
+                    <label for="lid">Light</label> 
+                     <input type="radio" name="theme" value="dark" id="dar"> 
+                     <label for="dar">Dark</label>
+                     <input type="radio" name="theme" value="dim" id="dim"> 
+                     <label for="dim">Dim</label>
+
+                </div>
+           </div>
+      
 
 
      <!-- Title -->
@@ -414,6 +448,33 @@ function showDropdownMenu(list) {
     }
   });
   }
+</script>
+<script>
+   document.getElementsByClassName("settings")[0].addEventListener('click',()=>{
+     let styleclass=document.getElementsByClassName("StyleSwitcher")[0].classList;
+
+     if(styleclass.contains("unhideStylenav"))
+     {
+       styleclass.remove("unhideStylenav");
+     }
+     else{
+       styleclass.add("unhideStylenav");
+     }
+
+})
+
+  document.getElementById("dar").addEventListener("click",()=>{
+      document.getElementsByTagName("body")[0].style.backgroundColor= "#0d1117";
+});
+
+document.getElementById("lid").addEventListener("click", () => {
+  document.getElementsByTagName("body")[0].style.backgroundColor = "#fdb1bb";
+});
+
+document.getElementById("dim").addEventListener("click", () => {
+  document.getElementsByTagName("body")[0].style.backgroundColor = "#696969";
+});
+
 </script>
   </body>
 </html>
