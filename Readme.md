@@ -150,6 +150,11 @@ Please go through the Contributing guidelines <a href="https://github.com/FOSS-C
 ## 📖 Code Of Conduct
 You can find the Code of Conduct <a href="https://github.com/FOSS-Cell-GECPKD/pixelvibe/blob/main/CODE_OF_CONDUCT.md">here</a>.
 
+### ✅&nbsp; PEP8 Standards to be followed
+-	Please follow the guidelines of PEP8 as given in <a href="https://github.com/FOSS-Cell-GECPKD/pixelvibe/blob/main/PEP8StandardGuide.md">here</a>.
+
+### ✅&nbsp; Pycode style to be followed
+-	Please follow the guidelines of python module pycodestyle as given in <a href="https://github.com/FOSS-Cell-GECPKD/pixelvibe/blob/main/Pycodestyle.md">here</a>.
 
 ### ✅&nbsp; Requirements
 1. Scalable size off the board according to the user preference
