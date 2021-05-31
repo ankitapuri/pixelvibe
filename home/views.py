@@ -94,6 +94,8 @@ def send_warning_email(email):
     msg = "Some One is Trying To Login With Your Account !!"
     con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)
   
+
+  
 login_users = {}
 def Handlelogin(request):
     if request.method == 'POST':
@@ -262,7 +264,17 @@ def passwordReset(request):
         else:
             messages.error(request, 'Please Enter a Valid Email First!')
             return redirect('/forgotPass')
-        
+
+def send_confirmation_email(email):
+    import smtplib
+    con = smtplib.SMTP("smtp.gmail.com",587)
+    con.ehlo()
+    con.starttls()
+    admin_email = "pixelzvibe@gmail.com"
+    admin_password = "pixelvibeart123"
+    con.login(admin_email,admin_password)
+    msg = "Password is changed of your Account !!"
+    con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)      
 def changePassword(request):
     if request.user.is_authenticated:
         pass
@@ -288,7 +300,9 @@ def changePassword(request):
         else:
             user.password = make_password(new_password)
             user.save()
-            # login(request,user)
+            print("email is ",user.email)
+            send_confirmation_email(user.email)
+            login(request,user)
             messages.success(request,"Password changed successfully Please Login Again!")
             return redirect("/login")
     else:
