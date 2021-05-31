@@ -14,6 +14,9 @@
 ### 📋 Description
 
 PixelVibe is a pixel-art maker which is mainly made for the creative art lover in you 😃
+### Demo 🎥
+![PixelVib](https://raw.githubusercontent.com/arpit456jain/pixelvibe/demo/static/gifs/2.gif)<br>
+![PixelVib](https://raw.githubusercontent.com/arpit456jain/pixelvibe/demo/static/gifs/1.gif)<br>
 
 ### ✅&nbsp; Features
 1. Variable canvas size as per user requirement 
