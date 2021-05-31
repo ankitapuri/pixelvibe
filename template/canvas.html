@@ -232,6 +232,7 @@ const clear=document.getElementById('delete')                             //clea
 const undo=document.getElementById('undo')                                //undo
 const eraser=document.getElementById('eraser')                             //eraser
 const colorFill=document.getElementById("color-fill")                     //Color-fill
+const currentColor=document.getElementById("palette-prompt")
 
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
@@ -318,6 +319,7 @@ colorInput.addEventListener("change", () => {
   eraser.classList.remove("selected");
   brush.classList.add("selected");
   canvas.classList.remove("erasing");
+  currentColor.style.color=brushColor;
 })
 
 //Color palette
@@ -333,6 +335,7 @@ palette.addEventListener('click', (e) => {
     e.target.style.boxShadow = boxShadow;
     canvas.classList.remove("erasing");
   }
+  currentColor.style.color=brushColor
 });
      
 // eraser
