@@ -45,6 +45,42 @@ PixelVibe uses a number of open source projects to work properly:
 ### Other:
 <img alt="Progressive Web Apps" src="https://img.shields.io/badge/Progressive Web Apps%20-%2300C4CC.svg?&style=for-the-badge&logo=ProgressiveWebApps&logoColor=white"/>
 
+### Project Structure 💁‍♀️
+```
+PixelVibe
+│   
+├───PixelVibe                  # Main Project Directory
+│       
+├───home                       # Project Main App Directory
+│   │   
+│   └───migrations              # Migrations
+│           
+├───static          
+|   |                           # Static Directory
+│   └───| 
+│       ├───assets              # Image Files  
+|       |
+│       ├───css                 # CSS Files  
+|       |
+|       ├───fonts               # Fonts Used
+│       │       
+|       ├───JS                  # js Files                      
+│       │       
+│       ├───favicons            # favicons
+│       |    
+│       
+│         
+|           
+├───templates                   # Root Template Directory (all html templates)
+|
+├───db.sqlite3                  # Database  File
+|
+├───manage.py                   # For running django server
+|
+├───requirements.txt            # All modules which are used in project
+
+```            
+
 ## 🚀 Quick Start :
 
 #### Step 1: Forking the repository :
@@ -172,41 +208,6 @@ You can find the Code of Conduct <a href="https://github.com/FOSS-Cell-GECPKD/pi
 ### 🚀 Contributing  
 This repository is contribution friendly. If you would like to add or improve, your contribution is welcome!  
 Do not forget to follow [Contribution Guidelines](Contributing.md) and [Code of Conduct](CODE_OF_CONDUCT.md) 😃  
-### Project Structure 💁‍♀️
-```
-PixelVibe
-│   
-├───PixelVibe                  # Main Project Directory
-│       
-├───home                       # Project Main App Directory
-│   │   
-│   └───migrations              # Migrations
-│           
-├───static          
-|   |                           # Static Directory
-│   └───| 
-│       ├───assets              # Image Files  
-|       |
-│       ├───css                 # CSS Files  
-|       |
-|       ├───fonts               # Fonts Used
-│       │       
-|       ├───JS                  # js Files                      
-│       │       
-│       ├───favicons            # favicons
-│       |    
-│       
-│         
-|           
-├───templates                   # Root Template Directory (all html templates)
-|
-├───db.sqlite3                  # Database  File
-|
-├───manage.py                   # For running django server
-|
-├───requirements.txt            # All modules which are used in project
-
-```            
 
 ## 📘&nbsp; License
 
