@@ -27,6 +27,7 @@ urlpatterns = [
     path('otp/',views.otpVerification , name='otpVerification' ),
     path('passwordReset/',views.passwordReset , name='passwordReset' ),
     path('changePassword/',views.changePassword , name='changePassword' ),
+    path('changeDimensions/',views.changeDimensions , name='changeDimensions' ),
     
     
 ]

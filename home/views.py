@@ -23,8 +23,13 @@ def home(request):
     allArts = Gallery.objects.all()
     params['allArts']=allArts
     return render(request, 'homepage.html',params)
+def changeDimensions(request):
+    global params
+    params = {}
+    return redirect('/paint')
 
 def paint(request):
+    global params
     if request.user.is_authenticated:
         pass
     else:
@@ -32,12 +37,13 @@ def paint(request):
         return redirect('/login')
     if request.method == 'GET':
         print('get')
+        if 'height' in params.keys() and 'width' in params.keys():
+            return render(request,"canvas.html",params)
     else:
         print('post')
         height = request.POST['height']
         width = request.POST['width']
         print(height,width)
-        params={}
         params['height'] = height
         params['width'] = width
         print(params)
