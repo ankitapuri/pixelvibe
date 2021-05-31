@@ -19,11 +19,11 @@ PixelVibe is a pixel-art maker which is mainly made for the creative art lover i
 1. Variable canvas size as per user requirement 
 2. Choice of colors for user 
 3. A drop-down menu for 
-  ->Brush of varying sizes 
-  -> Eraser for clearing 
-  ->Undo feature
-  ->Delete feature to clear the screen
-  -> color fill to fill up the page
+-  Brush of varying sizes 
+-  Eraser for clearing 
+-  Undo feature
+-  Delete feature to clear the screen
+-   color fill to fill up the page
 4. Signin / sign up page 
 5. Forgot password feature 
 6. Can change the password when required
