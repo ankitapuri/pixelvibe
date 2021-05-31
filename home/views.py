@@ -47,7 +47,7 @@ def paint(request):
         if int(width) <= 80 and int(height) <= 80:
             pass
         else:
-            messages.error(request,"Width and height must be less than 120!!")
+            messages.error(request,"Width and height must be less than 80!!")
             return redirect("/changeDimensions")
         params['height'] = height
         params['width'] = width
