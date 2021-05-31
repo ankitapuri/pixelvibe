@@ -189,6 +189,30 @@ You can find the Code of Conduct <a href="https://github.com/FOSS-Cell-GECPKD/pi
 ### 🚀 Contributing  
 This repository is contribution friendly. If you would like to add or improve, your contribution is welcome!  
 Do not forget to follow [Contribution Guidelines](Contributing.md) and [Code of Conduct](CODE_OF_CONDUCT.md) 😃  
+### Project Structure 💁‍♀️
+```
+PixelVibe
+│   
+├───PixelVibe                  # Main Project Directory
+│       
+├───home                       # Project Main App Directory
+│   │   
+│   └───migrations              # Migrations
+│           
+├───static          
+|   |                           # Static Directory
+│   └───| 
+│       ├───css                 # CSS Files  
+|       |                         
+│       │       
+│       ├───favicons            # favicons
+│       |    
+│       |
+│       ├───JS                  # js    
+|           
+└───templates                   # Root Template DIrectory
+               
+```            
 
 ## 📘&nbsp; License
 
