@@ -180,8 +180,8 @@ def send_email_to_user(otp,email):
     con = smtplib.SMTP("smtp.gmail.com",587)
     con.ehlo()
     con.starttls()
-    admin_email = ""
-    admin_password = ""
+    admin_email = "pixelzvibe@gmail.com"
+    admin_password = "pixelvibeart123"
     con.login(admin_email,admin_password)
     msg = "Otp is "+str(otp)
     con.sendmail("email",email,"Subject:Password Reset \n\n"+msg)
