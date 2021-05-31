@@ -54,7 +54,7 @@ def paint(request):
         if int(width) >= 5 and int(height) >= 5:
             pass
         else:
-            messages.error(request,"Width and height must be greater than 5!!")
+            messages.error(request,"Width and height must be greater than 4!!")
             return redirect("/changeDimensions")
         params['height'] = int(height)
         params['width'] = int(width)
