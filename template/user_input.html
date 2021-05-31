@@ -215,6 +215,13 @@ h2:first-of-type {
     <link rel="stylesheet" href="/static/css/theme.css">
   </head>
   <body>
+    {% for message in messages %}
+	
+		 {{message}}
+		
+	</div>
+    {% endfor %}
+
     <!-- Title -->
   <section id="title">
     <div class="row heading">
