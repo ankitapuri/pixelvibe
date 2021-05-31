@@ -211,6 +211,16 @@ h2:first-of-type {
       margin:10px;
     }
   }
+  .alert
+  {
+    width:50vw;
+    margin:0 auto; 
+  }
+  .alert-danger
+  {
+    background-color: #fede00;
+    /* color: white; */
+  }
     </style>
     <link rel="stylesheet" href="/static/css/theme.css">
   </head>
@@ -227,9 +237,14 @@ h2:first-of-type {
         </div>
     </div>
   </section>
+  
   {% for message in messages %}
-  {{message}}
-  {% endfor %}
+	<div class="alert mt-3 alert-{{message.tags}} alert-dismissible fade show" role="alert">
+		 {{message}}
+		 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+    {% endfor %}
+
   <!-- Grid Form -->
   <section id="grid-form">
     <form id="size-picker" class="size-picker-form scale-up-center" action="/paint/" method="post"> 
