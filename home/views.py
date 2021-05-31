@@ -11,6 +11,9 @@ import random
 from django.contrib.auth.hashers import make_password, check_password
 import smtplib
 import re
+admin_email = "pixelzvibe@gmail.com"
+admin_password = "pixelvibeart123"
+
 regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
 def check(email):
     if(re.search(regex,email)):
@@ -106,8 +109,8 @@ def send_warning_email(email):
     con = smtplib.SMTP("smtp.gmail.com",587)
     con.ehlo()
     con.starttls()
-    admin_email = "pixelzvibe@gmail.com"
-    admin_password = "pixelvibeart123"
+    global admin_email
+    global admin_password
     con.login(admin_email,admin_password)
     msg = "Some One is Trying To Login With Your Account !!"
     con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)
@@ -164,11 +167,11 @@ def send_email_to_Admin(msg,email):
     con = smtplib.SMTP("smtp.gmail.com",587)
     con.ehlo()
     con.starttls()
-    admin_email = "pixelzvibe@gmail.com"
-    admin_password = "pixelvibeart123"
+    global admin_email
+    global admin_password
     con.login(admin_email,admin_password)
     msg = str(msg)
-    con.sendmail("email",admin_email,"Subject:Contact Response To PixelVibe \n\n"+msg)
+    con.sendmail(admin_email,email,"Subject:Contact Response To PixelVibe \n\n"+msg)
 
 def contact(request):
     if request.method=="POST":
@@ -185,6 +188,7 @@ def contact(request):
             ins = Contact(firstname=firstname,lastname=lastname,email=email,content=content,number=number)
             ins.save()
             msg = str(firstname) + "is trying to contact with us. \nmsg : " + str(content) 
+            print("sending mail")
             send_email_to_Admin(msg,email)
             messages.success(request,'Thank You for contacting Us!! Your message has been saved ')
         return redirect('/contact')
@@ -202,8 +206,8 @@ def send_email_to_user(otp,email):
     con = smtplib.SMTP("smtp.gmail.com",587)
     con.ehlo()
     con.starttls()
-    admin_email = "pixelzvibe@gmail.com"
-    admin_password = "pixelvibeart123"
+    global admin_email
+    global admin_password
     con.login(admin_email,admin_password)
     msg = "Otp is "+str(otp)
     con.sendmail("email",email,"Subject:Password Reset \n\n"+msg)
@@ -290,8 +294,8 @@ def send_confirmation_email(email):
     con = smtplib.SMTP("smtp.gmail.com",587)
     con.ehlo()
     con.starttls()
-    admin_email = "pixelzvibe@gmail.com"
-    admin_password = "pixelvibeart123"
+    global admin_email
+    global admin_password
     con.login(admin_email,admin_password)
     msg = "Password is changed of your Account !!"
     con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)      
