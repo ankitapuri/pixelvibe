@@ -148,6 +148,8 @@ def Handlelogin(request):
         return render(request,'login_new.html')
 
 def logout(request):
+    global params
+    params={}
     auth.logout(request)
     return redirect('/login')
 
