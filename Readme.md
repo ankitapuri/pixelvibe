@@ -15,6 +15,18 @@
 
 PixelVibe is a pixel-art maker which is mainly made for the creative art lover in you 😃
 
+### ✅&nbsp; Features
+1. Variable canvas size as per user requirement 
+2. Choice of colors for user 
+3. A drop-down menu for 
+  - >Brush of varying sizes 
+  - > Eraser for clearing 
+  - >Undo feature
+  - >Delete feature to clear the screen
+  - > color fill to fill up the page
+4. Signin / sign up page 
+5. Forgot password feature 
+6. Can change the password when required
 
 ### 💻 Tech Stack
 
@@ -155,35 +167,6 @@ You can find the Code of Conduct <a href="https://github.com/FOSS-Cell-GECPKD/pi
 
 ### ✅&nbsp; Pycode style to be followed
 -	Please follow the guidelines of python module pycodestyle as given in <a href="https://github.com/FOSS-Cell-GECPKD/pixelvibe/blob/main/Pycodestyle.md">here</a>.
-
-### ✅&nbsp; Requirements
-1. Scalable size off the board according to the user preference
-2.	Colour palette in the form of colour wheel  
-3.	The board should not display the boxes to the user
-4.	Utility box displaying:
--	pens of various sizes
--	erasers of various sizes
--	A circle which asks the user to input the radius
--	Undo button
--	Delete button to clear the entire screen
--	A button to help the user to save the project
-5.	Lastly a functionality which helps the user to import the image from the local machine to the web app and convert into pixel format.  
-
-
-### ✅&nbsp; Project Goals and Ideas
-1. Scalable size off the board according to the user preferences
-2. Colour palette in the form of colour wheel  
-3. The board should not display the boxes to the user
-4. Utility box displaying:
-  -	Pens of various sizes
-  -	Erasers of various sizes
-  -	A circle which asks the user to input the radius
-  -	Undo button
-  -	Delete button to clear the entire screen
-  -	A button to help the user to save the project
-5. A functionality which helps the user to import the image from the local machine to the web app and convert into pixel format.
-6. Sign In/Sign Up page
-7. Ability to store user's work
 
 
 ### 🚀 Contributing  
