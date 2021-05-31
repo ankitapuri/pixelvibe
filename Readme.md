@@ -202,16 +202,27 @@ PixelVibe
 ├───static          
 |   |                           # Static Directory
 │   └───| 
+│       ├───assets              # Image Files  
+|       |
 │       ├───css                 # CSS Files  
-|       |                         
+|       |
+|       ├───fonts               # Fonts Used
+│       │       
+|       ├───JS                  # js Files                      
 │       │       
 │       ├───favicons            # favicons
 │       |    
-│       |
-│       ├───JS                  # js    
+│       
+│         
 |           
-└───templates                   # Root Template DIrectory
-               
+├───templates                   # Root Template Directory (all html templates)
+|
+├───db.sqlite3                  # Database  File
+|
+├───manage.py                   # For running django server
+|
+├───requirements.txt            # All modules which are used in project
+
 ```            
 
 ## 📘&nbsp; License
