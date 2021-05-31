@@ -43,7 +43,12 @@ def paint(request):
         print('post')
         height = request.POST['height']
         width = request.POST['width']
-        print(height,width)
+        print(height,width,type(height))
+        if int(width) <= 80 and int(height) <= 80:
+            pass
+        else:
+            messages.error(request,"Width and height must be less than 80!!")
+            return redirect("/changeDimensions")
         params['height'] = height
         params['width'] = width
         print(params)

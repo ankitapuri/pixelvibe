@@ -215,6 +215,7 @@ h2:first-of-type {
     <link rel="stylesheet" href="/static/css/theme.css">
   </head>
   <body>
+    
     <!-- Title -->
   <section id="title">
     <div class="row heading">
@@ -223,10 +224,12 @@ h2:first-of-type {
       </div>
       <div>
         <h1 class="color_change main-heading">PixelVibe</h1>
-      </div>
+        </div>
     </div>
   </section>
-
+  {% for message in messages %}
+  {{message}}
+  {% endfor %}
   <!-- Grid Form -->
   <section id="grid-form">
     <form id="size-picker" class="size-picker-form scale-up-center" action="/paint/" method="post"> 
