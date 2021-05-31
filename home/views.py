@@ -294,6 +294,11 @@ def changePassword(request):
         else:
             messages.error(request,"Current Password Not Matched")
             return redirect("/changePassword")
+        if len(new_password)<=5:
+                messages.error(request,'Password must be at least 6 characters Long!!')
+                return redirect("/changePassword")
+        else:
+            pass
         if new_password != confirm_password:
             messages.error(request,"Password not Matched")
             return redirect("/changePassword")
