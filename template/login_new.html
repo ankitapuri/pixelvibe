@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Login Form{% endblock title %}
+{% load socialaccount %}
 {% block body %}
 	<div class="content">
 		<div class="text">Sign in</div>
@@ -22,7 +23,8 @@
 				<a href="/signup">signup now</a>
 			</div>
 		</form>
-    	<!-- <button class="google"><i class="fab fa-google"></i> sign in with Google</button> -->
+		
+    	<button class="google"><i class="fab fa-google"></i> <a href="{% provider_login_url 'google' %}">sign in with Google</a></button>
 		<!-- <button class="facebook"><i class="fab fa-facebook-f"></i> sign in with Facebook</button> -->
 	</div>
 	<script>
