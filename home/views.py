@@ -14,6 +14,7 @@ import re
 admin_email = "pixelzvibe@gmail.com"
 admin_password = "pixelvibeart123"
 
+
 regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
 def check(email):
     if(re.search(regex,email)):
@@ -105,15 +106,17 @@ def handleSignUp(request):
         return render(request,'signup.html')
 
 def send_warning_email(email):
-    import smtplib
-    con = smtplib.SMTP("smtp.gmail.com",587)
-    con.ehlo()
-    con.starttls()
-    global admin_email
-    global admin_password
-    con.login(admin_email,admin_password)
-    msg = "Some One is Trying To Login With Your Account !!"
-    con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)
+    try:        
+        con = smtplib.SMTP("smtp.gmail.com",587)
+        con.ehlo()
+        con.starttls()
+        global admin_email
+        global admin_password
+        con.login(admin_email,admin_password)
+        msg = "Some One is Trying To Login With Your Account !!"
+        con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)
+    except:
+        pass
   
 
   
@@ -165,14 +168,18 @@ def logout(request):
     return redirect('/login')
 
 def send_email_to_Admin(msg,email):
-    con = smtplib.SMTP("smtp.gmail.com",587)
-    con.ehlo()
-    con.starttls()
-    global admin_email
-    global admin_password
-    con.login(admin_email,admin_password)
-    msg = str(msg)
-    con.sendmail(admin_email,email,"Subject:Contact Response To PixelVibe \n\n"+msg)
+    try:
+        con = smtplib.SMTP("smtp.gmail.com",587)
+        con.ehlo()
+        con.starttls()
+        global admin_email
+        global admin_password
+        con.login(admin_email,admin_password)
+        msg = str(msg)
+        con.sendmail(admin_email,email,"Subject:Contact Response To PixelVibe \n\n"+msg)
+    except:
+        pass
+    
 
 def contact(request):
     if request.method=="POST":
@@ -190,7 +197,8 @@ def contact(request):
             ins.save()
             msg = str(firstname) + "is trying to contact with us. \nmsg : " + str(content) 
             print("sending mail")
-            send_email_to_Admin(msg,email)
+            global admin_email
+            send_email_to_Admin(msg,admin_email)
             messages.success(request,'Thank You for contacting Us!! Your message has been saved ')
         return redirect('/contact')
     else:
@@ -201,18 +209,23 @@ def error_404(request, *args, **argv):
         data = {}
         return render(request,'404.html', data)
 
-
+error = 0
 def send_email_to_user(otp,email):
-    import smtplib
-    con = smtplib.SMTP("smtp.gmail.com",587)
-    con.ehlo()
-    con.starttls()
-    global admin_email
-    global admin_password
-    con.login(admin_email,admin_password)
-    msg = "Otp is "+str(otp)
-    con.sendmail("email",email,"Subject:Password Reset \n\n"+msg)
-
+    try:
+        con = smtplib.SMTP("smtp.gmail.com",587)
+        con.ehlo()
+        con.starttls()
+        global admin_email
+        global admin_password
+        con.login(admin_email,admin_password)
+        print("login failed")
+        print("yo")
+        msg = "Otp is "+str(otp)
+        con.sendmail(admin_email,email,"Subject:Password Reset \n\n"+msg)
+    except:
+        global error
+        error=1
+        return redirect("/forgotPass")
 
 global_dict = {'otp':"",'email':"",'otpcheck':""} 
 def generate_otp():
@@ -224,16 +237,21 @@ def generate_otp():
     print(random_str,type(random_str))
     global_dict['otp'] = random_str
     send_email_to_user(random_str,global_dict['email'])
-    
     return
 
 def forgotPass(request):
+    global error
     if request.method == 'POST':
         email = request.POST['email']
         if User.objects.filter(email=email).exists():
             print("exist")
             global_dict['email'] = email
             generate_otp()
+            if error == 1:
+                messages.error(request,"Some Error occurred in sending Email!")
+                return redirect("/forgotPass")
+            else:
+                pass
             messages.success(request, 'An otp is send to your Email please Enter that otp')
             return redirect('/otp')
         else:
@@ -291,15 +309,18 @@ def passwordReset(request):
             return redirect('/forgotPass')
 
 def send_confirmation_email(email):
-    import smtplib
-    con = smtplib.SMTP("smtp.gmail.com",587)
-    con.ehlo()
-    con.starttls()
-    global admin_email
-    global admin_password
-    con.login(admin_email,admin_password)
-    msg = "Password is changed of your Account !!"
-    con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)      
+    try:    
+        con = smtplib.SMTP("smtp.gmail.com",587)
+        con.ehlo()
+        con.starttls()
+        global admin_email
+        global admin_password
+        con.login(admin_email,admin_password)
+        msg = "Password is changed of your Account !!"
+        con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)      
+    except:
+        pass
+
 def changePassword(request):
     if request.user.is_authenticated:
         pass
