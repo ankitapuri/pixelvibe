@@ -37,8 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'home',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'import_export',
+
 ]
 
 MIDDLEWARE = [
@@ -67,6 +73,11 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 WSGI_APPLICATION = 'PixelVibe.wsgi.application'
@@ -131,3 +142,25 @@ MESSAGE_TAGS = {
 }
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+
+# Provider specific settings
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+            
+        ],
+        'AUTH_PARAMS' : {
+            'access_typ' : 'online'
+        }
+    }
+}
+# SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+
+# client id = 912151922216-if32l3g352hkkvndgaoh2vhqa1ddj061.apps.googleusercontent.com
+# key id = QRbOfSSRhp3cInXICWzhcMkn
+# domain = 127.0.0.1:8000

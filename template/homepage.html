@@ -124,6 +124,12 @@
     </div>
   </nav>
   <!-- navbar ends -->
+  {% for message in messages %}
+	<div class="alert mt-3 alert-{{message.tags}} alert-dismissible fade show" role="alert" style="display: none;">
+		 {{message}}
+		 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+    {% endfor %}
 
 
   <div class="container-fluid" id="section-1">

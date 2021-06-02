@@ -164,6 +164,7 @@ def logout(request):
     global params
     params={}
     auth.logout(request)
+    messages.success(request,"Successfully logged out")
     return redirect('/login')
 
 def send_email_to_Admin(msg,email):
