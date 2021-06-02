@@ -166,7 +166,7 @@ def logout(request):
 
 def send_email_to_Admin(msg,email):
     msg = str(msg)
-    con.sendmail(admin_email,email,"Subject:Contact Response To PixelVibe \n\n"+msg)
+    con.sendmail("email",email,"Subject:Contact Response To PixelVibe \n\n"+msg)
 
 def contact(request):
     if request.method=="POST":
@@ -185,7 +185,8 @@ def contact(request):
             msg = str(firstname) + "is trying to contact with us. \nmsg : " + str(content) 
             print("sending mail")
             try:
-                send_email_to_Admin(msg,email)
+                global admin_email
+                send_email_to_Admin(msg,admin_email)
             except:
                 pass
             messages.success(request,'Thank You for contacting Us!! Your message has been saved ')
