@@ -11,10 +11,9 @@ import random
 from django.contrib.auth.hashers import make_password, check_password
 import smtplib
 import re
-# admin_email = "pixelzvibe@gmail.com"
-# admin_password = "pixelvibeart123"
-admin_email = "arpit456jain@gmail.com"
-admin_password = "#jain vanshika#"
+admin_email = "pixelzvibe@gmail.com"
+admin_password = "pixelvibeart123"
+
 
 regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
 def check(email):
