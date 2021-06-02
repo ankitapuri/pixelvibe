@@ -13,13 +13,17 @@ import smtplib
 import re
 admin_email = "pixelzvibe@gmail.com"
 admin_password = "pixelvibeart123"
-
+con = smtplib.SMTP("smtp.gmail.com",587)
+con.ehlo()
+con.starttls()
+con.login(admin_email,admin_password)
 regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
 def check(email):
     if(re.search(regex,email)):
         return True
     else:
         return False
+
 params={}
 # Create your views here.
 def home(request):
@@ -105,13 +109,6 @@ def handleSignUp(request):
         return render(request,'signup.html')
 
 def send_warning_email(email):
-    import smtplib
-    con = smtplib.SMTP("smtp.gmail.com",587)
-    con.ehlo()
-    con.starttls()
-    global admin_email
-    global admin_password
-    con.login(admin_email,admin_password)
     msg = "Some One is Trying To Login With Your Account !!"
     con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)
   
@@ -149,7 +146,11 @@ def Handlelogin(request):
             if login_users[username] == 5:
                 user1 = User.objects.filter(username=username).first()
                 print(user1.email)
-                send_warning_email(user1.email)
+                try:
+                    send_warning_email(user1.email)
+                except:
+                    messages.error(request,"Some Error occurred in sending Mail!")
+
                 print("They used username: {} and password: {}".format(username,password))
                 
             messages.error(request,"Invalid credentials! Please try again")
@@ -164,12 +165,6 @@ def logout(request):
     return redirect('/login')
 
 def send_email_to_Admin(msg,email):
-    con = smtplib.SMTP("smtp.gmail.com",587)
-    con.ehlo()
-    con.starttls()
-    global admin_email
-    global admin_password
-    con.login(admin_email,admin_password)
     msg = str(msg)
     con.sendmail(admin_email,email,"Subject:Contact Response To PixelVibe \n\n"+msg)
 
@@ -189,7 +184,10 @@ def contact(request):
             ins.save()
             msg = str(firstname) + "is trying to contact with us. \nmsg : " + str(content) 
             print("sending mail")
-            send_email_to_Admin(msg,email)
+            try:
+                send_email_to_Admin(msg,email)
+            except:
+                pass
             messages.success(request,'Thank You for contacting Us!! Your message has been saved ')
         return redirect('/contact')
     else:
@@ -202,13 +200,6 @@ def error_404(request, *args, **argv):
 
 
 def send_email_to_user(otp,email):
-    import smtplib
-    con = smtplib.SMTP("smtp.gmail.com",587)
-    con.ehlo()
-    con.starttls()
-    global admin_email
-    global admin_password
-    con.login(admin_email,admin_password)
     msg = "Otp is "+str(otp)
     con.sendmail("email",email,"Subject:Password Reset \n\n"+msg)
 
@@ -222,7 +213,10 @@ def generate_otp():
         random_str += str(digits[index])
     print(random_str,type(random_str))
     global_dict['otp'] = random_str
-    send_email_to_user(random_str,global_dict['email'])
+    try:
+        send_email_to_user(random_str,global_dict['email'])
+    except:
+        messages.error(request,"Some Error occurred in sending Mail!")
     
     return
 
@@ -290,13 +284,6 @@ def passwordReset(request):
             return redirect('/forgotPass')
 
 def send_confirmation_email(email):
-    import smtplib
-    con = smtplib.SMTP("smtp.gmail.com",587)
-    con.ehlo()
-    con.starttls()
-    global admin_email
-    global admin_password
-    con.login(admin_email,admin_password)
     msg = "Password is changed of your Account !!"
     con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)      
 def changePassword(request):
@@ -330,7 +317,10 @@ def changePassword(request):
             user.password = make_password(new_password)
             user.save()
             print("email is ",user.email)
-            send_confirmation_email(user.email)
+            try:
+                send_confirmation_email(user.email)
+            except:
+                pass
             login(request,user)
             messages.success(request,"Password changed successfully Please Login Again!")
             return redirect("/login")
