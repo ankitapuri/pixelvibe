@@ -160,3 +160,7 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 # SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
+
+# client id = 912151922216-if32l3g352hkkvndgaoh2vhqa1ddj061.apps.googleusercontent.com
+# key id = QRbOfSSRhp3cInXICWzhcMkn
+# domain = 127.0.0.1:8000
