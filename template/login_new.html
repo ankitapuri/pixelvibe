@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Login Form{% endblock title %}
 {% load socialaccount %}
+{% providers_media_js %}
 {% block body %}
 	<div class="content">
 		<div class="text">Sign in</div>
@@ -25,7 +26,7 @@
 		</form>
 		
     	<button class="google"><i class="fab fa-google"></i> <a href="{% provider_login_url 'google' %}">sign in with Google</a></button>
-		<!-- <button class="facebook"><i class="fab fa-facebook-f"></i> sign in with Facebook</button> -->
+		<button class="facebook"><i class="fab fa-facebook-f"></i><a href="{% provider_login_url 'facebook' method='oauth2' %}">sign in with Facebook</a></button>
 	</div>
 	<script>
 				// for show password for one
