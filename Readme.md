@@ -235,6 +235,7 @@ The PixelVibe is released under the under terms of the [MIT License](LICENSE).
   </tr>
   </table>
 
+  
 ## Open Source Program(s)
 
 This project is a part of GSSOC 2021.
