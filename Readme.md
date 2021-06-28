@@ -49,6 +49,7 @@ PixelVibe uses a number of open source projects to work properly:
 <img alt="Progressive Web Apps" src="https://img.shields.io/badge/Progressive Web Apps%20-%2300C4CC.svg?&style=for-the-badge&logo=ProgressiveWebApps&logoColor=white"/>
 
 ### Project Structure 💁‍♀️
+  
 ```
 PixelVibe
 │   
