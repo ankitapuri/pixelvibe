@@ -61,14 +61,6 @@ Goto your GitHub and open your fork of this project. Then follow pull request pr
 
 Submit your pull request and wait for our review. We will soon review and proceed further. You can now choose another issue to work on.
 
-## Days allotted according to the levels 
-|Level | Days Provided|
-| - | - |
-| Level 0 | 1 day |
-| Level 1 | 2 days |
-| Level 2 | 5 days |
-| Level 3 | 7 days |
-*Note: Please open your PR within the specified duration after an issue has been assigned to you. We may reassign the issue if you fail to do so.*
 
 <p align=center> Thanks for your Contribution 😊<p>
 
