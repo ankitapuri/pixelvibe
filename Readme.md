@@ -208,7 +208,14 @@ You can find the Code of Conduct <a href="https://github.com/FOSS-Cell-GECPKD/pi
 ### ✅&nbsp; Pycode style to be followed
 -	Please follow the guidelines of python module pycodestyle as given in <a href="https://github.com/FOSS-Cell-GECPKD/pixelvibe/blob/main/Pycodestyle.md">here</a>.
 
+ <h1 align=center> Project Admin ❤️ </h1>
+<p align="center">
+<table>
+  <tbody><tr>
+     <td align="center"><a href="https://github.com/ankitapuri"><img alt="" src="https://avatars.githubusercontent.com/ankitapuri" width="100px;"><br><sub><b> Ankita Puri</b></sub></a><br></td></a></td>
+ <td align="center"><a href="https://github.com/arpit456jain"><img alt="" src="https://avatars.githubusercontent.com/arpit456jain" width="100px;"><br><sub><b> Arpit Jain </b></sub></a><br></td> </a></td>
 
+</tbody></table>
 ### 🚀 Contributing  
 This repository is contribution friendly. If you would like to add or improve, your contribution is welcome!  
 Do not forget to follow [Contribution Guidelines](Contributing.md) and [Code of Conduct](CODE_OF_CONDUCT.md) 😃  
