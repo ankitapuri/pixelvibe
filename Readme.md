@@ -233,4 +233,4 @@ This project is a part of GSSOC 2021.
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
   
-show some ❤️&nbsp; by giving the star to this repo
+  <b>show some ❤️&nbsp; by giving the star to this repo</b>
