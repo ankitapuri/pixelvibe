@@ -2,3 +2,5 @@ django
 django-import-export
 pillow
 django-allauth
+gunicorn 
+django-heroku
