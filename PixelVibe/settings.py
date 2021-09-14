@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import django_heroku
+import os
 
 from pathlib import Path
 
@@ -186,3 +188,6 @@ LOGIN_REDIRECT_URL = '/'
 # client id = 912151922216-if32l3g352hkkvndgaoh2vhqa1ddj061.apps.googleusercontent.com
 # key id = QRbOfSSRhp3cInXICWzhcMkn
 # domain = 127.0.0.1:8000
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+django_heroku.settings(locals())
