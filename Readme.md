@@ -229,6 +229,10 @@ The PixelVibe is released under the under terms of the [MIT License](LICENSE).
 
 This project is a part of GSSOC 2021.
 <img src="https://raw.githubusercontent.com/GirlScriptSummerOfCode/MentorshipProgram/master/GSsoc%20Type%20Logo%20Black.png">
+  
+This project is a part of SWOC 2021.  
+<img src="https://user-images.githubusercontent.com/74487802/145520292-1d4acbfa-2de9-493e-af4d-e2094623aa5d.png">
+
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
