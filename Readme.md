@@ -197,6 +197,22 @@ You should navigate to your forked repository, and press the "Compare & pull req
 
 GitHub will alert you that you can merge the two branches because there is no competing code. You should add in a title, a comment, and then press the “Create pull request” button.
 
+### Running the project Using Dockerfile.
+#Prerequisite: - You should have docker installed in your system.
+
+ The whole project has been dockerized and you can follow the below steps to build image an run the project in a docker container.
+
+ 1 - Clone the project - git clone "repo- link"
+
+ 2 - Move into the pixelvibe directory and run the below command.
+   a - docker build -t < image-name:tag> .
+   b - docker run -dP  < image-name:tag >
+
+Now your container will start and then note the port number of your container by below command
+ 1 - docker ps
+
+Then run it on localhost:port-number
+
 ## ⚙ Contributing Guidelines
 Please go through the Contributing guidelines <a href="https://github.com/FOSS-Cell-GECPKD/pixelvibe/blob/main/Contributing.md">here</a>.
 ## 📖 Code Of Conduct
