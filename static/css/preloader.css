@@ -1,13 +1,22 @@
 /* preloader */
+
 .folding-cube ul{
     position: fixed;
-    top: 48vh;
-    left: 45vw;
+    top:8%;
+    left:48%;
     margin: 0;
     padding: 0;
     width: 80px;
     height: 80px;
     transform: rotate(45deg);
+    
+  }
+  @media screen and (max-width: 768px) {
+    .folding-cube ul{
+      top:4%;
+      left:40%;
+
+    }
   }
   .folding-cube ul li{
     list-style: none;
@@ -32,28 +41,28 @@
   .folding-cube ul li:nth-child(1):before{
     animation-delay: 0s;
     /* background: #f57b70; */
-    background: #FFA3B8;
+    background: #ff686f;
   }
   .folding-cube ul li:nth-child(2){
     transform: rotate(90deg);
   }
   .folding-cube ul li:nth-child(2):before{
     animation-delay: 0.4s;
-    background:#FFA3B8;
+    background:#94d4e1;
   }
   .folding-cube ul li:nth-child(3){
     transform: rotate(270deg);
   }
   .folding-cube ul li:nth-child(3):before{
     animation-delay: 1.2s;
-    background: #FFA3B8;
+    background:  #60b03a;
   }
   .folding-cube ul li:nth-child(4){
     transform: rotate(180deg);
   }
   .folding-cube ul li:nth-child(4):before{
     animation-delay: 0.8s;
-    background: #FFA3B8;
+    background: #4869a7;
   }
   @keyframes animate{
     0%{

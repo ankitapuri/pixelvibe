@@ -14,468 +14,467 @@
     <link rel="favicon" href="{% static 'apple-touch-icon.png" sizes="any" type="img/png' %}  ">
     <link rel="favicon" href="{% static 'assets/favicon_pixelVibe.png" sizes="any" type="img/png' %}  ">
     <link rel="favicon" href="{% static 'assets/pixel_logo.png" sizes="any" type="img/png' %}  ">
-    <link rel="icon" href=" {% static 'favicon.ico' %} " type="image/x-icon"/>
-  
- <!-- Google fonts -->
+    <link rel="icon" href=" {% static 'favicon.ico' %} " type="image/x-icon" />
 
- <link rel="preconnect" href="https://fonts.gstatic.com">
- <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap" rel="stylesheet">
- <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Chewy&display=swap" rel="stylesheet">
+    <!-- Google fonts -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Chewy&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/canvas.css">
     <link rel="stylesheet" href="/static/css/preloader.css">
-  
+
     <title>Canvas</title>
     <link rel="stylesheet" href="/static/css/theme.css">
     <style>
-      .settings
-      {
+      .settings {
         position: absolute;
-        top:40vh;
-        right:1vw;
+        top: 40vh;
+        right: 1vw;
       }
-      .StyleSwitcher
-      {
+
+      .StyleSwitcher {
         position: absolute;
-        top:40vh;
-        right:4vw;
+        top: 40vh;
+        right: 4vw;
       }
-      .navbar-nav .nav-item
-      {
-      padding:0px 5px;
+
+      .navbar-nav .nav-item {
+        padding: 0px 5px;
       }
+
       .dropdown-menu {
         min-width: 8rem !important;
         padding: 0px !important;
       }
-      .dropdown-menu li a
-      {
+
+      .dropdown-menu li a {
         font-size: 13px !important;
         padding: 5px 4px !important;
-        color:black !important;
+        color: black !important;
       }
-      .nav-item:hover
-      {
+
+      .nav-item:hover {
         background-color: #eba7af !important;
-        color:black !important;
-        border-radius:30px;
-        transition:1s;
+        color: black !important;
+        border-radius: 30px;
+        transition: 1s;
       }
-      .dropdown-menu li a:hover
-      {
+
+      .dropdown-menu li a:hover {
         background-color: #1d3866;
-        color:#fff !important;
+        color: #fff !important;
       }
     </style>
   </head>
   <body>
-    
-  <!-- Preloader -->
-  <div class='folding-cube'>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-</div>
-   <!-- navbar start -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="/"><img src="/static/assets/nav.png"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/#section-4">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/changeDimensions">Change Dimensions</a>
-          </li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Download Art
-            </a> 
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" id="png-download" href="#">PNG</a></li>
-              <li><a class="dropdown-item" id="jpeg-download" href="#">JPEG</a></li>
-            </ul>
-            
-          {% if not user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login/SignUp</a>
-          </li>
-          {% else %}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              {{user}}
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              {% if request.user.is_superuser %}
-              <li><a class="nav-link text-center"  href="/admin"
-                 target="_blank">Admin</a></li>
-              {% endif %}
-              <li><a class="nav-link text-center"  href="/changePassword"
-              >Change Password</a></li>
-              <li><a class="nav-link text-center" onclick="confirmation()" href="#"
-                >Logout</a></li>
-            </ul>
-          </li>
-          {% endif %}
+
+    <!-- Preloader -->
+    <div class="preLoader-relative">
+      <div class='folding-cube'>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
-
       </div>
     </div>
-  </nav>
-  <!-- navbar ends -->
-  <div class="settings"> <i class="fas fa-cog"></i></div>
-             <div class="StyleSwitcher ">
-                 
-                <div style="padding-bottom: 3px;border-bottom: 1px solid rgb(110, 110, 110);"> Body Skin</div>
-                <div >
-                     <input type="radio" name="theme" value="light" id="lid">
-                    <label for="lid">Light</label> 
-                     <input type="radio" name="theme" value="dark" id="dar"> 
-                     <label for="dar">Dark</label>
-                     <input type="radio" name="theme" value="dim" id="dim"> 
-                     <label for="dim">Dim</label>
 
-                </div>
-           </div>
-      
-
-
-     <!-- Title -->
-  <section id="title">
-    <div class="row heading">
-      <div>
-  <div class="container" id="section-1">
-    <div class="row mx-auto">
-      <div class="col mx-auto">
-        <img src="/static/favicon_pixelVibe.png" class="title-img">
-      </div>
-      <div>
-        <h1 class="color_change main-heading">PixelVibe</h1>
-      </div>
-    </div>
-  </section>
-  </div>
-   <!-- Title -->
-
-     <!-- Hidden inputs do not remove this at any cost -->
-  <input type="text" id="input-height" placeholder="16" name="height" required value={{height}} style="visibility:hidden">
-   <input type="text" id="input-width" placeholder="16" name="width" required value={{width}} style="visibility:hidden">
-
-  <!-- Canvas supposed to be hidden before submitting -->
-  <section id=canvas-section>
-    <div id="canvas-div">
-    
-      <!-- Dropdown Menu -->
-      <div class="dropdown">
-        <button onclick="showDropdownMenu(this)" class="dropbtn">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img src="/static/assets/nav.png"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div id="myDropdown" class="dropdown-content">
-          <ul class="list">
-            <li id="brush">Brush
-            <select name="bsize" onChange="setBrushSize(this);">
-              <option value="0" selected>•</option>
-              <option value="1">●</option>
-              <option value="2">⬤</option>
-            </select>
-          </li>
-            <li id="delete">Delete <i class="fas fa-trash"></i></li>
-            <li id="undo">Undo</li>
-            <li id="eraser">Eraser</li>
-            <li id="color-fill">Color fill</li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#section-4">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/changeDimensions">Change Dimensions</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Download Art
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" id="png-download" href="#">PNG</a></li>
+                <li><a class="dropdown-item" id="jpeg-download" href="#">JPEG</a></li>
+              </ul>
+
+              {% if not user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login/SignUp</a>
+            </li>
+            {% else %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                {{user}}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if request.user.is_superuser %}
+                <li><a class="nav-link text-center" href="/admin" target="_blank">Admin</a></li>
+                {% endif %}
+                <li><a class="nav-link text-center" href="/changePassword">Change Password</a></li>
+                <li><a class="nav-link text-center" onclick="confirmation()" href="#">Logout</a></li>
+              </ul>
+            </li>
+            {% endif %}
           </ul>
+
         </div>
       </div>
-      <canvas id="canvas" class="main-canvas"></canvas>
+    </nav>
+    <!-- navbar ends -->
+    <div class="settings"> <i class="fas fa-cog"></i></div>
+    <div class="StyleSwitcher ">
 
-      <!-- Color Palette -->
-      <div id="palette">
-        <div id="palette-prompt">Pick a colour!</div>
-        <div class="palette-color" style="background-color: #ff0000;"></div>
-        <div class="palette-color" style="background-color: #0000ff;"></div>
-        <div class="palette-color" style="background-color: #008000;"></div>
-        <div class="palette-color" style="background-color: #ffff00;"></div>
-        <div class="palette-color" style="background-color: #00ff00;"></div>
-        <div class="palette-color" style="background-color: #ff798f;"></div>
-        <div class="palette-color" style="background-color: #000000;"></div>
-        <div class="palette-color" style="background-color: #ff6600;"></div>
-        <div class="palette-color" style="background-color: #87cefa;"></div>
-        <div class="palette-color" style="background-color: #d400ff;"></div>
-        <div class="palette-color" style="background-color: #ff1d4e;"></div>
-        <div class="palette-color" style="background-color: #952300;"></div>
-        <div id="palette-choose-any-prompt">Choose any color!</div>
-        <input id="palette-color-input" type="color" value="#29FA98">
+      <div style="padding-bottom: 3px;border-bottom: 1px solid rgb(110, 110, 110);"> Body Skin</div>
+      <div>
+        <input type="radio" name="theme" value="light" id="lid">
+        <label for="lid">Light</label>
+        <input type="radio" name="theme" value="dark" id="dar">
+        <label for="dar">Dark</label>
+        <input type="radio" name="theme" value="dim" id="dim">
+        <label for="dim">Dim</label>
+
       </div>
-
     </div>
-  </section>
-
-  
-   <script>
-     
-
-const downloadLinkPNG = document.getElementById("png-download");          //Download 
-const downloadLinkJPEG = document.getElementById("jpeg-download");        //Download 
-const palette = document.getElementById('palette')                        //palette
-const colorInput = document.getElementById('palette-color-input')         //palette Color Input
-const brush=document.getElementById('brush')                              //brush
-const clear=document.getElementById('delete')                             //clear
-const undo=document.getElementById('undo')                                //undo
-const eraser=document.getElementById('eraser')                             //eraser
-const colorFill=document.getElementById("color-fill")                     //Color-fill
-const currentColor=document.getElementById("palette-prompt")
-
-const canvas = document.querySelector("#canvas");
-const context = canvas.getContext("2d");
-
-context.globalAlpha = 1;
-canvas.style.display = "block";
-
-// Global Variables
-let brushColor = '#000';         // default brush color (black)
-let prevBrushColor='#000';
-let brushSize=0
-let prevBrushSize=0
-let isDrawing = false;
-let undoArray = []
-let index = -1
 
 
-    width = parseInt(document.getElementById("input-width").value);           //user input width
-    height = parseInt(document.getElementById("input-height").value);         //user input - height
-    width = parseInt(document.getElementById("input-width").value) || 16;           //user input width
-    height = parseInt(document.getElementById("input-height").value) || 16;         //user input - height
-    console.log(width, height)
 
-    canvas.height = 20 * height;
-    canvas.width = 20 * width;
+    <!-- Title -->
+    <section id="title">
+      <div class="row heading">
+        <div>
+          <div class="container" id="section-1">
+            <div class="row mx-auto">
+              <div class="col mx-auto">
+                <img src="/static/favicon_pixelVibe.png" class="title-img">
+              </div>
+              <div>
+                <h1 class="color_change main-heading">PixelVibe</h1>
+              </div>
+            </div>
+    </section>
+    </div>
+    <!-- Title -->
 
-    w = +canvas.width;
-    h = +canvas.height;
+    <!-- Hidden inputs do not remove this at any cost -->
+    <input type="text" id="input-height" placeholder="16" name="height" required value={{height}}
+      style="visibility:hidden">
+    <input type="text" id="input-width" placeholder="16" name="width" required value={{width}}
+      style="visibility:hidden">
 
-    
-    context.fillStyle = "#fff";                        // set white fill style
-    context.fillRect(0, 0, canvas.width, canvas.height);
+    <!-- Canvas supposed to be hidden before submitting -->
+    <section id=canvas-section>
+      <div id="canvas-div">
 
-//Get Mouse Position
-window.addEventListener("load", (e) => {
-  canvas.addEventListener("mousedown", (e) => {
-    isDrawing = true;
-    draw(e);
-  });
-  canvas.addEventListener("mouseup", (e) => {
-    isDrawing = false;
-    context.beginPath();
-    if (event.type != 'mouseout'){
-    undoArray.push(context.getImageData(0,0,canvas.width,canvas.height))
-    index+=1
-  }
-  });
-  canvas.addEventListener("mousemove", draw);
-});
+        <!-- Dropdown Menu -->
+        <div class="dropdown">
+          <button onclick="showDropdownMenu(this)" class="dropbtn">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+            <ul class="list">
+              <li id="brush">Brush
+                <select name="bsize" onChange="setBrushSize(this);">
+                  <option value="0" selected>•</option>
+                  <option value="1">●</option>
+                  <option value="2">⬤</option>
+                </select>
+              </li>
+              <li id="delete">Delete <i class="fas fa-trash"></i></li>
+              <li id="undo">Undo</li>
+              <li id="eraser">Eraser</li>
+              <li id="color-fill">Color fill</li>
+            </ul>
+          </div>
+        </div>
+        <canvas id="canvas" class="main-canvas"></canvas>
 
-function setBrushSize(sel) {
-  brushSize=parseInt(sel.options[sel.selectedIndex].value)
-}
+        <!-- Color Palette -->
+        <div id="palette">
+          <div id="palette-prompt">Pick a colour!</div>
+          <div class="palette-color" style="background-color: #ff0000;"></div>
+          <div class="palette-color" style="background-color: #0000ff;"></div>
+          <div class="palette-color" style="background-color: #008000;"></div>
+          <div class="palette-color" style="background-color: #ffff00;"></div>
+          <div class="palette-color" style="background-color: #00ff00;"></div>
+          <div class="palette-color" style="background-color: #ff798f;"></div>
+          <div class="palette-color" style="background-color: #000000;"></div>
+          <div class="palette-color" style="background-color: #ff6600;"></div>
+          <div class="palette-color" style="background-color: #87cefa;"></div>
+          <div class="palette-color" style="background-color: #d400ff;"></div>
+          <div class="palette-color" style="background-color: #ff1d4e;"></div>
+          <div class="palette-color" style="background-color: #952300;"></div>
+          <div id="palette-choose-any-prompt">Choose any color!</div>
+          <input id="palette-color-input" type="color" value="#29FA98">
+        </div>
 
-//Draw Function
-function draw(e) {
-  if (!isDrawing)              // Mouse is not pressed
-    return;
+      </div>
+    </section>
 
-  var rect = canvas.getBoundingClientRect();
-  var x = e.clientX - rect.left;
-  var y = e.clientY - rect.top;
-  x = Math.floor((width * x) / canvas.clientWidth);
-  y = Math.floor((height * y) / canvas.clientHeight);
 
-  for (var i=x;i<=x+brushSize;i++) {
-    for (var j=y;j<=y+brushSize;j++) {
-      if (i >= 0 && i < width && j >= 0 && j < height) {
-        context.fillStyle = brushColor;
-        context.fillRect(
-          Math.floor(i * (w / width)),
-          Math.floor(j * (h / height)),
-          Math.floor(canvas.width / width),
-          Math.floor(canvas.height / height)
-        );
+    <script>
+      const downloadLinkPNG = document.getElementById("png-download"); //Download 
+      const downloadLinkJPEG = document.getElementById("jpeg-download"); //Download 
+      const palette = document.getElementById('palette') //palette
+      const colorInput = document.getElementById('palette-color-input') //palette Color Input
+      const brush = document.getElementById('brush') //brush
+      const clear = document.getElementById('delete') //clear
+      const undo = document.getElementById('undo') //undo
+      const eraser = document.getElementById('eraser') //eraser
+      const colorFill = document.getElementById("color-fill") //Color-fill
+      const currentColor = document.getElementById("palette-prompt")
+
+      const canvas = document.querySelector("#canvas");
+      const context = canvas.getContext("2d");
+
+      context.globalAlpha = 1;
+      canvas.style.display = "block";
+
+      // Global Variables
+      let brushColor = '#000'; // default brush color (black)
+      let prevBrushColor = '#000';
+      let brushSize = 0
+      let prevBrushSize = 0
+      let isDrawing = false;
+      let undoArray = []
+      let index = -1
+
+
+      width = parseInt(document.getElementById("input-width").value); //user input width
+      height = parseInt(document.getElementById("input-height").value); //user input - height
+      width = parseInt(document.getElementById("input-width").value) || 16; //user input width
+      height = parseInt(document.getElementById("input-height").value) || 16; //user input - height
+      console.log(width, height)
+
+      canvas.height = 20 * height;
+      canvas.width = 20 * width;
+
+      w = +canvas.width;
+      h = +canvas.height;
+
+
+      context.fillStyle = "#fff"; // set white fill style
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      //Get Mouse Position
+      window.addEventListener("load", (e) => {
+        canvas.addEventListener("mousedown", (e) => {
+          isDrawing = true;
+          draw(e);
+        });
+        canvas.addEventListener("mouseup", (e) => {
+          isDrawing = false;
+          context.beginPath();
+          if (event.type != 'mouseout') {
+            undoArray.push(context.getImageData(0, 0, canvas.width, canvas.height))
+            index += 1
+          }
+        });
+        canvas.addEventListener("mousemove", draw);
+      });
+
+      function setBrushSize(sel) {
+        brushSize = parseInt(sel.options[sel.selectedIndex].value)
       }
-    }
-  }
-}
 
-colorInput.addEventListener("change", () => {
-  brushColor = colorInput.value;
-  prevBrushColor = brushColor;
-  eraser.classList.remove("selected");
-  brush.classList.add("selected");
-  canvas.classList.remove("erasing");
-  currentColor.style.color=brushColor;
-})
+      //Draw Function
+      function draw(e) {
+        if (!isDrawing) // Mouse is not pressed
+          return;
 
-//Color palette
-palette.addEventListener('click', (e) => {
-  const boxShadow = 'inset 0 0 6px #616161';
-  brushColor = e.target.style.backgroundColor;
-  prevBrushColor = brushColor;
-  for (var child of document.getElementById('palette').children) {
-    child.style.boxShadow = null;
-  }
+        var rect = canvas.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        x = Math.floor((width * x) / canvas.clientWidth);
+        y = Math.floor((height * y) / canvas.clientHeight);
 
-  if (e.target.className === 'palette-color') {
-    e.target.style.boxShadow = boxShadow;
-    canvas.classList.remove("erasing");
-  }
-  currentColor.style.color=brushColor
-});
-     
-// eraser
-     
-eraser.addEventListener("click", () => {
-  canvas.classList.add("erasing");
-  eraser.classList.add("selected");
-  brush.classList.remove("selected");
-  brushColor = "white";
-  prevBrushSize = brushSize
-  brushSize = 0
-})
+        for (var i = x; i <= x + brushSize; i++) {
+          for (var j = y; j <= y + brushSize; j++) {
+            if (i >= 0 && i < width && j >= 0 && j < height) {
+              context.fillStyle = brushColor;
+              context.fillRect(
+                Math.floor(i * (w / width)),
+                Math.floor(j * (h / height)),
+                Math.floor(canvas.width / width),
+                Math.floor(canvas.height / height)
+              );
+            }
+          }
+        }
+      }
 
-// undo
-     
-undo.addEventListener("click", () => {
-  if (index <=0 ){
-    clear.click()
-  }
-  else {
-    index -= 1;
-    undoArray.pop();
-    context.putImageData(undoArray[index],0,0);
-  }
-})
+      colorInput.addEventListener("change", () => {
+        brushColor = colorInput.value;
+        prevBrushColor = brushColor;
+        eraser.classList.remove("selected");
+        brush.classList.add("selected");
+        canvas.classList.remove("erasing");
+        currentColor.style.color = brushColor;
+      })
 
-//Download Image
-downloadLinkPNG.addEventListener("click", (e) => {          //PNG
-  e.preventDefault();
-  
-  var img = canvas.toDataURL("image/png");
-  download(img);
-});
-downloadLinkJPEG.addEventListener("click", (e) => {        //JPEG
-  e.preventDefault();
-  var img = canvas.toDataURL("image/jpeg");
-  download(img);
-});
+      //Color palette
+      palette.addEventListener('click', (e) => {
+        const boxShadow = 'inset 0 0 6px #616161';
+        brushColor = e.target.style.backgroundColor;
+        prevBrushColor = brushColor;
+        for (var child of document.getElementById('palette').children) {
+          child.style.boxShadow = null;
+        }
 
-var download = function (img) {
-  var link = document.createElement("a");
-  link.download = "pixelvibe";
-  link.href = img;
-  link.click();
-};
+        if (e.target.className === 'palette-color') {
+          e.target.style.boxShadow = boxShadow;
+          canvas.classList.remove("erasing");
+        }
+        currentColor.style.color = brushColor
+      });
 
-//Brush
-brush.addEventListener("click", () => {
-  canvas.classList.remove("erasing");
-  eraser.classList.remove("selected");
-  colorFill.classList.remove("selected");
-  brush.classList.add("selected");
-  brushColor = prevBrushColor;
-  // brushSize = prevBrushSize
-})
+      // eraser
+
+      eraser.addEventListener("click", () => {
+        canvas.classList.add("erasing");
+        eraser.classList.add("selected");
+        brush.classList.remove("selected");
+        brushColor = "white";
+        prevBrushSize = brushSize
+        brushSize = 0
+      })
+
+      // undo
+
+      undo.addEventListener("click", () => {
+        if (index <= 0) {
+          clear.click()
+        } else {
+          index -= 1;
+          undoArray.pop();
+          context.putImageData(undoArray[index], 0, 0);
+        }
+      })
+
+      //Download Image
+      downloadLinkPNG.addEventListener("click", (e) => { //PNG
+        e.preventDefault();
+
+        var img = canvas.toDataURL("image/png");
+        download(img);
+      });
+      downloadLinkJPEG.addEventListener("click", (e) => { //JPEG
+        e.preventDefault();
+        var img = canvas.toDataURL("image/jpeg");
+        download(img);
+      });
+
+      var download = function (img) {
+        var link = document.createElement("a");
+        link.download = "pixelvibe";
+        link.href = img;
+        link.click();
+      };
+
+      //Brush
+      brush.addEventListener("click", () => {
+        canvas.classList.remove("erasing");
+        eraser.classList.remove("selected");
+        colorFill.classList.remove("selected");
+        brush.classList.add("selected");
+        brushColor = prevBrushColor;
+        // brushSize = prevBrushSize
+      })
 
 
-//Clear Canvas
-clear.addEventListener("click", ()=>{
-  clear.classList.add("selected");
-  context.clearRect(0,0,canvas.width,canvas.height);
-  clear.classList.remove("selected");
-  undoArray = []
-  index = -1
-})
+      //Clear Canvas
+      clear.addEventListener("click", () => {
+        clear.classList.add("selected");
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        clear.classList.remove("selected");
+        undoArray = []
+        index = -1
+      })
 
-// Color-fill Canvas
-colorFill.addEventListener("click", () => {
-  eraser.classList.remove("selected");
-  brush.classList.remove("selected");
-  colorFill.classList.add("selected");
-  context.fillStyle = brushColor; 
-  context.fillRect(0, 0, canvas.width, canvas.height);
-}) 
+      // Color-fill Canvas
+      colorFill.addEventListener("click", () => {
+        eraser.classList.remove("selected");
+        brush.classList.remove("selected");
+        colorFill.classList.add("selected");
+        context.fillStyle = brushColor;
+        context.fillRect(0, 0, canvas.width, canvas.height);
+      })
 
-//Dropdown Menu
-function showDropdownMenu(list) {
-  list.classList.toggle("change");
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-   </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+      //Dropdown Menu
+      function showDropdownMenu(list) {
+        list.classList.toggle("change");
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
+    </script>
     <script src="https://kit.fontawesome.com/59a498d1d1.js" crossorigin="anonymous"></script>
     <script src="/static/JS/preloader.js"></script>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
-<script>
-  function confirmation(){
-  swal({
-    title: "Are you sure?",
-    text: "You Want to LogOut!!",
-    icon: "warning",
-    buttons: true,
-    buttons: ['cancel','Yes, Log out'],
-    dangerMode: true,
-  })
-  .then((willDelete) => {
-    if (willDelete) {
-      window.location = "/logout";
-    } else {
-      
-    }
-  });
-  }
-</script>
-<script>
-   document.getElementsByClassName("settings")[0].addEventListener('click',()=>{
-     let styleclass=document.getElementsByClassName("StyleSwitcher")[0].classList;
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      function confirmation() {
+        swal({
+            title: "Are you sure?",
+            text: "You Want to LogOut!!",
+            icon: "warning",
+            buttons: true,
+            buttons: ['cancel', 'Yes, Log out'],
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              window.location = "/logout";
+            } else {
 
-     if(styleclass.contains("unhideStylenav"))
-     {
-       styleclass.remove("unhideStylenav");
-     }
-     else{
-       styleclass.add("unhideStylenav");
-     }
+            }
+          });
+      }
+    </script>
+    <script>
+      document.getElementsByClassName("settings")[0].addEventListener('click', () => {
+        let styleclass = document.getElementsByClassName("StyleSwitcher")[0].classList;
 
-})
+        if (styleclass.contains("unhideStylenav")) {
+          styleclass.remove("unhideStylenav");
+        } else {
+          styleclass.add("unhideStylenav");
+        }
 
-  document.getElementById("dar").addEventListener("click",()=>{
-      document.getElementsByTagName("body")[0].style.backgroundColor= "#0d1117";
-});
+      })
 
-document.getElementById("lid").addEventListener("click", () => {
-  document.getElementsByTagName("body")[0].style.backgroundColor = "#fdb1bb";
-});
+      document.getElementById("dar").addEventListener("click", () => {
+        document.getElementsByTagName("body")[0].style.backgroundColor = "#0d1117";
+      });
 
-document.getElementById("dim").addEventListener("click", () => {
-  document.getElementsByTagName("body")[0].style.backgroundColor = "#696969";
-});
+      document.getElementById("lid").addEventListener("click", () => {
+        document.getElementsByTagName("body")[0].style.backgroundColor = "#fdb1bb";
+      });
 
-</script>
+      document.getElementById("dim").addEventListener("click", () => {
+        document.getElementsByTagName("body")[0].style.backgroundColor = "#696969";
+      });
+    </script>
   </body>
 </html>
