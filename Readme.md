@@ -196,7 +196,7 @@ Now, you are ready to make a pull request to the original repository.
 You should navigate to your forked repository, and press the "Compare & pull request" button on the page.
 
 GitHub will alert you that you can merge the two branches because there is no competing code. You should add in a title, a comment, and then press the “Create pull request” button.
-
+<hr>
 ### Running the project Using Dockerfile.
 #Prerequisite: - You should have docker installed in your system.
 
@@ -212,6 +212,29 @@ Now your container will start and then note the port number of your container by
  1 - docker ps
 
 Then run it on localhost:port-number
+
+Lets see above example with the screenshots of my system.
+
+<hr>
+1 - Screenshot of docker build command 
+<hr>
+<img src="docker_pics/docker-build.png" alt="docker build screenshot" width=700/>
+<hr>
+
+2- Screenshot of docker run command
+
+<img src="docker_pics/docker-run.png" alt="docker build screenshot" width=700/>
+<hr>
+3- Screenshot of docker ps
+<hr>
+
+<img src="docker_pics/docker ps.png" alt="docker build screenshot" width=700/>
+<hr>
+
+4 - Screenshot of running project
+<hr>
+<img src="docker_pics/pro-run.png" alt="docker build screenshot" width=700/>
+<hr>
 
 ## ⚙ Contributing Guidelines
 Please go through the Contributing guidelines <a href="https://github.com/FOSS-Cell-GECPKD/pixelvibe/blob/main/Contributing.md">here</a>.
