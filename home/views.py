@@ -3,7 +3,8 @@ from django.http import HttpResponse, request
 # now for using login sys we import user model
 from django.contrib.auth.models import User,auth
 from django.contrib.auth  import authenticate,  login, logout
-from home.models import Contact,Gallery
+from home.models import Contact,Gallery,ImageUpload
+from .forms import ImageForm
 from django.contrib import  messages
 from django.contrib.auth.decorators import login_required
 import math
@@ -31,6 +32,14 @@ def changeDimensions(request):
     global params
     params = {}
     return redirect('/paint')
+
+def ImgUpload(request):
+    form=ImageForm()
+    if request.method=="POST":
+        form=ImageForm(request.POST)
+        if form.is_valid():
+            form.save()
+    return render(request,"imgform.html",{'form':form})
 
 def paint(request):
     global params
@@ -98,7 +107,7 @@ def handleSignUp(request):
                     myuser.save()
                     messages.success(request,'Successfully!! Registred Please Login')
                     return redirect('/login')
-           
+
         else:
             messages.error(request,'password not matched Please Try Again!')
             return redirect('/signup')
@@ -106,7 +115,7 @@ def handleSignUp(request):
         return render(request,'signup.html')
 
 def send_warning_email(email):
-    try:        
+    try:
         con = smtplib.SMTP("smtp.gmail.com",587)
         con.ehlo()
         con.starttls()
@@ -117,9 +126,9 @@ def send_warning_email(email):
         con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)
     except:
         pass
-  
 
-  
+
+
 login_users = {}
 def Handlelogin(request):
     if request.method == 'POST':
@@ -133,8 +142,8 @@ def Handlelogin(request):
             return redirect('/login')
         user = User.objects.filter(username=username).first()
         print(user,user.password,password)
-        
-        user=authenticate(username=username,password=password) 
+
+        user=authenticate(username=username,password=password)
         if user is not None:
             if username in login_users.keys():
                 del(login_users[user.username])
@@ -154,7 +163,7 @@ def Handlelogin(request):
                 print(user1.email)
                 send_warning_email(user1.email)
                 print("They used username: {} and password: {}".format(username,password))
-                
+
             messages.error(request,"Invalid credentials! Please try again")
             return redirect("/login")
     else:
@@ -179,7 +188,7 @@ def send_email_to_Admin(msg,email):
         con.sendmail(admin_email,email,"Subject:Contact Response To PixelVibe \n\n"+msg)
     except:
         pass
-    
+
 
 def contact(request):
     if request.method=="POST":
@@ -195,7 +204,7 @@ def contact(request):
         else:
             ins = Contact(firstname=firstname,lastname=lastname,email=email,content=content,number=number)
             ins.save()
-            msg = str(firstname) + "is trying to contact with us. \nmsg : " + str(content) 
+            msg = str(firstname) + "is trying to contact with us. \nmsg : " + str(content)
             print("sending mail")
             global admin_email
             send_email_to_Admin(msg,admin_email)
@@ -227,7 +236,7 @@ def send_email_to_user(otp,email):
         error=1
         return redirect("/forgotPass")
 
-global_dict = {'otp':"",'email':"",'otpcheck':""} 
+global_dict = {'otp':"",'email':"",'otpcheck':""}
 def generate_otp():
     digits = [i for i in range(0, 10)]
     random_str = ""
@@ -309,7 +318,7 @@ def passwordReset(request):
             return redirect('/forgotPass')
 
 def send_confirmation_email(email):
-    try:    
+    try:
         con = smtplib.SMTP("smtp.gmail.com",587)
         con.ehlo()
         con.starttls()
@@ -317,7 +326,7 @@ def send_confirmation_email(email):
         global admin_password
         con.login(admin_email,admin_password)
         msg = "Password is changed of your Account !!"
-        con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)      
+        con.sendmail(admin_email,email,"Subject:Login Warning \n\n"+msg)
     except:
         pass
 
@@ -358,5 +367,5 @@ def changePassword(request):
             return redirect("/login")
     else:
         pass
-    
+
     return render(request,"changePassword.html")

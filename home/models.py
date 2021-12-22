@@ -14,13 +14,23 @@ class Contact(models.Model):
         return (self.firstname)
 
 
-        
+
 # # Create your models here.
 class Gallery(models.Model):
     sno = models.AutoField(primary_key=True)
     name = models.CharField(max_length=250)
     img = models.ImageField(upload_to="Arts")
-    
+
 
     def __str__(self):
         return "Art from  \t\t"+self.name
+
+
+class ImageUpload(models.Model):  
+    imgname=models.CharField(max_length=100)
+    attimg= models.ImageField(upload_to="Arts/Upload")
+    imgdate=models.DateField(auto_now_add=True)
+    imgDscp=models.CharField(max_length=500)
+
+    def __str__(self):
+        return (self.imgname)

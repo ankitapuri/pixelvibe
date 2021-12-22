@@ -28,6 +28,7 @@ urlpatterns = [
     path('passwordReset/',views.passwordReset , name='passwordReset' ),
     path('changePassword/',views.changePassword , name='changePassword' ),
     path('changeDimensions/',views.changeDimensions , name='changeDimensions' ),
-    
-    
+    path('imgupload/',views.ImgUpload , name='ImgUpload' ),
+
+
 ]
