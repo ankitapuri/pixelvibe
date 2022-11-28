@@ -220,6 +220,7 @@ You can find the Code of Conduct <a href="https://github.com/FOSS-Cell-GECPKD/pi
 <table>
   <tbody><tr>
      <td align="center"><a href="https://github.com/adarshvulli"><img alt="" src="https://avatars.githubusercontent.com/adarshvulli" width="100px;"><br><sub><b> Adarsh Vulli</b></sub></a><br></td></a></td>
+     <td align="center"><a href="https://github.com/arpit456jain"><img alt="" src="https://avatars.githubusercontent.com/arpit456jain" width="100px;"><br><sub><b> Arpit Jain</b></sub></a><br></td></a></td>
  </tbody></table>
   
 ### 🚀 Contributing  
